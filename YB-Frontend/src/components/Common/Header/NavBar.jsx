@@ -24,6 +24,11 @@ export default class NavBar extends Component {
               <li><Link to="/feed">Feed</Link></li>
               <li><Link to="/channels">Channels</Link></li>
             </ul>
+
+            <ul className="nav navbar-nav navbar-right">
+              <li><Link to="/settings"><span className="glyphicon glyphicon-cog"></span></Link></li>
+              <li><Link to="/profile"><span  className="glyphicon glyphicon-user"></span></Link></li>
+            </ul>
             
             <SearchForm />
 
