@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "YB-API",
   "version": "0.0.1",
   "private": true,
   "main": "server.ks",
@@ -23,6 +23,7 @@
     "method-override": "~2.2.0",
     "mongoose": "^4.8.4",
     "morgan": "~1.0.0",
+    "oembed": "^0.1.2",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",

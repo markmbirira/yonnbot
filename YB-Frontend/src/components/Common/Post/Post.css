@@ -1,0 +1,9 @@
+.post-item-oembed {
+  max-height: 100px;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.post-item-oembed img {
+  width: 100px;
+}

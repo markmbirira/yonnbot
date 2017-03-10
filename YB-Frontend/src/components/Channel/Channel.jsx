@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 
 import Header from '../Common/Header/Header';
 import Post from '../Common/Post/Post';
-import FeedSideBar from './FeedSideBar';
+import ChannelSideBar from './ChannelSideBar';
 import Footer from '../Common/Footer/Footer';
 
-import './Feed.css';
 
-class App extends Component {
+import './Channel.css';
+
+class Channel extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="main-app">
         <Header />
 
         <div className="col-sm-12 col-md-8">
@@ -18,13 +19,14 @@ class App extends Component {
         </div>
 
         <div className="col-sm-12 col-md-4">
-          <FeedSideBar />
+          <ChannelSideBar />
         </div>
 
         <Footer />
+
       </div>
     );
   }
 }
 
-export default App;
+export default Channel;
