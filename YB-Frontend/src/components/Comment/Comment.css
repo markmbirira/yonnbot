@@ -1,0 +1,101 @@
+.comment-left-right-container {
+  position: absolute;
+  width: 90%;
+  height: 500px;
+  margin: 100px auto !important;
+  padding: 15px;
+  top: 0; left: 0; bottom: 100px; right: 0;
+  z-index: 3;
+  background-color:#fff;
+  border-radius: 6px;
+  transition: opacity .5s ease-in;
+}
+
+
+.comment-form-overlay {
+  position: absolute;
+  width: 100%;
+  margin: -2px auto;
+  height: 150%;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.comment-form-overlay-close {
+  left: 94%;
+  font-size: 35px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.comment-left {
+  /*/*/
+}
+
+.comment-post-avatar {
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
+
+.comment-post-avatar .thumbnail {
+  margin: auto;
+}
+
+.comment-post-avatar-image {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.comment-navbar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.comment-navbar button {
+  margin-left: 4px;
+}
+
+.component-post-reaction {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.component-post-reaction-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.component-post-reaction-list li {
+  margin: 10px;
+  align-self: center;
+}
+
+.comment-item-container {
+  background: #fff;
+  margin-bottom: 15px;
+  margin-top: 4px;
+  height: 380px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-item {
+  padding: 5px 10px 0px 10px;
+  border-bottom: 1px #ccc dotted;
+}
+
+.comment-item__username {
+  margin-right: 5px;
+}
+
+.comment-item__text {
+  font-family: monospace;
+  font-size: small;
+}
+

@@ -26,6 +26,8 @@ class Channel extends Component {
 
         <Footer />
 
+        {this.props.children}
+
       </div>
     );
   }
