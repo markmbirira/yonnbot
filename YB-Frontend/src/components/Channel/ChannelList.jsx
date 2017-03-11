@@ -13,6 +13,9 @@ export default class ChannelList extends Component {
         <ChannelListItem />
         <ChannelListItem />
         <ChannelListItem />
+        <ChannelListItem />
+        <ChannelListItem />
+        <ChannelListItem />
 
         <p> 
           <button className="btn btn-md">&larr; prev</button>

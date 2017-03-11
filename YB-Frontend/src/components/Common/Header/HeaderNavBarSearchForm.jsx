@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 
-export default class SearchForm extends  Component {
+export default class HeaderNavBarSearchForm extends  Component {
   render () {
     return (
       <form className="navbar-form navbar-right">

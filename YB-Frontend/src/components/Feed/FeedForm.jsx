@@ -14,7 +14,7 @@ export default class FeedForm extends Component {
           <p>optional fields</p>
           <hr />
           <label htmlFor="channel">Channel for your link, type-in for suggestions</label>
-          <input className="form-control" type="text" name="category" placeholder=" channel" />
+          <input className="form-control" type="text" name="channel" placeholder=" channel" />
           <p>Famous Categories are: Music, Technology, Funny, Programming, N3rd! and Business</p>
           <textarea className="form-control" defaultValue=" short description/summary ..."></textarea>
           <label>

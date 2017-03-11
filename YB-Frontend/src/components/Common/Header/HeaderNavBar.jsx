@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import SearchForm from './SearchForm';
+import HeaderNavBarSearchForm from './HeaderNavBarSearchForm';
 
-export default class NavBar extends Component {
+export default class HeaderNavBar extends Component {
 
   render () {
     return (
@@ -21,16 +21,16 @@ export default class NavBar extends Component {
 
           <div className="collapse navbar-collapse" id="navbar-collapse">
             <ul className="nav navbar-nav">
-              <li><Link to="/feed">Feed</Link></li>
+              <li><Link to="/">Feed</Link></li>
               <li><Link to="/channels">Channels</Link></li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/settings"><span className="glyphicon glyphicon-cog"></span></Link></li>
+              <li><Link to="#"><span className="glyphicon glyphicon-bell"></span></Link></li>
               <li><Link to="/profile"><span  className="glyphicon glyphicon-user"></span></Link></li>
             </ul>
             
-            <SearchForm />
+            <HeaderNavBarSearchForm />
 
             </div> {/* navbar collapse */}
           </div> {/* container-fluid */}

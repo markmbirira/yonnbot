@@ -12,7 +12,7 @@ export default class PostItem extends Component {
         <div className="col-md-1 col-sm-2">
           <PostItemVoting />
         </div>
-        <div className="col-md-11 col-sm-10 post_item_details">
+        <div className="col-md-11 col-sm-10 post-item-details">
           <p>Pax is a smart tip jar for rideshare drivers</p>
           <p><Link to="#">https://techcrunch.com/2017/03/08/pax-is-a-smart-tip-jar-for-ride-share-drivers/</Link></p>
           <p> via <em>JohnDoe</em>  3hrs ago</p>
@@ -21,9 +21,7 @@ export default class PostItem extends Component {
             <img className="thumbnail" src={"/img/nice-car-th.jpg"} alt="" />  
             <p> ugly is real</p>
           </div>
-
         </div>
-        <hr />
       </div>
     );
   }

@@ -1,0 +1,66 @@
+.main-app {
+  width: 90%;
+  margin: 5px auto;
+}
+
+.profile-form-form {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  margin: auto;
+  padding: 15px;
+  top: 0; left: 0; bottom: 100px; right: 0;
+  z-index: 3;
+  background-color:#fff;
+  border-radius: 6px;
+  margin-top: 80px;
+  transition: opacity .5s ease-in;
+}
+
+.profile-form-overlay {
+  position: absolute;
+  width: 100%;
+  margin: -2px auto;
+  height: 150%;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.profile-social-social {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  margin: auto;
+  padding: 15px;
+  top: 0; left: 0; bottom: 100px; right: 0;
+  z-index: 3;
+  background-color:#fff;
+  border-radius: 6px;
+  margin-top: 80px;
+  transition: opacity .5s ease-in;
+}
+
+.profile-social-overlay {
+  position: absolute;
+  width: 100%;
+  margin: -2px auto;
+  height: 150%;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.profile-social-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 2px;
+  background-color:  #5bc0de;
+  color: white;
+  font-size: 22p
+}
+
+.profile-avatar img {
+  width: 100%;
+}

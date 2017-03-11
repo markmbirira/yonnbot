@@ -6,7 +6,7 @@ import Routes from './components/Router';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import './index.css';
+import './styles/index.css';
 
 
 

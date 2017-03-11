@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import NavBar from './NavBar';
+// import HeaderIntelliScroll from './HeaderIntelliScroll';
+
+import HeaderNavBar from './HeaderNavBar';
 
 export default class Header extends Component {
   render () {
     return (
-      <NavBar />
+      <HeaderNavBar />
     );
   }
 };
