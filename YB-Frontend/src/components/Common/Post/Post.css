@@ -7,6 +7,10 @@
     border-bottom: 1px solid #ccc;
 }
 
+.post-item-details {
+  display: flex;
+}
+
 .post-item:hover {
   background: #eee;
 }
@@ -20,6 +24,7 @@
 }
 
 .post-item-oembed {
+  margin-right: 10px;
   max-height: 100px;
   overflow-y: hidden;
   display: flex;

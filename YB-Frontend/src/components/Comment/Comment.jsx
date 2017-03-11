@@ -24,7 +24,7 @@ class Comment extends Component {
   _handleClose(e){
     e.preventDefault();
     // redirect with react router
-    browserHistory.replace('/profile');
+    browserHistory.replace('/');
   }
 
   render() {

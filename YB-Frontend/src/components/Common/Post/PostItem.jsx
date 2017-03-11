@@ -13,13 +13,14 @@ export default class PostItem extends Component {
           <PostItemVoting />
         </div>
         <div className="col-md-11 col-sm-10 post-item-details">
-          <p>Pax is a smart tip jar for rideshare drivers</p>
-          <p><Link to="#">https://techcrunch.com/2017/03/08/pax-is-a-smart-tip-jar-for-ride-share-drivers/</Link></p>
-          <p> via <em>JohnDoe</em>  3hrs ago</p>
-          
           <div className="post-item-oembed">
             <img className="thumbnail" src={"/img/nice-car-th.jpg"} alt="" />  
-            <p> ugly is real</p>
+          </div>
+
+          <div className="">
+            <p>Can someone be ugly in photos but pretty in real life?</p>
+            <p><Link to="#">https://www.quora.com/Can-someone-be-ugly-in-photos-but-pretty-in-real-life</Link></p>
+            <p><small>via johndoe <em className="text-info">4 hrs ago</em></small></p>
           </div>
         </div>
       </div>

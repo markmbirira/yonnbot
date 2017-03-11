@@ -9,9 +9,9 @@ export default class CommentLeft extends Component {
     return (
       <div className="comment-left col-md-6">
         <div className="">
-          <p>Pax is a smart tip jar for rideshare drivers</p>
-          <p>via (https://techcrunch.com/2017/03/08/pax-is-a-smart-tip-jar-for-ride-share-drivers/)</p>
-          <p>Ugly is real by <small className="text-info">technerd 4rhs ago</small> </p>
+          <p>Can someone be ugly in photos but pretty in real life?</p>
+          <p className="text-info">https://www.quora.com/Can-someone-be-ugly-in-photos-but-pretty-in-real-life</p>
+          <p><small>via johndoe <em className="text-info">4 hrs ago</em></small></p>
         </div>
         <CommentPostAvatar />
         <CommentPostReaction />

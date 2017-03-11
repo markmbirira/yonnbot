@@ -16,6 +16,14 @@ export default class Post extends Component {
           <PostItem />
           <PostItem />
           <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
         </div>
 
         <p className="post-paginator"> 
