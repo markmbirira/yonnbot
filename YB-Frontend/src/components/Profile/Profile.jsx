@@ -13,12 +13,14 @@ class Profile extends Component {
       <div className="main-app">
         <Header />
 
-        <div className="col-sm-12 col-md-8">
-          <Post />
-        </div>
+        <div>
+          <div className="col-sm-12 col-md-8 main-content">
+            <Post />
+          </div>
 
-        <div className="col-sm-12 col-md-4">
-          <ProfileSideBar />
+          <div className="col-sm-12 col-md-4 main-content">
+            <ProfileSideBar />
+          </div>
         </div>
         <Footer />
 

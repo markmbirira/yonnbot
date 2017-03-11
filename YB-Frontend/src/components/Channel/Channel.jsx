@@ -14,12 +14,14 @@ class Channel extends Component {
       <div className="main-app">
         <Header />
 
-        <div className="col-sm-12 col-md-8">
-          <Post />
-        </div>
+        <div>
+          <div className="col-sm-12 col-md-8 main-content">
+            <Post />
+          </div>
 
-        <div className="col-sm-12 col-md-4">
-          <ChannelSideBar />
+          <div className="col-sm-12 col-md-4 main-content">
+            <ChannelSideBar />
+          </div>
         </div>
 
         <Footer />

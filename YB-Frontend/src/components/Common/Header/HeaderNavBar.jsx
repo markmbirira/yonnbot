@@ -7,7 +7,7 @@ export default class HeaderNavBar extends Component {
 
   render () {
     return (
-      <nav className="navbar navbar-inverse">
+      <nav className="navbar navbar-inverse main-navbar">
         <div className="container-fluid">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">

@@ -3,3 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.main-navbar {
+    position: fixed;
+    width: 90%;
+    z-index: 2;
+}
+
+.main-content {
+    margin-top: 80px;
+}
