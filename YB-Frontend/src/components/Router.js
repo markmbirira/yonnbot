@@ -11,7 +11,6 @@ import ProfileSocial from './Profile/ProfileSocial';
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App} >
-      <Route  path="comment" component={Comment} />
     </Route>
       <Route path="channels" component={Channel}>
         <Route  path="comment" component={Comment} />
@@ -21,6 +20,7 @@ const Routes = (props) => (
         <Route path="social" component={ProfileSocial} />
         <Route  path="comment" component={Comment} />
       </Route>
+      <Route  path="comment" component={Comment} />
   </Router>
 );
 

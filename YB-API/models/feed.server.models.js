@@ -2,6 +2,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
     User = mongoose.model('User');
 
+var feedscrapper = require('../util/feedscrapper');
+
 var PostSchema = new Schema({
   title: {
     type: String,
@@ -30,6 +32,9 @@ var PostSchema = new Schema({
       }
     }
   },
+  embedly_data: {
+    type: Object
+  },
   color: String,
   category: String,
   created: {
@@ -40,8 +45,15 @@ var PostSchema = new Schema({
   //   type: Schema.ObjectId,
   //   ref: 'User'
   // },
-  comment: Array
-  
+  comments: Array,
+  upvotes: {
+    type: Number,
+    default: 0
+  },
+  downvotes: {
+    type: Number,
+    default: 0
+  }
 });
 
 PostSchema.set('toJSON', {
@@ -49,10 +61,15 @@ PostSchema.set('toJSON', {
   virtuals: true,
 });
 
-PostSchema.methods.verifyLink = function (url) {
-  var lurl = require('lurl');
-  return lurl(url); // valid URL
-}
+
+PostSchema.pre('save', function(next) {
+  self = this;
+  feedscrapper(this.url, function(data){
+    self.embedly_data = data; // save data received from EMBEDY API
+    next();
+  });
+
+});
 
 PostSchema.statics.findPostById = function (id, callback) {
   this.findOne({ _id: id}, callback);

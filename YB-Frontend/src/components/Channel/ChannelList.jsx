@@ -6,11 +6,8 @@ export default class ChannelList extends Component {
   render() {
     return (
       <div className="channel-list-item-container">
-        <h3 className="text-info">Available Channels</h3>
+        <h4 className="text-info">YonnBot channels available</h4>
         <hr />
-        <ChannelListItem />
-        <ChannelListItem />
-        <ChannelListItem />
         <ChannelListItem />
         <ChannelListItem />
         <ChannelListItem />

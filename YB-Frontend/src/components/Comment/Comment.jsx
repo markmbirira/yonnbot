@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import { browserHistory } from 'react-router';
 
-import CommentLeft from './CommentLeft';
-import CommentRight from './CommentRight';
+import Header from '../Common/Header/Header';
+import CommentPost from './CommentPost';
+import CommentComments from './CommentComments';
+import Footer from '../Common/Footer/Footer';
 
 import './Comment.css';
 
@@ -29,14 +31,21 @@ class Comment extends Component {
 
   render() {
     return (
-      <div className="comment">
-        <div className="comment-left-right-container row">
-          <CommentLeft />
-          <CommentRight />
+      <div className="main-app">
+        <Header />
+
+        <div className="main-content">
+          <div className="row">
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+              <CommentPost />
+              <CommentComments />
+            </div>
+            <div className="col-md-2"></div>
+          </div>
         </div>
-        <div className="comment-form-overlay" onClick={this._handleClose}>
-          <span className="glyphicon glyphicon-remove comment-form-overlay-close"></span>
-        </div> {/* overlay for modal */}
+
+        <Footer />
       </div>
     );
   }

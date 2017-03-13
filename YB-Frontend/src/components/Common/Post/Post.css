@@ -5,10 +5,12 @@
 .post-item {
     margin-top: 2px;
     border-bottom: 1px solid #ccc;
+    display: flex;
 }
 
 .post-item-details {
   display: flex;
+  padding-left: 5px;
 }
 
 .post-item:hover {
@@ -30,10 +32,24 @@
   display: flex;
 }
 
-.post-item-oembed img {
-  width: 100px;
+.post-item-oembed-thumbnail {
+  object-fit: cover;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.post-item-oembed-thumbnail img {
+  width: 90px;
 }
 
 .post-paginator {
   margin-top: 10px;
+}
+
+.post-item-details-text {
+  margin-left: 5px;
+}
+
+.post-item-details-text p {
+  margin: 0 0 0px;
 }

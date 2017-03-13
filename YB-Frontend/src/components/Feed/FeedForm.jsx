@@ -4,19 +4,17 @@ export default class FeedForm extends Component {
   render() {
     return (
       <div className="feedform">
-        <h4>Share new link</h4>
+        <p>Share new link post</p>
         <form className="form-group">
-          <label htmlFor="title">Title</label>
+          <p htmlFor="title">Title</p>
           <input className="form-control" type="text"  name="title" placeholder=" title" />
-          <label htmlFor="url">URL</label>
+          <p htmlFor="url">URL</p>
           <input className="form-control" type="text" name="url" placeholder=" URL/Link" />
-          <hr />
-          <p>optional fields</p>
-          <hr />
-          <label htmlFor="channel">Channel for your link, type-in for suggestions</label>
+          <p htmlFor="channel">Channel for your link, type-in for suggestions</p>
           <input className="form-control" type="text" name="channel" placeholder=" channel" />
-          <p>Famous Categories are: Music, Technology, Funny, Programming, N3rd! and Business</p>
-          <textarea className="form-control" defaultValue=" short description/summary ..."></textarea>
+          <p className="text-sm">
+            <small>Famous Categories are: Music, Technology, Funny, Programming, N3rd! and Business</small>
+          </p>
           <label>
             <input type="radio" name="xrating" value="safe" />
             Safe
@@ -25,7 +23,9 @@ export default class FeedForm extends Component {
             <input type="radio" name="xrating" value="nsfw" />
             NSFW
           </label>
-          <button className="btn btn-md btn-info form-control">Send</button>
+          <button className="btn btn-md btn-warning form-control">
+            <span className="glyphicon glyphicon-link"></span>
+          </button>
         </form>
       </div>
     );

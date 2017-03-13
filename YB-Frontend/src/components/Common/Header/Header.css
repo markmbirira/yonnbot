@@ -3,4 +3,8 @@
     width: 90%;
     margin: 0 auto;
     z-index: 2;
+} /* add class .main-navbar to <nav/> for a sticky header */
+
+.navbar.navbar-inverse {
+    border-bottom: 3px solid darkseagreen;
 }

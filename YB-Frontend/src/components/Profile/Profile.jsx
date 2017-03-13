@@ -22,6 +22,7 @@ class Profile extends Component {
             <ProfileSideBar />
           </div>
         </div>
+        
         <Footer />
 
         {this.props.children}
