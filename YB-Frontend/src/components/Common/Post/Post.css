@@ -33,13 +33,15 @@
 }
 
 .post-item-oembed-thumbnail {
-  object-fit: cover;
-  max-width: 100px;
-  max-height: 100px;
+    object-fit: cover;
+    width: 90px;
+    height: 72px;
+    overflow: hidden;
 }
 
 .post-item-oembed-thumbnail img {
-  width: 90px;
+  width: 72px;
+  border-radius: 2px;
 }
 
 .post-paginator {
@@ -52,4 +54,8 @@
 
 .post-item-details-text p {
   margin: 0 0 0px;
+}
+
+.post-item-description {
+
 }

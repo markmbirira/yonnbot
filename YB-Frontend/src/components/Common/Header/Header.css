@@ -5,6 +5,6 @@
     z-index: 2;
 } /* add class .main-navbar to <nav/> for a sticky header */
 
-.navbar.navbar-inverse {
+.navbar-fixed-top {
     border-bottom: 3px solid darkseagreen;
 }

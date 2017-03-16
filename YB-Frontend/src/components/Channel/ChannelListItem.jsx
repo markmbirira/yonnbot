@@ -11,10 +11,10 @@ export default class ChannelListItem extends Component {
           <img className="thumbnail" src={"/img/channel-pic.jpg"} alt="" />  
         </div>
         <div className="channel-list-item__title">
-          <p><Link to="/channels">Technology</Link></p>
+          <p><Link to="/channels">{this.props.channel}</Link></p>
         </div>
         <div className="channel-list-item__postcount">
-          <span>3047 posts</span>
+          <span>{this.props.postcount} posts</span>
         </div>
         <div className="channel-list-item-subscribed ">
           <span className="glyphicon glyphicon-check text-info"></span>

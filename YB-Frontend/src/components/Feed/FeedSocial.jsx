@@ -5,14 +5,12 @@ export default class FeedSocial extends Component {
   render () {
     return (
       <div className="feed-social">
-        <h4>YonnBot social media integration</h4>
-        <p>Share on your linked social accounts</p>
+        <h5>Configure social accounts</h5>
         <div className="feed-social-item-container">
-          <FeedSocialItem />
-          <FeedSocialItem />
-          <FeedSocialItem />
-          <FeedSocialItem />
-          <FeedSocialItem />
+          <FeedSocialItem social="FaceBook"/>
+          <FeedSocialItem social="Twitter" />
+          <FeedSocialItem social="Google" />
+          <FeedSocialItem social="GitHub" />
         </div>
       </div>
     );

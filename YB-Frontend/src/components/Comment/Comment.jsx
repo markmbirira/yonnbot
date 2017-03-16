@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import { browserHistory } from 'react-router';
+import postActionCreators from '../../actions/postActionCreators';
 
 import Header from '../Common/Header/Header';
 import CommentPost from './CommentPost';
@@ -10,24 +11,17 @@ import Footer from '../Common/Footer/Footer';
 import './Comment.css';
 
 
-class Comment extends Component {
-  constructor(props) {
-    super(props);
+class App extends Component {
 
-    let _handleChange = this._handleChange.bind(this);
-    let _handleClose = this._handleClose.bind(this);
-
+  componentDidMount() {
+    var postId = this.props.params.postId;
+    this.props.fetchSinglePost(postId);
   }
 
-  _handleChange(field, e){
-    // this.props.handleChange(field, e.target.value);
+  componentDidUpdate(nextProps) {
+    // console.log
   }
-  
-  _handleClose(e){
-    e.preventDefault();
-    // redirect with react router
-    browserHistory.replace('/');
-  }
+
 
   render() {
     return (
@@ -50,5 +44,35 @@ class Comment extends Component {
     );
   }
 }
+/*
+id={this.props.post.id}
+                title={this.props.post.title}
+                url={this.props.post.url}
+                created={this.props.post.created}
+                description={this.props.post.embedly_data.description}
+                thumbnail_url={this.props.post.embedly_data.thumbnail_url}
+*/
+
+App.propTypes = {
+  post: PropTypes.array,
+  fetchSinglePost: PropTypes.func
+}
+
+const mapStateToProps = (state) => {
+  console.log('state is', state.comments);
+  return {
+    post: state.comments
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchSinglePost: (postId) => {
+      dispatch(postActionCreators.fetchSinglePost(postId));
+    }
+  }
+}
+
+const Comment = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default Comment;

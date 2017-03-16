@@ -1,8 +1,8 @@
-import { Rgister } from '../actions/actionTypes';
+import { Posts } from '../actions/actionTypes';
 
 initialState = [];
 
-const register = (state = initialState, action) => {
+const profile = (state = initialState, action) => {
   switch (action.type) {
     case Posts.FETCH_ALL_POSTS:
       return [{"loading": true }];

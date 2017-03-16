@@ -11,11 +11,11 @@ var getErrorMessage = function(err) {
     }
   }
 
-  return message;
+  return "Something went wrong";
 };
 
 exports.pagedPosts = function(req, res, next) {
-  Post.find({}, function(err, posts) {
+  Post.find({}, {}, { sort: { 'created' : -1 } }, function(err, posts) {
     if (err) {
       var message = getErrorMessage(err);
       

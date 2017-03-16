@@ -32,14 +32,12 @@ var PostSchema = new Schema({
       }
     }
   },
-  embedly_data: {
-    type: Object
-  },
+  embedly_data: Object,
   color: String,
   category: String,
   created: {
     type: Date,
-    dafault: Date.now
+    default: Date.now
   },
   // author: { // use Post.find().populate('author').exec(function(err, posts) {});
   //   type: Schema.ObjectId,
@@ -65,6 +63,8 @@ PostSchema.set('toJSON', {
 PostSchema.pre('save', function(next) {
   self = this;
   feedscrapper(this.url, function(data){
+    data = JSON.stringify(eval("(" + data + ")"));
+    data = JSON.parse(data);
     self.embedly_data = data; // save data received from EMBEDY API
     next();
   });

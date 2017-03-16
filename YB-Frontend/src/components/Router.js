@@ -13,14 +13,14 @@ const Routes = (props) => (
     <Route path="/" component={App} >
     </Route>
       <Route path="channels" component={Channel}>
-        <Route  path="comment" component={Comment} />
+        <Route  path="comment/:postId" component={Comment} />
       </Route>
       <Route path="profile" component={Profile} >
         <Route path="settings" component={ProfileForm} />
         <Route path="social" component={ProfileSocial} />
-        <Route  path="comment" component={Comment} />
+        <Route  path="comment/:postId" component={Comment} />
       </Route>
-      <Route  path="comment" component={Comment} />
+      <Route  path="comment/:postId" component={Comment} />
   </Router>
 );
 

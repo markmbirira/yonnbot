@@ -1,9 +1,16 @@
 import { combineReducers } from 'redux';
-import registerReducer from './registerReducer';
-import loginReducer from './loginReducer';
 
+import posts from './postReducer';
+import comments from './commentReducer';
+import channels from './channelReducer';
+// import profile from './profileReducer';
+// import comments from './loginReducer';
+// import channels from './registerReducer';
 
-export default combineReducers({
-  registerReducer,
-  loginReducer,
+const rootReducer = combineReducers({
+  posts,
+  channels,
+  comments
 });
+
+export default rootReducer;

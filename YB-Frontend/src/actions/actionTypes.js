@@ -1,19 +1,37 @@
+// Posts
+export const Posts = {
+  FETCH_ALL_POSTS: "fetch all posts",
+  FETCH_SINGLE_POST : "fetch single post",
+  FETCH_SINGLE_CHANNEL_POSTS : "fetch all posts in a channel",
+  FETCH_ALL_PROFILE_POSTS : "fetch all posts by current user",
 
-// APP
+  RECEIVE_ALL_POSTS: "receive all posts",
+  RECEIVE_SINGLE_POST: "receive single post",
+  RECEIVE_SINGLE_CHANNEL_POSTS: "receive single channel posts",
+  RECEIVE_ALL_PROFILE_POSTS: "receive all posts by current user",
 
-export const UPDATE_LOGIN_STATUS = 'UPDATE_LOGIN_STATUS';
+  SEND_NEW_POST: 'send a new post to the API',
+  RECEIVE_NEW_POST: 'receive new post from API'
+};
 
-// REGISTER
+// Comments
+export const Comments = {
 
-export const UPDATE_REGISTER_AVATAR = 'UPDATE_REGISTER_AVATAR';
-export const UPDATE_REGISTER_PSEUDO = 'UPDATE_REGISTER_PSEUDO';
-export const UPDATE_REGISTER_EMAIL = 'UPDATE_REGISTER_EMAIL';
-export const UPDATE_REGISTER_PASSWORD = 'UPDATE_REGISTER_PASSWORD';
-export const UPDATE_REGISTER_PHONE = 'UPDATE_REGISTER_PHONE';
-export const UPDATE_REGISTER_DESCRIPTION = 'UPDATE_REGISTER_DESCRIPTION';
-export const UPDATE_REGISTER_BIRTHDAY = 'UPDATE_REGISTER_BIRTHDAY';
+}
 
-// LOGIN
+// Channels
+export const Channels = {
+  FETCH_ALL_CHANNELS_LIST : "fetch all channels available",
+  RECEIVE_ALL_CHANNELS_LIST: "receive all channels available"
+}
 
-export const UPDATE_LOGIN_PSEUDO = 'UPDATE_LOGIN_PSEUDO';
-export const UPDATE_LOGIN_PASSWORD = 'UPDATE_LOGIN_PASSWORD';
+// Register
+export const Register = {
+
+}
+
+// Login
+export const Login = {
+
+}
+
