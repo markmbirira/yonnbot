@@ -14,30 +14,6 @@ export default class CommentRight extends Component {
           <CommentItem />
           <CommentItem />
           <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
         </div>
       </div>
     );

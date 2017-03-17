@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import CommentPostThumbnail from './CommentPostThumbnail';
-import CommentPostReaction from './CommentPostReaction';
 
 
 export default class CommentPost extends Component {
@@ -9,15 +9,17 @@ export default class CommentPost extends Component {
     console.log('props are ', this.props);
     return (
       <div className="comment-post">
-        <CommentPostReaction />
         <div className="comment-post-details">
-          <p className="text-info">{this.props.title}</p>
+          <h5 className="text-info">{this.props.title}</h5>
           <p>
-            {this.props.description} {' '}
+            {this.props.embedly_data.description}...{' '}  <span><a href={this.props.url} target="blank">read full post</a></span>
           </p>
-          <p><a href="this.props.url" target="blank">Read full post</a></p>
-          <p><small>via user404 <em className="text-info">{this.props.created}</em></small></p>
-          <CommentPostThumbnail  thumbnail_url={this.props.thumbnail_url} />
+          <CommentPostThumbnail  thumbnail_url={this.props.embedly_data.thumbnail_url} />
+          <p>
+            <small>via user404 <em className="text-info">{this.props.created}</em></small> {' '}
+            <Link to="#"><span className="glyphicon glyphicon-arrow-up text-sucess"></span> {this.props.upvotes}</Link> {' '}
+            <Link to="#"><span className="glyphicon glyphicon-comment text-info"></span> {this.props.comments.length}</Link>
+          </p>
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ export default class CommentItem extends Component {
           </small>
         </p>
         <p className="comment-item-text">
-          {'Lets face facts, just like numbers, cameras dont lie...photoshot does '}
+          {'photoshop AF!'}
         </p>
 
         <hr />

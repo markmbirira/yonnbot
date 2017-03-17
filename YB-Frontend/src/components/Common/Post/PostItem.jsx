@@ -30,7 +30,7 @@ export default class PostItem extends Component {
               </small>
             </p>
             <p>
-              <Link to={`comment/${this.props.id}`} >
+              <Link to={`post/${this.props.id}`} >
                 <span className="glyphicon glyphicon-comment text-info"></span>
               </Link><small> {this.props.upvotes}</small>
             </p>

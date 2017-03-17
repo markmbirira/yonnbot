@@ -16,10 +16,30 @@ class App extends Component {
   componentDidMount() {
     var postId = this.props.params.postId;
     this.props.fetchSinglePost(postId);
+    this._renderCommentPost = this._renderCommentPost.bind(this);
   }
 
   componentDidUpdate(nextProps) {
-    // console.log
+    console.log('Comment updating, nextProps are', this.props.post.comments);
+  }
+
+  _renderCommentPost() {
+    let commentpost;
+    if (this.props.post && this.props.post.length) {
+      commentpost = this.props.post.map(post => 
+        <CommentPost
+          key={post._id}
+          id={post._id}
+          title={post.title}
+          url={post.url}
+          comments={post.comments}
+          upvotes={post.upvotes}
+          created={post.created}
+          embedly_data={post.embedly_data}
+        />
+      );
+      return commentpost;
+    }
   }
 
 
@@ -30,12 +50,14 @@ class App extends Component {
 
         <div className="main-content">
           <div className="row">
-            <div className="col-md-2"></div>
-            <div className="col-md-8">
-              <CommentPost />
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              {
+                this._renderCommentPost()
+              }
               <CommentComments />
             </div>
-            <div className="col-md-2"></div>
+            <div className="col-md-3"></div>
           </div>
         </div>
 

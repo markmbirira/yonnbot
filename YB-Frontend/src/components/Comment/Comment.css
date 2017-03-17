@@ -2,13 +2,12 @@
   display: flex;
 }
 
-.comment-post-details {
-  padding-left: 15px;
+.comment-post-avatar-image {
+  max-width: 100%;
 }
 
-.comment-post-reaction {
-  display: flex;
-  flex-direction: column
+.comment-post-details {
+  padding-left: 15px;
 }
 
 .comment-comment {
