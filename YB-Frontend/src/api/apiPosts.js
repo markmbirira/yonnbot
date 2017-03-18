@@ -3,8 +3,8 @@ import 'whatwg-fetch'; // window.fetch() polyfill by GitHub
 const host = "http://localhost:3000";
 
 let apiPosts = {
-  fetchAllPosts() {
-    return fetch(host + "/feed",
+  fetchAllPosts(page) {
+    return fetch(host + "/feed/" + page,
       {
         method: 'GET',
         headers: {
@@ -16,7 +16,7 @@ let apiPosts = {
   },
   
   fetchSinglePost(postId) {
-    return fetch(host + "/feed/" + postId )
+    return fetch(host + "/feed/view/" + postId )
     .then((response) => response.json());
   },
   

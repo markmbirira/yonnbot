@@ -4,10 +4,10 @@ import API from '../api';
 
 let postActionCreators = {
   // Thunk action creators/async dispatches
-  fetchAllPosts() {
+  fetchAllPosts(page) {
     return (dispatch) => {
       dispatch({ type: Posts.FETCH_ALL_POSTS });
-      API.apiPosts.fetchAllPosts().then(
+      API.apiPosts.fetchAllPosts(page).then(
         (posts) => dispatch({ type: Posts.RECEIVE_ALL_POSTS, success: true, posts }),
         (error) => dispatch({ type: Posts.RECEIVE_ALL_POSTS, success: false, error })
       );

@@ -15,7 +15,15 @@ var getErrorMessage = function(err) {
 };
 
 exports.pagedPosts = function(req, res, next) {
-  Post.find({}, {}, { sort: { 'created' : -1 } }, function(err, posts) {
+  var query = {};
+  var options = {
+    sort: { 'created': -1 },
+    // populate: 'author',
+    page: req.param('page') || 1,
+    limit: 20
+  };
+
+  Post.paginate(query, options, function(err, posts) {
     if (err) {
       var message = getErrorMessage(err);
       

@@ -20,6 +20,7 @@ const Routes = (props) => (
         <Route path="social" component={ProfileSocial} />
         <Route  path="post/:postId" component={Comment} />
       </Route>
+      <Route path="/page/:page" component={App} />
       <Route  path="post/:postId" component={Comment} />
   </Router>
 );

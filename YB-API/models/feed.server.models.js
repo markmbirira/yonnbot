@@ -1,6 +1,8 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
-    User = mongoose.model('User');
+    Schema = mongoose.Schema,
+    User = mongoose.model('User'),
+    mongoosePaginate = require('mongoose-paginate');
+
 
 var feedscrapper = require('../util/feedscrapper');
 
@@ -53,6 +55,8 @@ var PostSchema = new Schema({
     default: 0
   }
 });
+
+PostSchema.plugin(mongoosePaginate);
 
 PostSchema.set('toJSON', {
   getters: true,

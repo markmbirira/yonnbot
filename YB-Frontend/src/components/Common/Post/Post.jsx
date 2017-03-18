@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+
 import { connect } from 'react-redux';
 
 import postActionCreators from '../../../actions/postActionCreators';
@@ -12,15 +13,36 @@ class App extends Component {
     super(props);
 
     this._renderPosts = this._renderPosts.bind(this);
+    this._renderPrevPosts = this._renderPrevPosts.bind(this);
+    this._renderNextPosts = this._renderNextPosts.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchAllPosts();
+    this.props.fetchAllPosts(this.props.page);
+    window.scrollTo(0,0);
   }
 
   componentDidUpdate(newProps) {
     console.log('New props are ', newProps);
+    window.scrollTo(0,0);
   }
+
+  _renderPrevPosts(page) {
+    console.log('render prev page ');
+    if (this.props.page <= 1) {
+      return;    
+    }
+    this.props.fetchAllPosts(this.props.page - 1);
+  }
+
+  _renderNextPosts(page) {
+    console.log('render next page');
+    if (this.props.page >= this.props.pages) {
+      return;
+    }
+    this.props.fetchAllPosts(this.props.page + 1);
+  }
+
 
   _renderPosts() {
     let post_items;
@@ -43,7 +65,7 @@ class App extends Component {
     } else {
       return (
         <div className="alert alert-info text-sm">
-          No Posts available
+          loading...
         </div>
       );
     }
@@ -58,9 +80,13 @@ class App extends Component {
           }
         </div>
 
-        <p className="post-paginator"> 
-          <button className="btn btn-md">&larr; prev</button>
-          <button className="btn btn-md pull-right">next &rarr;</button>
+        <p className="post-paginator">
+          <button className="btn btn-md" onClick={this._renderPrevPosts} >
+            &larr; {this.props.page > 1 ?  this.props.page - 1 : 1}
+          </button>  
+          <button className="btn btn-md pull-right" onClick={this._renderNextPosts} >
+            {this.props.page + 1} &rarr;
+          </button>
         </p>
         
       </div>
@@ -69,18 +95,27 @@ class App extends Component {
 };
 
 App.propTypes = {
-  posts: PropTypes.array
-}
+  posts: PropTypes.object,
+  page: PropTypes.number,
+  pages: PropTypes.number,
+  total: PropTypes.number,
+  limit: PropTypes.number
+};
 
 const mapStateToProps = (state) => {
+  console.log('state in Post ', state);
   return {
-    posts: state.posts
+    posts: state.posts.docs,
+    page: Number(state.posts.page) || 1,
+    pages: Number(state.posts.pages),
+    total: Number(state.posts.total),
+    limit: Number(state.posts.limit)
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllPosts: () => dispatch(postActionCreators.fetchAllPosts()),
+    fetchAllPosts: (page) => dispatch(postActionCreators.fetchAllPosts(page)),
   }
 }
 

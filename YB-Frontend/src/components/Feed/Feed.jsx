@@ -8,6 +8,7 @@ import Footer from '../Common/Footer/Footer';
 import './Feed.css';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
