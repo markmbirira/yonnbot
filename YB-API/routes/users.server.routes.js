@@ -3,17 +3,23 @@ var users = require('../../YB-API/controllers/user.server.controllers'),
 
 module.exports = function(app) {
   app.route('/signup')
-    .get(users.renderSignUp)
+    .get(users.signin) // APIs role
     .post(users.signup);
   
   app.route('/signin')
-    .get(users.renderSignIn)
+    .get(users.signin) // APIs role
     .post(passport.authenticate('local', {
-      successRedirect: '/',
+      successRedirect: '/auth/success',
       failureRedirect: '/signin',
       failureFlash: 'true'
     }));
-
+  
+  app.route('/auth/success')
+    .get(users.isLoggedIn);
+  
+  app.route('/auth/logout')
+    .get(users.isLoggedOut);
+  
   app.get('/signout', users.signout);
 
   // facebook passport

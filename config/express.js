@@ -14,11 +14,10 @@ module.exports = function() {
 
   if (process.env.NODE_ENV === "development") {
     app.use(morgan('dev'));
+    app.use(cors()); // control CORS
   } else if (process.env.NODE_ENV === "production") {
     app.use(compress());
   }
-
-  app.use(cors()); // for production
 
   app.use(bodyParser.urlencoded({
     extended: true
@@ -29,8 +28,6 @@ module.exports = function() {
     resave: true,
     secret: config.sessionSecret,
   }));
-
-  app.use(morgan('dev')); // fix this
 
   app.set('views', './yonnbot/views');
   app.set('view engine', 'ejs');

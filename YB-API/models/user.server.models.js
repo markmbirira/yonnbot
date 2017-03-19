@@ -54,7 +54,7 @@ UserSchema.virtual('fullName').get(function() {
 UserSchema.pre('save', function(next) {
   if (this.password) {
     this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-    this.password = this.hashPassword(new Buffer(this.password));
+    this.password = this.hashPassword(this.password);
   }
 
   next();

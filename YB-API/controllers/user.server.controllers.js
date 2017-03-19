@@ -45,6 +45,24 @@ exports.renderSignUp = function(req, res, next) {
   }
 };
 
+// this method intercept all GET requests for both login and signup
+
+exports.signin = function(req, res, next) {
+  return res.json({ success: false, message: "Sent Post data" });
+}
+
+// this method returns the correct result for login and signup
+exports.isLoggedIn = function(req, res, next) {
+  return res.json({success: true, username: req.user.username, loggedIn: true });
+}
+
+
+// this method returns the correct result for logout
+exports.isLoggedOut = function(req, res, next) {
+  return res.json({success: true, username: null, loggedIn: false });
+},
+
+
 exports.signup = function(req, res, next) {
   if (!req.user) {
     var user = new User(req.body);
@@ -57,11 +75,14 @@ exports.signup = function(req, res, next) {
         var message = getErrorMessage(err);
 
         req.flash('error', message);
-        return res.redirect('/signup');
+        // return res.redirect('/signup');
+        return res.json({ success: false, message: message });
       }
       req.login(user, function(err) {
         if (err) return next(err);
-        return res.redirect('/');
+
+        // return res.redirect('/');
+        return res.redirect('/auth/success');
       });
     });
   } else {
@@ -71,7 +92,7 @@ exports.signup = function(req, res, next) {
 
 exports.signout = function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/auth/logout');
 }
 
 
