@@ -1,16 +1,14 @@
+// import { List } from 'immutable';
+
 import { Posts } from '../actions/actionTypes';
 
-const initialState = [
-  {
-    "title": "No posts yet",
-    "url": "No posts yet",
-    "created": "No posts yet",
-    upvotes: "No posts yet",
-    downvotes: "No posts yet",
-    comments: "No posts yet",
-    embedly_data: "",
-  }
-];
+const initialState = [{
+  docs: [],
+  page: 1,
+  pages: 1,
+  limit: 20,
+  total: 1
+}];
 
 const posts = (state = initialState, action) => {
   switch (action.type) {

@@ -95,7 +95,7 @@ class App extends Component {
 };
 
 App.propTypes = {
-  posts: PropTypes.object,
+  posts: PropTypes.array,
   page: PropTypes.number,
   pages: PropTypes.number,
   total: PropTypes.number,

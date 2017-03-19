@@ -45,5 +45,5 @@ PostItem.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   url: PropTypes.string,
-  embedly_data: PropTypes.string
+  embedly_data: PropTypes.object
 }

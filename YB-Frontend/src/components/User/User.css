@@ -1,0 +1,21 @@
+.user-sidebar {
+  width: 100%;
+  border: 1px #ccc solid;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.user-login {
+  width: 100%;
+}
+
+.user-signup {
+  width: 100%;
+}
+
+.user-tooltip {
+  width: 100%;
+  padding: 3px;
+  font-size: small;
+  margin-top: 10px;
+}
