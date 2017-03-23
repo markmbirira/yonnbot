@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 import { connect } from 'react-redux';
 
@@ -45,10 +46,10 @@ class App extends Component {
 
 
   _renderPosts() {
-    let post_items;
+    
     
     if(this.props.posts && this.props.posts.length) {
-      post_items = this.props.posts.map(post => 
+      let post_items = this.props.posts.map(post => 
         <PostItem 
           key={post._id}
           id={post._id}
@@ -72,21 +73,22 @@ class App extends Component {
   }
 
   render() {
+    
     return (
-      <div className="post-container">
+      <div className="posts">
         <div>
           {
             this._renderPosts()
           }
         </div>
 
-        <p className="post-paginator">
-          <button className="btn btn-md" onClick={this._renderPrevPosts} >
-            &larr; {this.props.page > 1 ?  this.props.page - 1 : 1}
-          </button>  
-          <button className="btn btn-md pull-right" onClick={this._renderNextPosts} >
-            {this.props.page + 1} &rarr;
-          </button>
+        <p className="paginator-links">
+          <a onClick={this._renderPrevPosts} className="paginator-link-prev">
+            <span className="paginator-arrow">&#x21E0;</span> prev </a> {' '}
+          <span className="paginator-page">{this.props.page}</span>
+          <a onClick={this._renderNextPosts} className="paginator-links-next">next 
+            <span className="paginator-arrow"> &#x21E2;</span>
+          </a>
         </p>
         
       </div>

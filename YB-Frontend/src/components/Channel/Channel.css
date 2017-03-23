@@ -1,28 +1,67 @@
-.main-app {
-  width: 90%;
-  margin: 5px auto;
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  background: #e9e9e9;
 }
 
-.channel-list-item-container p {
-  margin-top: 5px;
+.main-content {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
 }
 
+.channel-sidebar {
+  float: right;
+  background-color: #fff;
+  width: 300px;
+  padding: 3px;
+  border: 1px #ccc solid;
+}
+
+.channel-sidebar p {
+  text-align: center;
+  color: #fff;
+  background: goldenrod;
+  padding: 4px;
+  border-radius: 3px;
+  width: 97%;
+  margin: 15px auto;
+  height: 16px;
+}
 
 .channel-list-item {
-    height: 50px;
-    border: 1px #eee solid;
-    border-radius: 10px;
-    margin-top: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  background: ghostwhite;
+  padding: 5px 0px 0px 10px;
+  margin-bottom: 5px;
+  border: 1px #ccc solid;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.channel-list-item__avatar img {
-    width: 50px;
-    height: 50px;
+.channel-list-item:hover {
+  background: #fff;
 }
 
-.channel-list-item-subscribed {
-  font-size: 20px;
+.channel-list-item-title {
+  width: 30%;
+  margin-left: 10px;
+  padding: 2px 0px 2px 0px;
+}
+
+.channel-list-item-title__title {
+  text-decoration: none;
+  color: brown;
+  opacity: .9;
+}
+
+.channel-list-item-postcount {
+  width: 30%;
+}
+
+.clear {
+  clear: both;
 }

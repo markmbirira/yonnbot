@@ -7,17 +7,14 @@ export default class ChannelListItem extends Component {
   render() {
     return (
       <div className="channel-list-item">
-        <div className="channel-list-item__avatar">
-          <img className="thumbnail" src={"/img/channel-pic.jpg"} alt="" />  
+        <div className="channel-list-item-title">
+          <Link to="/channels" className="channel-list-item-title__title">{this.props.channel}</Link>
         </div>
-        <div className="channel-list-item__title">
-          <p><Link to="/channels">{this.props.channel}</Link></p>
-        </div>
-        <div className="channel-list-item__postcount">
-          <span>{this.props.postcount} posts</span>
+        <div className="channel-list-item-postcount">
+          <span className="channel-list-item-postcount__postcount">{this.props.postcount} posts</span>
         </div>
         <div className="channel-list-item-subscribed ">
-          <span className="glyphicon glyphicon-check text-info"></span>
+          <span className="">join +</span>
         </div>
       </div>
     );

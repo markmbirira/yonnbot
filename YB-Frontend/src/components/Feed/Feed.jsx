@@ -3,35 +3,28 @@ import React, { Component } from 'react';
 import Header from '../Common/Header/Header';
 import Post from '../Common/Post/Post';
 import FeedSideBar from './FeedSideBar';
-import Footer from '../Common/Footer/Footer';
 
 import './Feed.css';
 
-class App extends Component {
+class Feed extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="wrapper">
         <Header />
 
-        <div>
-          <div className="col-md-2"></div>
-          <div className="col-md-7 main-content">
-            <Post />
-          </div>
+        <div className="main-content">
+          <Post />
+          <FeedSideBar />
 
-          <div className="col-md-3 main-content">
-            <FeedSideBar />
-          </div>
+          <div className="clear"></div>
         </div>
 
-        <Footer />
-
-        {this.props.children}
+        { this.props.children }
 
       </div>
     );
   }
 }
 
-export default App;
+export default Feed;

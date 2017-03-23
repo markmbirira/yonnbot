@@ -53,13 +53,27 @@ exports.signin = function(req, res, next) {
 
 // this method returns the correct result for login and signup
 exports.isLoggedIn = function(req, res, next) {
-  return res.json({success: true, username: req.user.username, loggedIn: true });
+  return res.json(
+    {
+      success: true,
+      username: req.user.username,
+      created: req.user.created,
+      loggedIn: true
+    }
+  );
 }
 
 
 // this method returns the correct result for logout
 exports.isLoggedOut = function(req, res, next) {
-  return res.json({success: true, username: null, loggedIn: false });
+  return res.json(
+    {
+      success: true,
+      username: null,
+      loggedIn: false,
+      created:  null 
+    }
+  );
 },
 
 

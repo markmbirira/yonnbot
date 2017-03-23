@@ -31,35 +31,17 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="feedform">
+      <div className="feed-form">
         <p>Share new link post</p>
         <form className="form-group" onSubmit={this._handlePostSubmit}>
-          <p htmlFor="title">Title</p>
-          <input className="form-control" type="text"  name="title" placeholder=" title" ref="title" required />
-          <p htmlFor="url">URL</p>
-          <input className="form-control" type="url" name="url" placeholder=" URL/Link" ref="url" required />
-          <span>
-            <input type="radio" name="channel" value="safe" />
-            Tech
-          </span>
-          <span>
-            <input type="radio" name="channel" value="nsfw" />
-            Music
-          </span>
-          <span>
-            <input type="radio" name="channel" value="safe" />
-            Code
-          </span>
-          <span>
-            <input type="radio" name="channel" value="nsfw" />
-            Funny
-          </span>
-          <span>
-            <input type="radio" name="channel" value="nsfw" />
-            Other
-          </span>
+          <label htmlFor="title">title</label><br/>
+          <input className="form-control" type="text"  name="title" placeholder=" title" ref="title" required /> <br/>
+          <label htmlFor="url">url</label><br/>
+          <input className="form-control" type="url" name="url" placeholder=" URL/Link" ref="url" required /> <br />
+          <label htmlFor="channel" >channel</label><br/>
+          <input className="feed-form-input-channel" type="text" name="channel" placeholder=" channel" ref="channel" /> <br />
           
-          <input type="submit" className="btn btn-md btn-default form-control" value="send"  />
+          <button type="submit" className="" value="send" >share</button>
         </form>
       </div>
     );

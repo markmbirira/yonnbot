@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
-// import HeaderIntelliScroll from './HeaderIntelliScroll';
-
-import HeaderNavBar from './HeaderNavBar';
+import './Header.css';
 
 export default class Header extends Component {
   render () {
     return (
-      <HeaderNavBar />
+      <header className="header">
+        <div className="header-left">
+          <a id="yonnbot" href="/" title="Yonnbot">YB</a> {' '}
+          <span className="headerlinks">
+            <input type="text" className="header-search" />
+            <input type="submit" className="" value="search" />
+          </span>
+        </div>
+
+        <div className="header-right">
+          <span className="headerlinks">
+            <Link to="/">feed</Link> {' '}
+            <Link to="/channels">channels</Link> {' '}
+            <Link to="#">comments</Link> {' '}
+            <Link to="/profile">profile</Link> {' '}
+            <Link to="#">login</Link> {' '}
+          </span>
+        </div>
+
+        <div className="clear"></div>
+      </header>
     );
   }
 };

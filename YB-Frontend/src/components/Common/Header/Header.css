@@ -1,10 +1,22 @@
-.main-navbar {
-    position: fixed;
-    width: 90%;
-    margin: 0 auto;
-    z-index: 2;
-} /* remove class .navbar-fixed-top from and add class .main-navbar to <nav/> for a sticky header */
+.header {
+  background-color: #fff;
+  padding: 4px;
+  border-bottom: 2px solid goldenrod;
+  border-top: 2px solid #fee;
+}
 
-.navbar-fixed-top {
-    border-bottom: 3px solid darkseagreen;
+header a {
+  text-decoration: none;
+  color: brown;
+}
+
+.header-right {
+  display: inline;
+  float: right;
+  margin-right: 10%;
+}
+
+.header-left {
+  display: inline;
+  margin-left: 5%;
 }

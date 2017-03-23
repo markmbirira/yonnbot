@@ -17,21 +17,23 @@ export const Posts = {
 // Comments
 export const Comments = {
 
-}
+};
 
 // Channels
 export const Channels = {
   FETCH_ALL_CHANNELS_LIST : "fetch all channels available",
   RECEIVE_ALL_CHANNELS_LIST: "receive all channels available"
-}
+};
 
 // Register
-export const Register = {
-
-}
-
-// Login
-export const Login = {
-
+export const Profile = {
+  LOGIN_USER_REQUEST: "login current user start session",
+  LOGIN_USER_RESPONSE: "receive the response of user login to start session",
+  
+  LOGOUT_USER_REQUEST: "logout current user end session to end session",
+  LOGOUT_USER_RESPONSE: "receive the response of user logout end session",
+  
+  SIGNUP_USER_REQUEST: "sign up the current user start session",
+  SIGNUP_USER_RESPONSE: "receive the response of user register and start session"
 }
 

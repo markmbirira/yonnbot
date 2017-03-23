@@ -1,21 +1,27 @@
-.user-sidebar {
-  width: 100%;
-  border: 1px #ccc solid;
-  border-radius: 4px;
-  padding: 5px;
-}
-
-.user-login {
+.user-sidebar form {
   width: 100%;
 }
 
-.user-signup {
-  width: 100%;
+.user-sidebar form input, .user-sidebar form input {
+  width: 99%;
+  margin-bottom: 5px;
+  height: 22px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.user-signup-facebook-button {
+  width: 99%;
+  height: 25px;
+  background: #494af3;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
 }
 
 .user-tooltip {
-  width: 100%;
   padding: 3px;
-  font-size: small;
-  margin-top: 10px;
+  color: brown;
+  opacity: .9;
 }
+

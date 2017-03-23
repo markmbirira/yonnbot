@@ -1,61 +1,109 @@
-.post-container {
-  margin-bottom: 60px !important;
+.posts {
+  position: relative;
+  float: left;
+  margin: auto;
+  width: 70%;
 }
 
-.post-item {
-    margin-top: 2px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-}
-
-.post-item-details {
+.post {
+  background-color: #fff;
+  width: 100%;
+  margin: 0px auto 5px auto;
+  border: 1px solid #ccc;
+  position: relative;
   display: flex;
-  padding-left: 5px;
+  padding-bottom: 2px;
 }
 
-.post-item:hover {
-  background: #eee;
-}
-
-.post-item-voting {
-  padding-top: 8px;
-}
-
-.post-item-details {
-  border-left: 2px solid #ddd;
-}
-
-.post-item-oembed {
-  margin-right: 10px;
-  max-height: 100px;
-  overflow-y: hidden;
+.post-upvotes {
   display: flex;
+  flex-direction: column;
+  padding: 0 8px 0px 8px;
 }
 
-.post-item-oembed-thumbnail {
-    object-fit: cover;
-    width: 90px;
-    height: 72px;
-    overflow: hidden;
+.post-upvotes-icon {
+  color: rgba(0,0,0, 0.8);
+  padding: 4px;
 }
 
-.post-item-oembed-thumbnail img {
-  width: 72px;
+.post-upvotes-upvotes {
+  padding: 5px;
+  font-size: smaller;
+}
+
+.post-thumbnail {
+  max-width: 80px;
   border-radius: 2px;
+  height: 75px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
-.post-paginator {
-  margin-top: 10px;
+.post-thumbnail img {
+  object-fit: cover;
+  width: 80px;
+  height: 80px;    
 }
 
-.post-item-details-text {
-  margin-left: 5px;
+.paginator-links {
+  float: right;
 }
 
-.post-item-details-text p {
-  margin: 0 0 0px;
+.paginator-page {
+  width: 40px;
+  padding: 10px;
+  color: brown;
 }
 
-.post-item-description {
+.paginator-arrow {
+  color: #000;
+}
 
+.paginator-links a {
+  background: goldenrod;
+  border-radius: 3px;
+  color: #fff;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.paginator-links a.inactive {
+  opacity: .3;
+}
+
+.post-item-details {
+  padding: 4px 4px 4px 8px;
+  line-height: 20px;
+}
+
+.post-item-details-title {
+  text-overflow: ellipsis;
+}
+
+.post-channel {
+  background-color: goldenrod;
+  color: #fff;
+  padding: 3px;
+  border-radius: 4px;
+  font-size: smaller;
+}
+
+.post-url {
+  text-decoration: none;
+  color: brown;
+}
+
+.post-item-comments {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 5px;
+}
+
+.post-item-comments-comments {
+  text-decoration: none;
+  color: saddlebrown;
 }
