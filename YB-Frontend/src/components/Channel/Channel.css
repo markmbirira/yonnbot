@@ -14,7 +14,7 @@
 .channel-sidebar {
   float: right;
   background-color: #fff;
-  width: 300px;
+  width: 285px;
   padding: 3px;
   border: 1px #ccc solid;
 }
@@ -26,7 +26,7 @@
   padding: 4px;
   border-radius: 3px;
   width: 97%;
-  margin: 15px auto;
+  margin: 2px auto;
   height: 16px;
 }
 
@@ -40,10 +40,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  animation: ease-in-out;
 }
 
 .channel-list-item:hover {
-  background: #fff;
+  background: gold;
 }
 
 .channel-list-item-title {

@@ -19,9 +19,7 @@ export default class Header extends Component {
           <span className="headerlinks">
             <Link to="/">feed</Link> {' '}
             <Link to="/channels">channels</Link> {' '}
-            <Link to="#">comments</Link> {' '}
             <Link to="/profile">profile</Link> {' '}
-            <Link to="#">login</Link> {' '}
           </span>
         </div>
 
