@@ -19,14 +19,8 @@ export const Comments = {
 
 };
 
-// Channels
-export const Channels = {
-  FETCH_ALL_CHANNELS_LIST : "fetch all channels available",
-  RECEIVE_ALL_CHANNELS_LIST: "receive all channels available"
-};
-
-// Register
-export const Profile = {
+// Users
+export const Users = {
   LOGIN_USER_REQUEST: "login current user start session",
   LOGIN_USER_RESPONSE: "receive the response of user login to start session",
   

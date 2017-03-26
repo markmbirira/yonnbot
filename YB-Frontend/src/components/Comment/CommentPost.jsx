@@ -10,9 +10,10 @@ export default class CommentPost extends Component {
     return (
       <div className="comment-post">
         <div className="comment-post-details">
-          <h5 className="text-info">{this.props.title}</h5>
+          <h3 className="text-info">{this.props.title}</h3>
           <p>
-            {this.props.embedly_data.description}...{' '}  <span><a href={this.props.url} target="blank">read full post</a></span>
+            {this.props.embedly_data.description}...{' '}  <br />
+            <span className="comment-post-readmore"><a href={this.props.url} target="blank">read full post</a></span>
           </p>
           <CommentPostThumbnail  thumbnail_url={this.props.embedly_data.thumbnail_url} />
           <p>

@@ -6,13 +6,11 @@
 
 import apiPosts from './apiPosts';
 import apiComments from './apiComments';
-import apiChannels from './apiChannels';
 import apiUsers from './apiUsers';
 
 const  API =  {
 	apiPosts,
 	apiComments,
-	apiChannels,
 	apiUsers
 }
 

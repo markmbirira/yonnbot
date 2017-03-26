@@ -3,13 +3,6 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  email: {
-    type: String,
-    index: true,
-    match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
-  },
   username: {
     type: String,
     unique: true,
@@ -28,27 +21,10 @@ var UserSchema = new Schema({
   salt: {
     type: String
   },
-  provider: {
-    type: String,
-    required: 'Provider is required'
-  },
-  providerId: String,
-  providerData: {},
   created: {
     type: Date,
     default: Date.now
   }
-});
-
-
-// extra method to mongoose on UserSchema 
-
-UserSchema.virtual('fullName').get(function() {
-  return this.firstName + ' ' + this.lastName;
-}).set(function(fullName) {
-  var splitName = fullName.split(' ');
-  this.firstName = splitName[0] || '';
-  this.lastName = splitName[1] || '';
 });
 
 UserSchema.pre('save', function(next) {

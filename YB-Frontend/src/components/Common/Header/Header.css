@@ -1,13 +1,23 @@
-.header {
+/*.header {
   background-color: #fff;
   padding: 4px;
   border-bottom: 2px solid goldenrod;
   border-top: 2px solid #fee;
+}*/
+
+.header {
+  padding: 10px 0 10px 205px;
+  /*color: #CACACB;*/
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3px;
+  background: rgba(14,14,14,.65);
+  /*border-bottom: 2px solid dodgerblue;*/
 }
 
 header a {
   text-decoration: none;
-  color: brown;
+  color: mediumseagreen;
 }
 
 .header-right {
@@ -18,5 +28,27 @@ header a {
 
 .header-left {
   display: inline;
-  margin-left: 5%;
+}
+
+.header-left > a {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.search-top {
+  display: inline-block;
+}
+
+.search-form > input {
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.search-form button {
+  border: 2px solid #fff;
+  color: #673f3f;
+  border-radius: 2px;
+  background: #fff;
 }

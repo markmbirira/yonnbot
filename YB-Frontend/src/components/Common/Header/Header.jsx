@@ -9,17 +9,20 @@ export default class Header extends Component {
       <header className="header">
         <div className="header-left">
           <a id="yonnbot" href="/" title="Yonnbot">YB</a> {' '}
-          <span className="headerlinks">
-            <input type="text" className="header-search" />
-            <input type="submit" className="" value="search" />
-          </span>
+          <div className="search-top">
+            <form method="POST" className="search-form">
+              <input type="text" placeholder=" search YonnBot" name="q" />
+              <button type="submit" className="btn-important">
+               search
+              </button>
+            </form>
+          </div>
         </div>
 
         <div className="header-right">
           <span className="headerlinks">
-            <Link to="/">feed</Link> {' '}
-            <Link to="/channels">channels</Link> {' '}
-            <Link to="/profile">profile</Link> {' '}
+            <Link to="/">submit</Link> {' '}
+            <Link to=".">login</Link> {' '}
           </span>
         </div>
 

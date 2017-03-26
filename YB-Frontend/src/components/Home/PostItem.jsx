@@ -13,13 +13,13 @@ export default class PostItem extends Component {
           <span className="post-upvotes-upvotes">{this.props.upvotes}</span>
         </div>
         <div className="post-thumbnail">
-          <img src={this.props.embedly_data.thumbnail_url} alt="post-thumbnail" />
+          <img src={this.props.embedly_data.thumbnail_url} alt="img" />
         </div>
         <div className="post-item-details">
           <span className="post-item-details-title">
             {this.props.title}
           </span>
-          <div>
+          <div className="post-item-details-created">
             <span className="post-channel">{'tech'}</span> {' '}
               <small>
                   by user404 {' '}
@@ -32,8 +32,9 @@ export default class PostItem extends Component {
           </div>
         </div>
         <div className="post-item-comments">
-          <Link to={`post/${this.props.id}`} className="post-item-comments-comments"> comments
-          </Link><small> {this.props.upvotes}</small>
+          <Link to={`post/${this.props.id}`} className="post-item-comments-comments">
+            comments  {this.props.upvotes}
+          </Link>
         </div>
 
       </div>

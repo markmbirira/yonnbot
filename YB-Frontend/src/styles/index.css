@@ -1,3 +1,7 @@
+html {
+  background: url('/img/yonnbot-background.jpg');
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;

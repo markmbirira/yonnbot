@@ -14,8 +14,6 @@ export default class CommentItem extends Component {
         <p className="comment-item-text">
           {'photoshop AF!'}
         </p>
-
-        <hr />
       </div>
     );
   }

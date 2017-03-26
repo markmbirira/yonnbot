@@ -6,7 +6,7 @@ import store from './store/store';
 import { browserHistory } from 'react-router';
 import Routes from './components/Router';
 
-// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css'; 
 
 import './styles/index.css';
 

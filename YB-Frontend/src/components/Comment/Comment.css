@@ -1,5 +1,17 @@
+.comment-content {
+  width: 620px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 1.5em;
+  background: #929292;
+  background: rgba(14,14,14,.65);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.66);
+}
+
 .comment-post {
-  display: flex;
+  color: #fff;
+  background: rgba(0,0,0,0.65);
+  padding: 5px;
 }
 
 .comment-post-avatar-image {
@@ -8,6 +20,18 @@
 
 .comment-post-details {
   padding-left: 15px;
+}
+
+.comment-post-readmore a {
+  color: goldenrod;
+  text-decoration: none;
+  opacity: .5;
+  font-size: smaller;
+}
+
+.comment-post-readmore a:hover {
+  color: gold;
+  opacity: 1;
 }
 
 .comment-comment {

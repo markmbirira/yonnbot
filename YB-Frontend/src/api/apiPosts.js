@@ -19,16 +19,6 @@ let apiPosts = {
     return fetch(host + "/feed/view/" + postId )
     .then((response) => response.json());
   },
-  
-  fetchChannelList() {
-    return fetch(host + "/feed")
-    .then((response) => response.json());
-  },
-  
-  fetchSingleChannelPosts() {
-    return fetch(host + "/feed")
-    .then((response) => response.json());
-  },
 
   fetchProfilePosts() {
     return fetch(host + "/feed")

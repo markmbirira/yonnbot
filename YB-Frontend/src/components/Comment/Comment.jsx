@@ -6,7 +6,6 @@ import postActionCreators from '../../actions/postActionCreators';
 import Header from '../Common/Header/Header';
 import CommentPost from './CommentPost';
 import CommentComments from './CommentComments';
-import Footer from '../Common/Footer/Footer';
 
 import './Comment.css';
 
@@ -45,23 +44,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main-app">
+      <div className="main">
         <Header />
 
-        <div className="main-content">
-          <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-6">
-              {
-                this._renderCommentPost()
-              }
-              <CommentComments />
-            </div>
-            <div className="col-md-3"></div>
-          </div>
+        <div className="comment-content">
+          {
+            this._renderCommentPost()
+          }
+          <CommentComments />
         </div>
+        <div className="clear"></div>
 
-        <Footer />
       </div>
     );
   }
