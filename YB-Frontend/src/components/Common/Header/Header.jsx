@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <header className="header col-12">
         <div className="header-left">
-          <a id="yonnbot" href="/" title="Yonnbot">YB</a> {' '}
+          <a id="yonnbot" href="/" title="YonnBot">YB</a> {' '}
           <div className="search-top">
             <form method="POST" className="search-form">
               <input type="text" placeholder=" search YonnBot" name="q" />
