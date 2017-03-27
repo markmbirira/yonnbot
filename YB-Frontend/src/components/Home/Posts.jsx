@@ -9,6 +9,7 @@ class Posts extends Component {
     super(props);
 
     this._renderPosts = this._renderPosts.bind(this);
+    this._renderNavigator = this._renderNavigator.bind(this);
     this._renderPrevPosts = this._renderPrevPosts.bind(this);
     this._renderNextPosts = this._renderNextPosts.bind(this);
   }
@@ -29,10 +30,26 @@ class Posts extends Component {
     this.props.fetchAllPosts(this.props.page + 1);
   }
 
+  _renderNavigator() {
+    // if (5/2 !== 2.5) {
+    if (this.props.posts && this.props.posts.length) {
+      return (
+        <p className="paginator-links">
+          <a onClick={this._renderPrevPosts} className="paginator-link-prev">
+            <span className="paginator-arrow">&#x21E0;</span></a> {' '}
+          <span className="paginator-page">{this.props.page}</span>
+          <a onClick={this._renderNextPosts} className="paginator-links-next">
+            <span className="paginator-arrow">&#x21E2;</span>
+          </a>
+        </p>
+      );
+    }
+  }
+
 
   _renderPosts() {
     
-    
+    // if("k" === "kk") {
     if(this.props.posts && this.props.posts.length) {
       let post_items = this.props.posts.map(post => 
         <PostItem 
@@ -50,9 +67,17 @@ class Posts extends Component {
       return post_items;
     } else {
       return (
-        <div className="loading">
-          loading...
-        </div>
+        <PostItem 
+          key={'loading...'}
+          id={'loading...'}
+          title={'loading...'}
+          url={'loading...'}
+          created={'loading...'}
+          embedly_data={'loading...'}
+          upvotes={'loading...'}
+          downvotes={'loading...'}
+          comments={'loading...'}
+        />
       );
     }
   }
@@ -60,24 +85,18 @@ class Posts extends Component {
   render() {
     
     return (
-      <div className="col content-col">
-        <div className="posts-menu">
+      <div className="row content-col">
+        <div className="posts-menu col-3">
           <a className="active-link" href=".">top</a>
           <a href=".">new</a>
         </div>
-        <div  className="posts">
+        <div  className="posts col-9">
           {
             this._renderPosts()
           }
-
-          <p className="paginator-links">
-            <a onClick={this._renderPrevPosts} className="paginator-link-prev">
-              <span className="paginator-arrow">&#x21E0;</span> prev </a> {' '}
-            <span className="paginator-page">{this.props.page}</span>
-            <a onClick={this._renderNextPosts} className="paginator-links-next">next 
-              <span className="paginator-arrow"> &#x21E2;</span>
-            </a>
-          </p>
+          {
+            this._renderNavigator()
+          }
           
         </div>
       </div>

@@ -47,11 +47,15 @@ class App extends Component {
       <div className="main">
         <Header />
 
-        <div className="comment-content">
-          {
-            this._renderCommentPost()
-          }
-          <CommentComments />
+        <div className="row">
+          <div className="col-3"></div>
+          <div className="comment-content col-6">
+            {
+              this._renderCommentPost()
+            }
+            <CommentComments />
+          </div>
+          <div className="col-3"></div>
         </div>
         <div className="clear"></div>
 

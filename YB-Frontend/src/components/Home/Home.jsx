@@ -25,18 +25,24 @@ class App extends Component {
     return (
       <div className="main">
         <Header />
-        <Posts 
-          posts={this.props.posts}
-          page={this.props.page}
-          pages={this.props.pages}
-          limit={this.props.limit}
-          total={this.props.total}
-          fetchAllPosts={this.props.fetchAllPosts}
-        />
-        <SideBar 
-          sendNewPost={this.props.sendNewPost}
-        />
-        <div className="clear"></div>
+        <div className="row">
+          <div className="col-9">
+            <Posts 
+              posts={this.props.posts}
+              page={this.props.page}
+              pages={this.props.pages}
+              limit={this.props.limit}
+              total={this.props.total}
+              fetchAllPosts={this.props.fetchAllPosts}
+            />
+          </div>
+          <div className="col-3">
+            <SideBar 
+              sendNewPost={this.props.sendNewPost}
+            />
+          </div>
+        </div>
+         <div className="clear"></div>
         { this.props.children }
       </div>
     );

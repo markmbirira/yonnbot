@@ -6,7 +6,7 @@ import './Header.css';
 export default class Header extends Component {
   render () {
     return (
-      <header className="header">
+      <header className="header col-12">
         <div className="header-left">
           <a id="yonnbot" href="/" title="Yonnbot">YB</a> {' '}
           <div className="search-top">

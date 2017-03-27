@@ -19,22 +19,17 @@ export default class PostItem extends Component {
           <span className="post-item-details-title">
             {this.props.title}
           </span>
-          <div className="post-item-details-created">
+          <div className="post-item-details-meta">
             <span className="post-channel">{'tech'}</span> {' '}
-              <small>
-                  by user404 {' '}
-                <em className="text-info">at {this.props.created}</em> <br />
-                  via {' '}
-                <Link to={this.props.url} className="post-url">
-                  {this.props.embedly_data.provider_url} 
-                </Link>
-              </small>
+            <span className="post-author">{'hercules15'}</span> {' '}
+            <span className="post-created"> 4hrs ago</span> {' '} <br />
+            <a href={this.props.url} className="post-url" target="blank">
+              {this.props.embedly_data.provider_url} 
+            </a> {' '}
+            <Link to={`post/${this.props.id}`} className="post-item-comments-comments">
+              <span>comments {this.props.upvotes}</span>
+            </Link>
           </div>
-        </div>
-        <div className="post-item-comments">
-          <Link to={`post/${this.props.id}`} className="post-item-comments-comments">
-            comments  {this.props.upvotes}
-          </Link>
         </div>
 
       </div>
