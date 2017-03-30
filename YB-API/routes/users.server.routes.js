@@ -1,13 +1,12 @@
 var users = require('../../YB-API/controllers/user.server.controllers');
 
 module.exports = function(app) {
-  app.route('/signup')
-    .get(users.signup) // APIs role
+  /* both routes are open/no-auth */
+  app.route('/api/v1/signup')
     .post(users.signup);
   
-  app.route('/signin')
-    .get(users.signin) // APIs role
-    .post(users.signin);
+  app.route('/api/v1/authenticate')
+    .post(users.authenticate);
   
-  app.get('/signout', users.signout);
+  // app.get('/api/v1/signout', users.signout); 
 };

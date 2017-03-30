@@ -4,7 +4,7 @@ const host = "http://localhost:3000";
 
 let apiPosts = {
   fetchAllPosts(page) {
-    return fetch(host + "/feed/" + page,
+    return fetch(host + "/api/v1/posts/" + page,
       {
         method: 'GET',
         headers: {
@@ -16,7 +16,7 @@ let apiPosts = {
   },
   
   fetchSinglePost(postId) {
-    return fetch(host + "/feed/view/" + postId )
+    return fetch(host + "/api/v1/post/" + postId )
     .then((response) => response.json());
   },
 
@@ -28,7 +28,7 @@ let apiPosts = {
   sendNewPost(title, url) {
     console.log('title in sendNewPost is ', title);
     console.log('url in action sendNewPost is ', url);
-    return fetch(host + "/feed",
+    return fetch(host + "/api/v1/post/",
     {
         method: 'POST',
         headers: {

@@ -1,5 +1,7 @@
 var Post = require('mongoose').model('Post'),
-    User = require('mongoose').model('User');
+    User = require('mongoose').model('User')
+    jwt = require('jwt-simple')
+    config = require('../../config/config');
 
 var getErrorMessage = function(err) {
   if (err.code) {
@@ -10,11 +12,11 @@ var getErrorMessage = function(err) {
        else message = "something went wrong"
     }
   }
-
   return "Something went wrong";
 };
 
-exports.pagedPosts = function(req, res, next) {
+
+exports.pagedPosts = function(req, res, next) {;
   var query = {};
   var options = {
     sort: { 'created': -1 },
@@ -51,16 +53,23 @@ exports.singlePost = function(req, res, next) {
 
 exports.create = function(req, res, next) {
     var post = new Post(req.body);
-    post.color = "#ccc";
+    /**
+     * TODO: decode the access Token
+     * find the user from Mongo
+     * populate Author field and save
+     */
+    post.author_id = req.user._id;
+    
     post.save(function(err, feed) {
       if (err) {
+        console.log('err ', err);
         message = getErrorMessage(err);
 
         res.json({ success: false, message: message });
       } else {
         res.json(feed);
       }
-    })
+    });
 };
 
 exports.update = function(req, res,  next) {

@@ -6,8 +6,9 @@ var config = require('./config'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     session = require('express-session'),
-    flash = require('connect-flash'),
     passport = require('passport');
+  
+// custom middleware
 
 module.exports = function() {
   var app = express();
@@ -29,12 +30,8 @@ module.exports = function() {
     secret: config.sessionSecret,
   }));
 
-  app.set('views', './yonnbot/views');
-  app.set('view engine', 'ejs');
-
-  app.use(flash());
+  // initilize passport
   app.use(passport.initialize());
-  app.use(passport.session());
 
   // hook  the routes to the application
 

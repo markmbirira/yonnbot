@@ -1,110 +1,57 @@
 var User = require('mongoose').model('User'),
-    passport = require('passport');
-
-var getErrorMessage = function(err) {
-  var message = '';
-
-  if (err.code) {
-    switch (err.code) {
-      case 11000:
-      case 11001:
-        message = "Username already exists";
-        break;
-      
-      default:
-        message = "Something went wrong";
-    }
-  } else {
-    for (var errName in err.errors) {
-      if (err.errors[errName].message) message = err.errors[errName].message;
-    } 
-  }
-
-  return message;
-};
-
-exports.renderSignIn = function(req, res, next) {
-  if (!req.user) {
-    res.render('signin', {
-      title: 'YB - Sign Up',
-      messages: req.flash('error') || req.flash('info')
-    });
-  } else {
-    return res.redirect('/');
-  }
-}
-
-exports.renderSignUp = function(req, res, next) {
-  if (!req.user) {
-    res.render('signup', {
-      title: 'YB - Sign In',
-      messages: req.flash('error')
-    });
-  } else {
-    return res.redirect('/');
-  }
-};
-
-// this method intercept all GET requests for both login and signup
-
-exports.signin = function(req, res, next) {
-  return res.json({ success: false, message: "Sent Post data" });
-}
-
-// this method returns the correct result for login and signup
-exports.isLoggedIn = function(req, res, next) {
-  return res.json(
-    {
-      success: true,
-      username: req.user.username,
-      created: req.user.created,
-      loggedIn: true
-    }
-  );
-}
-
-
-// this method returns the correct result for logout
-exports.isLoggedOut = function(req, res, next) {
-  return res.json(
-    {
-      success: true,
-      username: null,
-      loggedIn: false,
-      created:  null 
-    }
-  );
-},
-
+    passport = require('passport'),
+    jwt = require('jwt-simple'),
+    config = require('../../config/config');
 
 exports.signup = function(req, res, next) {
-  if (!req.user) {
-    var user = new User(req.body);
-    var message = null;
-
-    user.provider = 'local';
-
-    user.save(function(err) {
-      if (err) {
-        var message = getErrorMessage(err);
-
-        req.flash('error', message);
-        // return res.redirect('/signup');
-        return res.json({ success: false, message: message });
-      }
-      req.login(user, function(err) {
-        if (err) return next(err);
-
-        // return res.redirect('/');
-        return res.redirect('/auth/success');
-      });
-    });
+  if (!req.body.username || !req.body.password || !req.body.role ) {
+    res.json({success: false, msg: 'Please pass username and password.'});
   } else {
-    return res.redirect('/');
+    var newUser = new User(req.body);
+    // save the user
+    newUser.save(function(err) {
+      if (err) {
+        console.log('err is ', err);
+        return res.json({success: false, msg: 'Username already exists.'});
+      }
+      res.json({success: true, msg: 'Successful created new user.'});
+    });
   }
 };
 
-exports.signout = function(req, res) {
-  req.logout();
-  res.redirect('/auth/logout');
-}
+exports.authenticate = function(req, res) {
+  User.findOne({
+    username: req.body.username
+  }, function(err, user) {
+    if (err) throw err;
+ 
+    if (!user) {
+      res.send({success: false, msg: 'Authentication failed. User not found.'});
+    } else {
+      // check if password matches
+      user.comparePassword(req.body.password, function (err, isMatch) {
+        if (isMatch && !err) {
+          // if user is found and password is right create a token
+          var token = jwt.encode(user, config.sessionSecret);
+          // return the information including token as JSON
+          res.json({success: true, token: 'JWT ' + token});
+        } else {
+          res.send({success: false, msg: 'Authentication failed. Wrong password.'});
+        }
+      });
+    }
+  });
+};
+
+// exports.signout = function(req, res) {
+//   req.session.username = null;
+//   req.session.created = null;
+//   return res.json(
+//     { 
+//       success: true,
+//       username: res.session.username,
+//       created: req.session.created,
+//       loggedin: false 
+//     }
+//   );
+// }

@@ -3,9 +3,22 @@ import { Link } from 'react-router';
 
 
 export default class PostItem extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.renderEmbedly = this.renderEmbedly.bind(this);
+  }
+
+  renderEmbedly() {
+    if(this.props.embedly_data === 'undefined') {
+      this.props.embedly_data = {
+        "thumbnail_url": '/img/image404.png',
+        "provider_url": this.props.url,
+      }
+    }
+  }
 
   render() {
-   
     return (
       <div className="post">
         <div className="post-upvotes">
@@ -13,7 +26,7 @@ export default class PostItem extends Component {
           <span className="post-upvotes-upvotes">{this.props.upvotes}</span>
         </div>
         <div className="post-thumbnail">
-          <img src={this.props.embedly_data.thumbnail_url} alt="img" />
+          <img src={ this.props.embedly_data.thumbnail_url } alt="img" />
         </div>
         <div className="post-item-details">
           <span className="post-item-details-title">

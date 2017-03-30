@@ -19,7 +19,7 @@ export default class CommentPost extends Component {
           <p>
             <small>via user404 <em className="text-info">{this.props.created}</em></small> {' '}
             <Link to="#"><span className="glyphicon glyphicon-arrow-up text-sucess"></span> {this.props.upvotes}</Link> {' '}
-            <Link to="#"><span className="glyphicon glyphicon-comment text-info"></span> {this.props.comments.length}</Link>
+            <Link to="#"><span className="glyphicon glyphicon-comment text-info"></span>4 comments</Link>
           </p>
         </div>
       </div>

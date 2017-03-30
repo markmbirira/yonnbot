@@ -1,8 +1,7 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    User = mongoose.model('User'),
-    mongoosePaginate = require('mongoose-paginate');
-
+  Schema = mongoose.Schema,
+  User = mongoose.model('User'),
+  mongoosePaginate = require('mongoose-paginate');
 
 var feedscrapper = require('../util/feedscrapper');
 
@@ -10,6 +9,7 @@ var PostSchema = new Schema({
   title: {
     type: String,
     index: true,
+    trim: true,
     required: 'title is required',
     validate: [
       function(title) {
@@ -28,29 +28,22 @@ var PostSchema = new Schema({
       } else {
         if (url.indexOf('http://') !== 0 && url.indexOf('https://') !==0) {
           url = 'http:\/\/' + url;
-        }
-        
-        return url;
+        } 
+      return url;
       }
     }
   },
   embedly_data: Object,
-  color: String,
-  category: String,
+  tags: {
+    type: Array,
+    default: []
+  },
   created: {
     type: Date,
     default: Date.now
   },
-  // author: { // use Post.find().populate('author').exec(function(err, posts) {});
-  //   type: Schema.ObjectId,
-  //   ref: 'User'
-  // },
-  comments: Array,
+  author_id: String,
   upvotes: {
-    type: Number,
-    default: 0
-  },
-  downvotes: {
     type: Number,
     default: 0
   }
@@ -72,7 +65,6 @@ PostSchema.pre('save', function(next) {
     self.embedly_data = data; // save data received from EMBEDY API
     next();
   });
-
 });
 
 PostSchema.statics.findPostById = function (id, callback) {
