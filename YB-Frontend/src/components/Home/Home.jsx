@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import postActionCreators from '../../actions/postActionCreators';
+import profileActionCreators from '../../actions/profileActionCreators';
 
 import Header from '../Common/Header/Header';
 import Posts from './Posts';
@@ -37,8 +38,11 @@ class App extends Component {
             />
           </div>
           <div className="col-3">
-            <SideBar 
+            <SideBar
+              user={this.props.user}
               sendNewPost={this.props.sendNewPost}
+              loginUser={this.props.loginUser}
+              registerUser={this.props.registerUser}
             />
           </div>
         </div>
@@ -50,12 +54,14 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('state is ', state);
   return {
     posts: state.posts.docs,
     page: Number(state.posts.page) || 1,
     pages: Number(state.posts.pages),
     total: Number(state.posts.total),
-    limit: Number(state.posts.limit)
+    limit: Number(state.posts.limit),
+    user: state.user
   }
 };
 
@@ -64,6 +70,12 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllPosts: (page) => dispatch(postActionCreators.fetchAllPosts(page)),
     sendNewPost: (title, url) => {
       dispatch(postActionCreators.sendNewPost(title, url))
+    },
+    loginUser: (username, password) => {
+      dispatch(profileActionCreators.loginUser(username, password));
+    },
+    registerUser: (username, password, role) => {
+      dispatch(profileActionCreators.registerUser(username, password, role));
     }
   }
 }

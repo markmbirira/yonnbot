@@ -6,7 +6,7 @@ let apiUsers = {
   loginUser(username, password) {
     console.log('username in action loginUser() is ', username);
     console.log('password in action loginUser() is ', password);
-    return fetch(host + "/signin",
+    return fetch(host + "/api/v1/authenticate",
     {
         method: 'POST',
         headers: {
@@ -21,10 +21,11 @@ let apiUsers = {
     .then((response) => response.json());
   },
 
-  signupUser(username, password) {
+  signupUser(username, password, role) {
     console.log('username in action signupUser() is ', username);
     console.log('password in action signupUser() is ', password);
-    return fetch(host + "/signup",
+    console.log('role in action signupUser() is', role);
+    return fetch(host + "/api/v1/signup",
     {
         method: 'POST',
         headers: {
@@ -32,7 +33,8 @@ let apiUsers = {
         },
         body: JSON.stringify({
           username: username,
-          password: password
+          password: password,
+          role: role
         })
       }
     )
@@ -40,7 +42,7 @@ let apiUsers = {
   },
     
  logoutUser() {
-    return fetch(host + "/signout")
+    return fetch(host + "/api/v1/signout")
     .then((response) => response.json());
   }
 };

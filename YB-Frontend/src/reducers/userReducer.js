@@ -1,37 +1,37 @@
-// import { List } from 'immutable';
+import update from 'react-addons-update';
 
 import { Users } from '../actions/actionTypes';
 
 const initialState = {
-  username: null,
-  loggedIn: false,
-  created: null
+  username: false,
+  token: false,
+  loading: false,
 };
 
 const user = (state = initialState, action) => {
   switch (action.type) {
     case Users.LOGIN_USER_REQUEST:
       console.log('loginUser() loading');
-      return state;
+      return update(state, { $set: { loading: true }});
     case Users.LOGIN_USER_RESPONSE:
       if (action.success) {
-        console.log('success fetching all posts:',action.posts);
-        return action.posts;
+        console.log('success authenticating',action.userinfo);
+        return update(state, { $set : { username: action.userinfo.username, token: action.userinfo.token, loading: false }});
       } else {
-        console.log('error fetching all posts:',action.error);
+        console.log('error authenticating:', action.error);
         return state;
       }
     
     case Users.SIGNUP_USER_REQUEST:
       console.log('signupUser() loading');
-      return state;
+      return { loading: true };
     case Users.SIGNUP_USER_RESPONSE:
       if (action.success) {
         console.log('success fetching new post', action.userinfo);
         return action.userinfo;
       } else {
         console.log('error fetching new post');
-        return state;
+        return { success: false };
       }
 
       case Users.LOGOUT_USER_REQUEST:
