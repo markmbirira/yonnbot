@@ -7,7 +7,7 @@ import Comment from './Comment/Comment';
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={Home} />
-    <Route  path="post/:postId" component={Comment} />
+    <Route  path="post/:postId/:title" component={Comment} />
   </Router>
 );
 

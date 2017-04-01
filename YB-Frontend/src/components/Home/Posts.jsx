@@ -57,6 +57,7 @@ class Posts extends Component {
           id={post._id}
           title={post.title}
           url={post.url}
+          slug_url={post.slug_url}
           created={post.created}
           embedly_data={post.embedly_data}
           upvotes={post.upvotes}
@@ -86,11 +87,10 @@ class Posts extends Component {
     
     return (
       <div className="row content-col">
-        <div className="posts-menu col-3">
-          <a className="active-link" href=".">top</a>
-          <a href=".">new</a>
+        <div className="col-4">
+          
         </div>
-        <div  className="posts col-9">
+        <div  className="posts col-8">
           {
             this._renderPosts()
           }

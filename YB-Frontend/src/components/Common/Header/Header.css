@@ -10,7 +10,7 @@
   overflow: hidden;
   margin-top: 4px;
   margin-bottom: 3px;
-  background: rgba(14,14,14,.65);
+  background: rgb(35, 35, 35);
   /*border-bottom: 2px solid dodgerblue;*/
 }
 
@@ -29,11 +29,20 @@ header a {
   color: red;
 }
 
+.header-links-left {
+  display: inline;
+  margin-left: 20px;
+}
+
+.header-links-left a {
+
+}
+
 .header-left {
   display: inline;
 }
 
-.header-left > a {
+.yonnbot-logo {
   font-size: 18px;
   font-weight: 600;
   border: 1px rgb(72, 60, 60) solid;
@@ -42,7 +51,7 @@ header a {
   opacity: .7;
 }
 
-.header-left > a:hover {
+.yonnbot-logo:hover {
   background: black;
   opacity: 1;
 }

@@ -4,15 +4,7 @@ var Post = require('mongoose').model('Post'),
     config = require('../../config/config');
 
 var getErrorMessage = function(err) {
-  if (err.code) {
-    message = 'Something went wrong';
-  } else {
-    for (var errName in err.errors) {
-      if (err.errors[errName].message) message = err.errors[errName].message;
-       else message = "something went wrong"
-    }
-  }
-  return "Something went wrong";
+  return err;
 };
 
 
@@ -44,6 +36,8 @@ exports.singlePost = function(req, res, next) {
        var message = getErrorMessage(err);
 
        res.json({ success: false, message: message });
+     } else if(!post.length) {
+       res.json({ success: false, message: 'post not found' });
      } else {
        console.log('fetch success');
        res.json(post);

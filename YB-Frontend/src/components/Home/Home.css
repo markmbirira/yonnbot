@@ -60,13 +60,6 @@
   margin-left: 10px;
 }
 
-.active-link {
-  background: #ccc;
-  padding: 2px;
-  border-radius: 3px;
-  color: brown !important;
-}
-
 .post-upvotes {
   display: flex;
   flex-direction: column;

@@ -38,7 +38,7 @@ module.exports = function() {
   require('../YB-API/routes/index.server.routes.js')(app);
   require('../YB-API/routes/users.server.routes.js')(app);
   require('../YB-API/routes/feed.server.routes.js')(app);
-  require('../YB-API/routes/category.server.routes')(app);
+  require('../YB-API/routes/comment.server.routes')(app);
 
   app.use(express.static('./public'));
 

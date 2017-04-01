@@ -3,7 +3,8 @@
 }
 
 html {
-  background: url('/img/yonnbot-background.jpg');
+  background-color: rgba(0,0,0,.8);
+  /*background: url('/img/yonnbot-background.jpg');*/
 }
 
 body {

@@ -1,24 +1,35 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 
 export default class PostItem extends Component {
   constructor(props) {
     super(props);
     
-    this.renderEmbedly = this.renderEmbedly.bind(this);
+    this.renderThumbnail = this.renderThumbnail.bind(this);
+    this.renderDate = this.renderDate.bind(this);
   }
 
-  renderEmbedly() {
-    if(this.props.embedly_data === 'undefined') {
-      this.props.embedly_data = {
-        "thumbnail_url": '/img/image404.png',
-        "provider_url": this.props.url,
-      }
+  renderThumbnail() {
+    var src;
+    if(!this.props.embedly_data.thumbnail_url) {
+      src = '/img/thumbnail_404.svg';
+    } else {
+      src = this.props.embedly_data.thumbnail_url;
     }
+
+    return src;
+  }
+
+  renderDate() {
+    let created = moment(this.props.created);
+    created = created.fromNow();
+    return created
   }
 
   render() {
+
     return (
       <div className="post">
         <div className="post-upvotes">
@@ -26,7 +37,7 @@ export default class PostItem extends Component {
           <span className="post-upvotes-upvotes">{this.props.upvotes}</span>
         </div>
         <div className="post-thumbnail">
-          <img src={ this.props.embedly_data.thumbnail_url } alt="img" />
+          <img src={ this.renderThumbnail() } alt="img" />
         </div>
         <div className="post-item-details">
           <span className="post-item-details-title">
@@ -35,11 +46,11 @@ export default class PostItem extends Component {
           <div className="post-item-details-meta">
             <span className="post-channel">{'tech'}</span> {' '}
             <span className="post-author">{'hercules15'}</span> {' '}
-            <span className="post-created"> 4hrs ago</span> {' '} <br />
+            <span className="post-created">{ this.renderDate() }</span> {' '} <br />
             <a href={this.props.url} className="post-url" target="blank">
               {this.props.embedly_data.provider_url} 
             </a> {' '}
-            <Link to={`post/${this.props.id}`} className="post-item-comments-comments">
+            <Link to={`post/${this.props.slug_url}`} className="post-item-comments-comments">
               <span>comments {this.props.upvotes}</span>
             </Link>
           </div>

@@ -26,6 +26,7 @@
     "jwt-simple": "^0.5.1",
     "lurl": "0.0.1",
     "method-override": "~2.2.0",
+    "moment": "^2.18.1",
     "mongoose": "^4.8.4",
     "mongoose-paginate": "^5.0.3",
     "morgan": "~1.0.0",

@@ -6,7 +6,7 @@ module.exports = function() {
 
   require('../YB-API/models/user.server.models');
   require('../YB-API/models/feed.server.models');
-  require('../YB-API/models/category.server.model');
+  require('../YB-API/models/comment.server.model');
 
   return db;
 }

@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   User = mongoose.model('User'),
-  mongoosePaginate = require('mongoose-paginate');
+  mongoosePaginate = require('mongoose-paginate')
+  moment = require('moment');
 
 var feedscrapper = require('../util/feedscrapper');
 
@@ -42,6 +43,7 @@ var PostSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  slug: String, // userfriendly URLs
   author_id: String,
   upvotes: {
     type: Number,
@@ -57,6 +59,11 @@ PostSchema.set('toJSON', {
 });
 
 
+PostSchema.pre('save', function(next){
+  this.slug = slugify(this.title);
+  next();
+});
+
 PostSchema.pre('save', function(next) {
   self = this;
   feedscrapper(this.url, function(data){
@@ -71,6 +78,21 @@ PostSchema.statics.findPostById = function (id, callback) {
   this.findOne({ _id: id}, callback);
 };
 
+PostSchema.virtual('slug_url').get(function() {
+    var date = moment(this.created)
+      , formatted = date.format('YYYY[/]MM[/]');
+    // formatted results in the format 'YYYY/MM/'
+    return this._id + '/' + this.slug;
+  });
+
+function slugify(title) {
+  return title.toString().toLowerCase()
+    .replace(/\s+/g, '-')        // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')   // Remove all non-word chars
+    .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+    .replace(/^-+/, '')          // Trim - from start of text
+    .replace(/-+$/, '');         // Trim - from end of text
+}
 
 mongoose.model('Post', PostSchema);
 

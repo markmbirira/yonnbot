@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <header className="header col-12">
         <div className="header-left">
-          <a id="yonnbot" href="/" title="YonnBot">YB</a> {' '}
+          <a className="yonnbot-logo" href="/" title="YonnBot">YB</a> {' '}
           <div className="search-top">
             <form method="POST" className="search-form">
               <input type="text" placeholder=" search YonnBot" name="q" />
@@ -17,10 +17,14 @@ export default class Header extends Component {
               </button>
             </form>
           </div>
+          <div className="header-links-left">
+            <a className="" href=".">top</a>{' '}
+            <a href=".">new</a>
+          </div>
         </div>
 
         <div className="header-right">
-          <span className="headerlinks">
+          <span className="header-links-right">
             <Link to="/">submit</Link> {' '}
             <Link to=".">login</Link> {' '}
           </span>
