@@ -25,7 +25,7 @@ let apiPosts = {
     .then((response) => response.json());
   },
 
-  sendNewPost(title, url) {
+  sendNewPost(title, url, auth_token) {
     console.log('title in sendNewPost is ', title);
     console.log('url in action sendNewPost is ', url);
     return fetch(host + "/api/v1/post/",
@@ -33,6 +33,7 @@ let apiPosts = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': auth_token
         },
         body: JSON.stringify({
           title: title,

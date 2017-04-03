@@ -21,10 +21,10 @@ let apiUsers = {
     .then((response) => response.json());
   },
 
-  signupUser(username, password, role) {
+  signupUser(username, email, password) {
     console.log('username in action signupUser() is ', username);
-    console.log('password in action signupUser() is ', password);
-    console.log('role in action signupUser() is', role);
+    console.log('email in action signupUser() is ', email);
+    console.log('password in action signupUser() is', password);
     return fetch(host + "/api/v1/signup",
     {
         method: 'POST',
@@ -34,7 +34,7 @@ let apiUsers = {
         body: JSON.stringify({
           username: username,
           password: password,
-          role: role
+          email: email
         })
       }
     )

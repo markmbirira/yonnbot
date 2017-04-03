@@ -19,9 +19,10 @@ var UserSchema = new Schema({
       'password must be longer than 6 chars'
     ]
   },
+  email: String,
   role: {
     type: String, // admin, moderator, member
-    required: 'user role is required'
+    default: 'member'
   },
   karma: Number,
   salt: {

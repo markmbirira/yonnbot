@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+import jquery from 'jquery';
 import PostItem from './PostItem';
 
 
@@ -8,10 +8,20 @@ class Posts extends Component {
   constructor(props) {
     super(props);
 
+    this._spinner = this._spinner.bind(this);
     this._renderPosts = this._renderPosts.bind(this);
     this._renderNavigator = this._renderNavigator.bind(this);
     this._renderPrevPosts = this._renderPrevPosts.bind(this);
     this._renderNextPosts = this._renderNextPosts.bind(this);
+  }
+
+
+  _spinner () {
+    var i = 0;
+    setInterval(function() {
+      i = ++i % 4;
+      jquery(".post-spinner").text(" fetching" + Array(i+1).join("."));
+    }, 600);
   }
 
   _renderPrevPosts(page) {
@@ -49,7 +59,6 @@ class Posts extends Component {
 
   _renderPosts() {
     
-    // if("k" === "kk") {
     if(this.props.posts && this.props.posts.length) {
       let post_items = this.props.posts.map(post => 
         <PostItem 
@@ -68,17 +77,9 @@ class Posts extends Component {
       return post_items;
     } else {
       return (
-        <PostItem 
-          key={'loading...'}
-          id={'loading...'}
-          title={'loading...'}
-          url={'loading...'}
-          created={'loading...'}
-          embedly_data={'loading...'}
-          upvotes={'loading...'}
-          downvotes={'loading...'}
-          comments={'loading...'}
-        />
+        <div className="post-spinner">
+          fetching  
+        </div>
       );
     }
   }
@@ -91,6 +92,11 @@ class Posts extends Component {
           
         </div>
         <div  className="posts col-8">
+          {
+            (!this.props.posts) ?
+              this._spinner() :
+              console.log('fetching complete')
+          }
           {
             this._renderPosts()
           }

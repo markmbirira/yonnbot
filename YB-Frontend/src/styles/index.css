@@ -18,15 +18,12 @@ body {
 [class*="col-"] {
     width: 100%;
 }
-.submit-form > input {
-  display: none;
-}
 
 /* all should float to the left */
 
 [class*="col-"] {
     float: left;
-    padding: 6px;
+    padding: 7px;
     /*border: 1px solid red;*/
 }
 
@@ -83,9 +80,6 @@ body {
   }
   .post-thumbnail {
     display: block;
-  }
-  .submit-form > input {
-    display: inline;
   }
 }
 

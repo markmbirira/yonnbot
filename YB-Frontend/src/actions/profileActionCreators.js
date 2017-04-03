@@ -14,10 +14,10 @@ let profileActionCreators = {
     };
   },
 
-  registerUser(username, password, role) {
+  registerUser(username, email, password) {
     return (dispatch) => {
       dispatch({ type: Users.SIGNUP_USER_REQUEST });
-      API.apiUsers.signupUser(username, password, role).then(
+      API.apiUsers.signupUser(username, email, password).then(
         (userinfo) => dispatch({ type: Users.SIGNUP_USER_RESPONSE, success: true , userinfo }),
         (error) => dispatch({ type: Users.SIGNUP_USER_RESPONSE, success: false, error })
       );

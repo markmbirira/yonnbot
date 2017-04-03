@@ -6,6 +6,7 @@
 }*/
 
 .header {
+  font-size: small;
   position: relative;
   overflow: hidden;
   margin-top: 4px;
@@ -26,16 +27,11 @@ header a {
 }
 
 .header-right a:hover {
-  color: red;
+  color: lightseagreen;
 }
 
 .header-links-left {
   display: inline;
-  margin-left: 20px;
-}
-
-.header-links-left a {
-
 }
 
 .header-left {
@@ -44,8 +40,9 @@ header a {
 
 .yonnbot-logo {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px rgb(72, 60, 60) solid;
+  box-sizing: border-box;
   padding: 2px;
   border-radius: 2px;
   opacity: .7;
@@ -53,28 +50,6 @@ header a {
 
 .yonnbot-logo:hover {
   background: black;
-  opacity: 1;
-}
-
-.search-top {
-  display: inline-block;
-}
-
-.search-form {
-  display: none;
-}
-
-.search-form > input {
-  height: 21px;
-  border: 2px solid #fff;
-  border-radius: 2px;
-  margin-right: 2px;
-}
-
-.search-form button {
-  height: 21px;
-  border: 2px solid #fff;
-  color: #673f3f;
-  border-radius: 2px;
-  background: #fff;
+  color: #fff;
+  opacity: .7;
 }

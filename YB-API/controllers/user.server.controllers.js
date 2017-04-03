@@ -4,7 +4,7 @@ var User = require('mongoose').model('User'),
     config = require('../../config/config');
 
 exports.signup = function(req, res, next) {
-  if (!req.body.username || !req.body.password || !req.body.role ) {
+  if (!req.body.username || !req.body.password || !req.body.email ) {
     res.json({success: false, msg: 'Please pass username and password.'});
   } else {
     var newUser = new User(req.body);

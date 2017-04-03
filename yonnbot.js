@@ -12,4 +12,4 @@ app.listen(3000);
 
 module.exports = app;
 
-console.log('YB API running at http://localhost:3000');
+console.log(' 🌎 YB API running at http://localhost:3000');

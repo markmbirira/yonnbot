@@ -28,7 +28,6 @@ export default class SubmitForm extends Component {
   render () {
     return (
       <div className="submit-form col-12">
-        <div>add a link post</div>
         <form className="submit-form-form" onSubmit={this._handlePostSubmit}>
           <input type="text" name="title" ref="title" placeholder=" title" required /> <br />
           <input type="url" name="url" ref="url" placeholder=" URL " required /> <br />

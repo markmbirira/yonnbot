@@ -24,10 +24,10 @@ let postActionCreators = {
     }
   },
 
-  sendNewPost(title, url) {
+  sendNewPost(title, url, auth_token) {
     return (dispatch) => {
       dispatch({ type: Posts.SEND_NEW_POST });
-      API.apiPosts.sendNewPost(title, url).then(
+      API.apiPosts.sendNewPost(title, url, auth_token).then(
         (post) => dispatch({ type: Posts.RECEIVE_NEW_POST, success: true , post}),
         (error) => dispatch({ type: Posts.RECEIVE_NEW_POST, success: false, error })
       );

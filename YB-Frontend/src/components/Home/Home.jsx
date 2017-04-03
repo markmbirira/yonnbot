@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { browserhistory } from 'react-router';
 
 import postActionCreators from '../../actions/postActionCreators';
 import profileActionCreators from '../../actions/profileActionCreators';
 
 import Header from '../Common/Header/Header';
 import Posts from './Posts';
-import SideBar from './SideBar';
+// import SideBar from './SideBar';
 
 import './Home.css';
 
 class App extends Component {
+  componentWillMount() {
+    // const token = window.localStorage.getItem('jwt');
+  }
 
   componentDidMount() {
     this.props.fetchAllPosts(this.props.page);
     window.scrollTo(0,0);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.redirectTo) {
+      browserhistory.push('/');
+    }
   }
 
   componentDidUpdate(newProps) {
@@ -38,12 +48,14 @@ class App extends Component {
             />
           </div>
           <div className="col-3">
+          {/*
             <SideBar
               user={this.props.user}
               sendNewPost={this.props.sendNewPost}
               loginUser={this.props.loginUser}
               registerUser={this.props.registerUser}
             />
+          */}
           </div>
         </div>
          <div className="clear"></div>
