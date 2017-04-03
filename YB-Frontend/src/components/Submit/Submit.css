@@ -16,13 +16,13 @@
   margin: 10px;
   padding: 10px;
   /*border: 1px red solid;*/
-  background: rgba(0, 0, 0, 0.29);
+  background:  #fff;
   border-radius: 10px;
 }
 
 .submit-form label {
   display: block;
-  color: white;
+  color: #000;
   margin-bottom: 5px;
   /*margin-top: 5px;*/
 }

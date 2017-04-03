@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import postActionCreators from '../../actions/postActionCreators';
+import commentActionCreators from '../../actions/commentActionCreators';
 
 import Header from '../Common/Header/Header';
 import CommentPost from './CommentPost';
@@ -14,8 +15,12 @@ class App extends Component {
 
   componentDidMount() {
     var postId = this.props.params.postId;
+
     this.props.fetchSinglePost(postId);
+    this.props.fetchAllPostComments(postId);
+
     this._renderCommentPost = this._renderCommentPost.bind(this);
+    window.scrollTo(0,0);
   }
 
   componentDidUpdate(nextProps) {
@@ -37,8 +42,12 @@ class App extends Component {
           embedly_data={post.embedly_data}
         />
       );
-      return commentpost;
+    } else {
+      commentpost = <div className="post-spinner">
+        fetching
+      </div>
     }
+    return commentpost;
   }
 
 
@@ -53,7 +62,12 @@ class App extends Component {
             {
               this._renderCommentPost()
             }
-            <CommentComments />
+            <CommentComments 
+              fetchAllPostComments={this.props.fetchAllPostComments}
+              fetchSinglePostComment={this.props.fetchSinglePostComment}
+              sendNewComment={this.props.sendNewComment}
+              post_id={ this.props.params['postId'] }
+            />
           </div>
           <div className="col-3"></div>
         </div>
@@ -63,14 +77,6 @@ class App extends Component {
     );
   }
 }
-/*
-id={this.props.post.id}
-                title={this.props.post.title}
-                url={this.props.post.url}
-                created={this.props.post.created}
-                description={this.props.post.embedly_data.description}
-                thumbnail_url={this.props.post.embedly_data.thumbnail_url}
-*/
 
 App.propTypes = {
   post: PropTypes.array,
@@ -88,7 +94,16 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchSinglePost: (postId) => {
       dispatch(postActionCreators.fetchSinglePost(postId));
-    }
+    },
+    fetchAllPostComments: (page) => {
+      dispatch(commentActionCreators.fetchAllPostComments(page));
+    },
+    fetchSinglePostComment: (comment_id) => {
+      dispatch(commentActionCreators.fetchSinglePostComment(comment_id));
+    },
+    sendNewComment: (post_id, comment_text, auth_token) => {
+      dispatch(commentActionCreators.sendNewPost(post_id, comment_text, auth_token));
+    } 
   }
 }
 

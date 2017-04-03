@@ -6,13 +6,11 @@ export default class CommentItem extends Component {
     return (
       <div className="comment-item">
         <p>
-          <small className="comment-item-username label label-default">technerd</small>
-          <small className="comment-item-created text-info" >
-            <em>{'24mins ago'}</em>
-          </small>
+          <span className="comment-item-author"> hercules15 </span>
+          <small className="comment-item-created"> {'24mins ago'} </small>
         </p>
-        <p className="comment-item-text">
-          {'photoshop AF!'}
+        <p className="comment-item-comment-text">
+          {'this is where the comment goes'}
         </p>
       </div>
     );
