@@ -5,7 +5,30 @@ import CommentItem from './CommentItem';
 export default class CommentComments extends Component {
   constructor(props) {
     super(props);
+
+    this._renderCommentItem = this._renderCommentItem.bind(this);
     this._handleCommentSubmit = this._handleCommentSubmit.bind(this);
+  }
+
+  _renderCommentItem() {
+    let commentitems;
+    if (this.props.comments && this.props.comments.length) {
+      commentitems = this.props.comments.map(comment => 
+        <CommentItem
+          key={ comment._id }
+          id={ comment._id }
+          comment_text={ comment.comment_text }
+          created={ comment.created }
+          post_id={ comment.post_id }
+          author_id={ comment.post_id }
+        />
+      );
+    } else {
+      commentitems = <div className="post-spinner">
+        fetching
+      </div>
+    }
+    return commentitems;
   }
 
   _handleCommentSubmit(event) {
@@ -45,24 +68,9 @@ export default class CommentComments extends Component {
             <button className="comment-form-button" onClick={this._handleCommentSubmit}> send</button>
           </div>
           <div className="comment-item-container">
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
+            {
+              this._renderCommentItem()
+            }
           </div>
         </div>
       </div>

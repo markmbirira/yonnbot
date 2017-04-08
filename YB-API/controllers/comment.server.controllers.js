@@ -6,7 +6,8 @@ getErrorMessage = function(err) {
 
 exports.allPostComments = function(req, res, next) {
   var post_id = req.param('post_id');
-  Comment.findById(post_id, function(err, comments) {
+  console.log('allpostComments() postId is ', post_id);
+  Comment.find({'post_id' : post_id }, function(err, comments) {
     if (err) {
       var message = getErrorMessage(err);
       

@@ -3,8 +3,8 @@ import 'whatwg-fetch'; // window.fetch() polyfill by GitHub
 const host = "http://localhost:3000";
 
 let apiComments = {
-  fetchAllPostComments(page) {
-    return fetch(host + "/api/v1/comments/:post_id" + page,
+  fetchAllPostComments(post_id) {
+    return fetch(host + "/api/v1/comments/" + post_id,
       {
         method: 'GET',
         headers: {

@@ -32,7 +32,7 @@ class App extends Component {
     if (this.props.post && this.props.post.length) {
       commentpost = this.props.post.map(post => 
         <CommentPost
-          key={post._id}
+          key={ post._id }
           id={post._id}
           title={post.title}
           url={post.url}
@@ -66,7 +66,8 @@ class App extends Component {
               fetchAllPostComments={this.props.fetchAllPostComments}
               fetchSinglePostComment={this.props.fetchSinglePostComment}
               sendNewComment={this.props.sendNewComment}
-              post_id={ this.props.params['postId'] }
+              post_id={ this.props.params.postId }
+              comments={ this.props.comments }
             />
           </div>
           <div className="col-3"></div>
@@ -84,9 +85,10 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state is', state.comments);
+  console.log('state in Comments is', state.comments);
   return {
-    post: state.comments
+    post: state.comments.post,
+    comments: state.comments.comments
   }
 }
 

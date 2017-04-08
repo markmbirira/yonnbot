@@ -4,12 +4,12 @@ import API from '../api';
 
 let commentActionCreators = {
   // Thunk action creators/async dispatches
-  fetchAllPostComments(page) {
+  fetchAllPostComments(postId) {
     return (dispatch) => {
       dispatch({ type: Comments.FETCH_ALL_POST_COMMENTS });
-      API.apiComments.fetchAllPostComments(page).then(
-        (comments) => dispatch({ type: Comments.RECEIVE_ALL_POSTS, success: true, comments }),
-        (error) => dispatch({ type: Comments.RECEIVE_ALL_POSTS, success: false, error })
+      API.apiComments.fetchAllPostComments(postId).then(
+        (comments) => dispatch({ type: Comments.RECEIVE_ALL_POST_COMMENTS, success: true, comments }),
+        (error) => dispatch({ type: Comments.RECEIVE_ALL_POST_COMMENTS, success: false, error })
       );
     };
   },
@@ -18,8 +18,8 @@ let commentActionCreators = {
     return (dispatch) => {
       dispatch({ type: Comments.FETCH_SINGLE_POST_COMMENT });
       API.apiComments.fetchSinglePostComment(comment_id).then(
-        (comment) => dispatch({ type: Comments.RECEIVE_SINGLE_POST, success: true , comment}),
-        (error) => dispatch({ type: Comments.RECEIVE_SINGLE_POST, success: false, error })
+        (comment) => dispatch({ type: Comments.RECEIVE_SINGLE_POST_COMMENT, success: true , comment}),
+        (error) => dispatch({ type: Comments.RECEIVE_SINGLE_POST_COMMENT, success: false, error })
       );
     }
   },
