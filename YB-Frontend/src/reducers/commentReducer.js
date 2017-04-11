@@ -17,7 +17,7 @@ const comments = (state = initialState, action) => {
     case Posts.RECEIVE_SINGLE_POST:
       if (action.success) {
         console.log('success fetching single post', action.post);
-        return update(state, { post: { $unshift: action.post } });
+        return update(state, { post: { $set: action.post } });
       } else {
         console.log('error fetching single post', action.error);
         return state;
@@ -30,7 +30,7 @@ const comments = (state = initialState, action) => {
     case Comments.RECEIVE_ALL_POST_COMMENTS:
       if (action.success) {
         console.log('success fetching all comments for current post');
-        return update(state, { comments: { $unshift : action.comments } } );
+        return update(state, { comments: { $set : action.comments } } );
       } else {
         console.log('error fetching all comments for current post');
         return state;

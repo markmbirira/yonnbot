@@ -1,22 +1,11 @@
-/*.comment-content {
-  width: 620px;
-  margin: 0 auto;
-  padding: 10px;
-  margin-bottom: 1.5em;
-  background: #929292;
-  background: rgba(14,14,14,.65);
-  box-shadow: 5px 5px 10px rgba(0,0,0,.66);
-}*/
-
-
 .comment-content {
-  /*font-size: medium;*/
+  margin-top: 4px; 
   background: rgba(14,14,14,.5);
 }
 
 .comment-post {
   color: #fff;
-  background: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.4);
   padding: 5px;
   opacity: .95;
 }

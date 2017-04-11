@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    console.log('Comment updating, nextProps are', this.props.post.comments);
+    console.log('Comment updating, nextProps are', this.props.comments);
   }
 
   _renderCommentPost() {

@@ -1,33 +1,51 @@
-/*.header {
-  background-color: #fff;
-  padding: 4px;
-  border-bottom: 2px solid goldenrod;
-  border-top: 2px solid #fee;
-}*/
-
 .header {
+  padding: 4px !important;
   font-size: small;
   position: relative;
   overflow: hidden;
-  margin-top: 4px;
-  margin-bottom: 3px;
-  background: rgb(35, 35, 35);
-  /*border-bottom: 2px solid dodgerblue;*/
+  margin: 2px 0 3px 0;
+  background: #191818;
+  height: 50px;
+  min-height: 50px;
+  border-bottom: 5px solid #343436;
+  box-shadow: 0 1px 1px #191818;
 }
 
 header a {
   text-decoration: none;
   color: #fff;
+  display: inline-block;
 }
 
 .header-right {
   display: inline;
   float: right;
-  margin-right: 5%;
+}
+
+.header-left h1 {
+  display: inline;
+  position: relative;
+  top: 2px;
+  left: 8px;
 }
 
 .header-right a:hover {
-  color: lightseagreen;
+  color: lightsalmon;
+}
+
+.header-links-right button {
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  margin-top: 3px;
+  margin-right: 5px;
+  background: #343436;
+  color: white;
+}
+
+.header-links-right button:hover {
+  background: #4d4d50;
 }
 
 .header-links-left {
@@ -39,17 +57,9 @@ header a {
 }
 
 .yonnbot-logo {
-  font-size: 18px;
-  font-weight: 500;
-  border: 1px rgb(72, 60, 60) solid;
-  box-sizing: border-box;
-  padding: 2px;
-  border-radius: 2px;
-  opacity: .7;
+  
 }
 
 .yonnbot-logo:hover {
-  background: black;
-  color: #fff;
-  opacity: .7;
+  
 }

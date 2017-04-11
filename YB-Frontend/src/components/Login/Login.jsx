@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import profileActionCreators from '../../actions/profileActionCreators';
 
@@ -47,6 +48,10 @@ class App extends Component {
                 <input type="password" name="password" ref="password" className="login-form-password" required />
                 <input type="submit" value="Login" />
               </form>
+
+              <div>
+              or <button><Link to="/auth/register">register</Link></button> {' '}
+              </div>
             </div>
           </div>
           <div className="col-3"></div>

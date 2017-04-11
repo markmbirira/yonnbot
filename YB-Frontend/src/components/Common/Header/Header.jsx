@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <header className="header col-12">
         <div className="header-left">
-          <a className="yonnbot-logo" href="/" title="YonnBot">YB</a> {' '}
+          <h1><a className="yonnbot-logo" href="/" title="YonnBot">YONNBOT</a></h1> {' '}
           <div className="header-links-left">
             
           </div>
@@ -16,11 +16,9 @@ export default class Header extends Component {
 
         <div className="header-right">
           <span className="header-links-right">
-            <Link className="." to="."> top </Link> {' '}
-            <Link to="."> new </Link> {' '}
-            <Link to="/post/submit">submit</Link> {' '}
-            <Link to="/auth/login">login</Link> {' '}
-            <Link to="/auth/register">register</Link> {' '}
+             <button>Search</button>
+            <button><Link to="/post/submit">submit</Link></button> {' '}
+            <button><Link to="/auth/login">login</Link></button> {' '}
           </span>
         </div>
 
