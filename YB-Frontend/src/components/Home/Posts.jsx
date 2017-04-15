@@ -41,17 +41,20 @@ class Posts extends Component {
   }
 
   _renderNavigator() {
-    // if (5/2 !== 2.5) {
     if (this.props.posts && this.props.posts.length) {
+      let hide_prev_button = this.props.page === 1 ? "hide_prev_button" : "";
+      // let hide_prev_button = this.props.page === 1 ? "hide_prev_button" : "";
+      
       return (
-        <p className="paginator-links">
-          <a onClick={this._renderPrevPosts} className="paginator-link-prev">
-            <span className="paginator-arrow">&#x21E0;</span></a> {' '}
-          <span className="paginator-page">{this.props.page}</span>
-          <a onClick={this._renderNextPosts} className="paginator-links-next">
-            <span className="paginator-arrow">&#x21E2;</span>
-          </a>
-        </p>
+        <div className="paginator-links col-12">
+          <button onClick={this._renderPrevPosts} className={`paginator-link-prev ${hide_prev_button}`}>
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>
+          </button> {' '}
+          <span className="paginator-page">{this.props.page}</span> {' '}
+          <button onClick={this._renderNextPosts} className="paginator-link-next">
+            <i className="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
       );
     }
   }
@@ -88,7 +91,7 @@ class Posts extends Component {
     
     return (
       <div className="row content-col">
-        <div className="col-4">
+        <div className="col-4 mobile-hidden">
           
         </div>
         <div  className="posts col-8">

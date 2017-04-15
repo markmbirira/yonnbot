@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="main">
         <Header />
-        <div className="row">
+        <div className="row main-content">
           <div className="col-9">
             <Posts 
               posts={this.props.posts}

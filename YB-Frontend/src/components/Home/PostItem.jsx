@@ -44,14 +44,13 @@ export default class PostItem extends Component {
             {this.props.title}
           </span>
           <div className="post-item-details-meta">
-            <span className="post-channel">{'tech'}</span> {' '}
             <span className="post-author">{'hercules15'}</span> {' '}
             <span className="post-created">{ this.renderDate() }</span> {' '} <br />
             <a href={this.props.url} className="post-url" target="blank">
               {this.props.embedly_data.provider_url} 
             </a> {' '}
             <Link to={`post/${this.props.slug_url}`} className="post-item-comments-comments">
-              <span>comments {this.props.upvotes}</span>
+              <span><i className="fa fa-comments-o" aria-hidden="true"></i> <small>{this.props.upvotes}</small></span>
             </Link>
           </div>
         </div>

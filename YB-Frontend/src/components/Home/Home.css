@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.main-content {
+  margin-top: 48px !important;
+}
+
 .col {
   padding: 0 10px;
 }
@@ -103,7 +107,7 @@
 }
 
 .post-item-details-meta {
-  color: #c9c9c9;
+  color: rgba(248, 248, 255, 0.88);
 }
 
 .post-author:hover {
@@ -115,31 +119,31 @@
 }
 
 .paginator-links {
-  float: right;
+  
 }
 
 .paginator-page {
   width: 40px;
   padding: 10px;
   color: #fff;
+  font-family: monospace;
+  font-size: large;
 }
 
-.paginator-arrow {
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.paginator-links a {
-  background: #219b62;
-  border-radius: 3px;
-  padding: 4px 8px 2px 8px;
+.paginator-link-prev, .paginator-link-next {
+  padding: 3px 6px 3px 6px;
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: large;
   cursor: pointer;
-  
+  background: #343436;
+  border: none;
+  color: ghostwhite;
 }
 
-.paginator-links a.inactive {
-  opacity: .3;
+.hide_prev_button {
+  display: none;
 }
 
 .post-item-details {
@@ -156,21 +160,13 @@
   color: #fff;
 }
 
-.post-channel {
-  background-color: darkseagreen;
-  color: #111;
-  padding: 3px;
-  border-radius: 4px;
-  font-size: smaller;
-}
-
 .post-url {
   text-decoration: none;
-  color: darkseagreen;
+  color:lightseagreen;
 }
 
 .post-url:hover {
-  color: lightseagreen;
+  color: goldenrod;
 }
 
 .post-item-comments {

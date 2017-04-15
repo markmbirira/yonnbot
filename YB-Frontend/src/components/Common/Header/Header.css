@@ -1,65 +1,90 @@
 .header {
-  padding: 4px !important;
-  font-size: small;
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 3px 0 0 rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  width: 100%;
+  max-height: 52px;
   overflow: hidden;
-  margin: 2px 0 3px 0;
-  background: #191818;
-  height: 50px;
-  min-height: 50px;
-  border-bottom: 5px solid #343436;
-  box-shadow: 0 1px 1px #191818;
+  background: #262728;
 }
 
-header a {
-  text-decoration: none;
-  color: #fff;
-  display: inline-block;
-}
-
-.header-right {
-  display: inline;
-  float: right;
-}
-
-.header-left h1 {
+.header-logo {
   display: inline;
   position: relative;
-  top: 2px;
+  top: -13px;
   left: 8px;
-}
-
-.header-right a:hover {
-  color: lightsalmon;
-}
-
-.header-links-right button {
-  width: 100px;
-  border: none;
-  border-radius: 2px;
-  height: 30px;
-  margin-top: 3px;
-  margin-right: 5px;
-  background: #343436;
-  color: white;
-}
-
-.header-links-right button:hover {
-  background: #4d4d50;
-}
-
-.header-links-left {
-  display: inline;
-}
-
-.header-left {
-  display: inline;
+  float: left;
 }
 
 .yonnbot-logo {
-  
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.yonnbot-logo:hover {
-  
+.header-nav {
+  float: right;
+  color: white;
+}
+
+.header-nav ul {
+  list-style-type: none;
+}
+
+.header-nav ul li {
+  display: inline;
+  padding: 10px 15px;
+}
+
+.header-nav ul li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.post-submit {
+  background: ghostwhite;
+  color: black;
+  border-radius: 4px;
+}
+
+.post-submit-link {
+  color: black !important;
+}
+
+/* user dropdown */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.user-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.user-dropdown-content a:hover {background-color: #f1f1f1}
+
+.user-dropdown:hover .user-dropdown-content {
+  /*display: block;*/
+}
+
+.user-dropdown:hover .user-dropdown-button {
+  /*background-color: #3e8e41;*/
 }

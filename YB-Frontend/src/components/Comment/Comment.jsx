@@ -56,7 +56,7 @@ class App extends Component {
       <div className="main">
         <Header />
 
-        <div className="row">
+        <div className="row main-content">
           <div className="col-3"></div>
           <div className="comment-content col-6">
             {
