@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import $ from 'jquery';
 
 import './Header.css';
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this._hideShowNavBarOnScroll = this._hideShowNavBarOnScroll.bind(this);
+  }
+
+  componentDidMount() {
+    this._hideShowNavBarOnScroll();
+  }
+
+  _hideShowNavBarOnScroll() {
+    $(window).scroll(
+      {
+        previousTop: 0
+      }, 
+      function () {
+        var currentTop = $(window).scrollTop();
+        if (currentTop < this.previousTop) {
+            $(".header").show();
+        } else {
+            $(".header").hide();
+        }
+        this.previousTop = currentTop;
+      });
+  }
+
   render () {
     return (
       <header className="header col-12">

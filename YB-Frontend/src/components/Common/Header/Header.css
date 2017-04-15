@@ -11,6 +11,7 @@
   max-height: 52px;
   /*overflow: hidden;*/
   background: #262728;
+  transition: display 10s;
 }
 
 .header-logo {
