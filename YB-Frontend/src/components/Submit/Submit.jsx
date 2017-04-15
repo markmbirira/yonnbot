@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import postActionCreators from  '../../actions/postActionCreators';
 
@@ -36,20 +37,33 @@ class App extends Component {
     return (
       <div className="main">
         <Header />
-        <div className="row">
-          <div className="col-3"></div>
+        <div className="row main-content">
+          <div className="col-3 mobile-hidden"></div>
           <div className="col-6">
             <div className="submit-form-container">
-              <p className="submit-form-heading">You are adding a new link post</p>
+              <p className="submit-form-heading">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+                {' '} add a link post
+              </p>
+
               <form className="submit-form" onSubmit={this._handlePostSubmit}>
-                <label htmlFor="title">title</label>
-                <input type="text" name="title" ref="title" className="submit-form-title" required /> <br />
-                <label htmlFor="url">URL/link</label>
-                <input type="url" name="url" ref="url" className="submit-form-url" required /> <br />
-                <label htmlFor="tag">tag</label>
-                <input type="text" name="text" ref="tag" className="submit-form-tag"  /> 
-                <input type="submit" className="" value="Submit"  />
+                <span className="submit-form-icon-title"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                <input type="text" name="title" ref="title" className="submit-form-input-title" placeholder="enter title here" required /> <br />
+                <span className="submit-form-icon-url"><i className="fa fa-link" aria-hidden="true"></i></span>
+                <input type="url" name="url" ref="url" className="submit-form-input-url" placeholder="https://example.com/news-item" required /> <br />
+                <span className="submit-form-icon-tags"><i className="fa fa-tags" aria-hidden="true"></i></span>
+                <input type="text" name="text" ref="tag" className="submit-form-input-tags"  placeholder="enter,tags,here,with,commas" /> 
+                <button type="submit" className="submit-form-button">
+                  <span>
+                    <i className="fa fa-paper-plane" aria-hidden="true"></i>
+                  </span>
+                </button>
               </form>
+
+              <div className="home-link-section">
+                <Link to="/">Home</Link>
+              </div>
+
             </div>
           </div>
           <div className="col-3"></div>

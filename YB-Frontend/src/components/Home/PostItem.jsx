@@ -50,7 +50,7 @@ export default class PostItem extends Component {
               {this.props.embedly_data.provider_url} 
             </a> {' '}
             <Link to={`post/${this.props.slug_url}`} className="post-item-comments-comments">
-              <span><i className="fa fa-comments-o" aria-hidden="true"></i> <small>{this.props.upvotes}</small></span>
+              <span><i className="fa fa-comment-o" aria-hidden="true"></i> <small>{this.props.upvotes}</small></span>
             </Link>
           </div>
         </div>
