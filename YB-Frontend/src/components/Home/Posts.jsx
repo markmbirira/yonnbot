@@ -90,7 +90,7 @@ class Posts extends Component {
   render() {
     
     return (
-      <div className="row content-col">
+      <div className="row main-content">
         <div className="col-4 mobile-hidden">
           
         </div>

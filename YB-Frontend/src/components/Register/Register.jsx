@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import profileActionCreators from '../../actions/profileActionCreators';
 
@@ -39,20 +40,36 @@ class App extends Component {
     return (
       <div className="main">
         <Header />
-        <div className="row">
-          <div className="col-3"></div>
+        <div className="row main-content">
+          <div className="col-3 mobile-hidden"></div>
           <div className="col-6">
             <div className="register-form-container">
-              <p className="register-form-title">Register to YonnBot</p>
+              <p className="register-form-title">
+                <i className="fa fa-user-plus" aria-hidden="true"></i> Register
+              </p>
+
               <form className="register-form" onSubmit={this._handleRegister}>
-                <label>username</label>
-                <input type="text" name="username" ref="username" className="register-form-username" required />
-                <label>email</label>
-                <input type="text" name="email" ref="email" className="register-form-email" required />
-                <label>password</label>
-                <input type="password" name="password" ref="password" className="register-form-password" required />
-                <input type="submit" value="Register" />
+                <span className="register-form-icon-user"><i className="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" name="username" ref="username" className="register-form-input-username" placeholder="username" required />
+                <span className="register-form-icon-email"><i className="fa fa-envelope" aria-hidden="true"></i></span>
+                <input type="email" name="email" ref="email" className="register-form-input-email" placeholder="email" required />
+                <span className="register-form-icon-password"><i className="fa fa-key" aria-hidden="true"></i></span>
+                <input type="password" name="password" ref="password" className="register-form-input-password" placeholder="password" required />
+                <button className="register-form-button" type="submit">
+                  <span>
+                    <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                  </span>
+                </button>
+                <div className="clear"></div>
               </form>
+
+              <div className="login-link-section">
+                Existing account? {' '}
+                <button>
+                  <Link to="/auth/login" className="login-link"> Login </Link>
+                  <i className="fa fa-sign-in" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
           <div className="col-3"></div>

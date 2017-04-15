@@ -114,8 +114,24 @@ input {
     .login-form-button {
       float: left;
       margin-top: 3px;
-      margin-left: 15px;
+      margin-left: 0px;
       height: 48px;
-      width: 80%;
+      width: 100%;
+    }
+    .login-form-input-username,
+    .login-form-input-password {
+      width: 100%;
+      margin-left: 0px;
+    }
+    .login-form-icon-user {
+      right: 30px;
+    }
+
+    .login-form-icon-key {
+      right: 30px;
+    }
+
+    .register-link-section {
+      right: 30px;
     }
 }
