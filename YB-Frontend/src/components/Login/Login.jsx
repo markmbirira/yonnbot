@@ -36,21 +36,31 @@ class App extends Component {
     return (
       <div className="main">
         <Header />
-        <div className="row">
-          <div className="col-3"></div>
+        <div className="row main-content">
+          <div className="col-3 mobile-hidden"></div>
           <div className="col-6">
             <div className="login-form-container">
-              <p className="login-form-title">Login to YonnBot</p>
+              <p className="login-form-title">
+                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
+              </p>
+
               <form className="login-form" onSubmit={this._handleLogin}>
-                <label>username</label>
-                <input type="text" name="username" ref="username" className="login-form-username" required />
-                <label>password</label>
-                <input type="password" name="password" ref="password" className="login-form-password" required />
-                <input type="submit" value="Login" />
+                <span className="login-form-icon-user"><i className="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" name="username" ref="username" className="login-form-input-username" placeholder="username" required />
+                <span className="login-form-icon-key"><i className="fa fa-key" aria-hidden="true"></i></span>
+                <input type="password" name="password" ref="password" className="login-form-input-password" placeholder="password" required />
+                <button className="login-form-button" type="submit" value="login">
+                  <i className="fa fa-lock" aria-hidden="true"></i>
+                </button>
+                <div className="clear"></div>
               </form>
 
-              <div>
-              or <button><Link to="/auth/register">register</Link></button> {' '}
+              <div className="register-link-section">
+                No account? {' '}
+                <button>
+                  <Link to="/auth/register" className="register-link"> Register </Link>
+                  <i className="fa fa-user-plus" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </div>

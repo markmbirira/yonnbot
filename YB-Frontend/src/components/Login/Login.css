@@ -1,55 +1,81 @@
 .login-form-container {
   background: rgba(35, 35, 35, 1);
   padding-bottom: 50px;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .login-form-title {
-  font-size: medium;
+  font-size: large;
   text-align: center;
-  color: white;
   padding: 20px 0 5px 0px;
+  color: rgba(255,255,255,.8);
+  margin-left: 20px;
 }
 
 .login-form {
-  margin: 10px;
+  margin: 30px auto;
   padding: 10px;
-  /*border: 1px red solid;*/
-  background: #fff;
-  border-radius: 10px;
+  position: relative;
+  max-width: 380px;
 }
 
-.login-form label {
-  display: block;
-  color: #000;
-  margin-bottom: 10px;
-  margin-top: 10px;
+.login-form-button {
+  float: right;
+  height: 123px;
+  width: 50px;
+  border: 0px;
+  background: #e74c3c;
+  border-radius: 7px;
+  padding: 10px;
+  color: white;
+  font-size: 22px;
+  margin-top: -138px;
 }
 
-.login-form-username,
-.login-form-password {
+.login-form-input-username,
+.login-form-input-password {
+  padding: 16px;
+  border-radius: 7px;
+  border: 0px;
+  background: rgba(255,255,255,.2);
   display: block;
-  width: 100%;
-  height: 30px;
-  border-radius: 4px;
-  padding: 2px;
+  margin: 15px;
+  width: 80%;
+  color: white;
+  font-size: 18px;
+  height: 54px;
 }
 
-.login-form input[type="submit"] {
+.login-form-icon-user {
+  position: absolute;
+  top: 45px;
+  right: 80px;
+  color: white;
+}
+
+.login-form-icon-key {
+  position: absolute;
+  top: 115px;
+  right: 80px;
+  color: white;
+}
+
+.register-link-section {
   display: block;
-  width: 100%;
-  height: 30px;
-  border: none;
-  border-radius: 4px;
-  margin-top: 20px;
+  margin: 30px auto;
+  width: 50%;
+  color: ghostwhite;
   text-align: center;
-  font-size: medium;
-  background: rgba(30, 48, 208, 0.69);
-  color: #fff;
-  cursor: pointer;
 }
 
-.login-form input[type="submit"]:hover {
-  background: rgba(30, 48, 208, 0.69);
-  color: #fff;
+.register-link-section button {
+  color: darkcyan;
+  background: ghostwhite;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.register-link-section button a {
+  color: black;
+  text-decoration: none;
 }
