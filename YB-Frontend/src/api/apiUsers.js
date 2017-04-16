@@ -3,7 +3,7 @@ import 'whatwg-fetch'; // window.fetch() polyfill by GitHub
 const host = "http://localhost:3000";
 
 let apiUsers = {
-  loginUser(username, password) {
+  loginUser(username, password) { // API actions for Users on YB
     console.log('username in action loginUser() is ', username);
     console.log('password in action loginUser() is ', password);
     return fetch(host + "/api/v1/authenticate",

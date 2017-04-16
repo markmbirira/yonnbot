@@ -7,7 +7,7 @@ import { browserHistory } from 'react-router';
 import Routes from './components/Router';
 
 // import 'bootstrap/dist/css/bootstrap.css'; 
-
+import 'animate.css';
 import './styles/index.css';
 
 

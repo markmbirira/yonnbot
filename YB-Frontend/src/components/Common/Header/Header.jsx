@@ -12,7 +12,7 @@ export default class Header extends Component {
   }
 
   componentDidMount() {
-    this._hideShowNavBarOnScroll();
+    // this._hideShowNavBarOnScroll();
   }
 
   _hideShowNavBarOnScroll() {

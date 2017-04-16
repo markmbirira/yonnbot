@@ -64,8 +64,10 @@ export default class CommentComments extends Component {
       <div>
         <div className="comment-comment">
           <div className="comment-form">
-            <textarea ref="comment_text" className="comment-form-textarea" required></textarea>
-            <button className="comment-form-button" onClick={this._handleCommentSubmit}> send</button>
+            <input ref="comment_text" className="comment-form-input" required />
+            <button className="comment-form-button" onClick={this._handleCommentSubmit}>
+              <i className="fa fa-comment-o" aria-hidden="true"></i>
+            </button>
           </div>
           <div className="comment-item-container">
             {

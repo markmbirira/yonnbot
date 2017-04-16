@@ -34,9 +34,7 @@
 .posts {
   padding: 10px;
   margin-bottom: 1.5em;
-  background: #929292;
-  background: rgba(14,14,14,.65);
-  /*box-shadow: 5px 5px 10px rgba(0,0,0,.66);*/
+  background: rgb(31,31,31);
   width: 620px;
   float: right;
 }
@@ -52,7 +50,7 @@
 }
 
 .post {
-  background-color: inherit;
+  background-color: rgba(41,41,41,.72) !important;
   width: 100%;
   margin: 0px auto 5px auto;
   /*border: 1px solid #ccc;*/
