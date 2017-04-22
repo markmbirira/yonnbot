@@ -3,6 +3,7 @@ A social bookmarking MERN (MongoDB Express React Node.js) application
 
 ## Installation
 Download a zip archize of this project to your working station and extract or use git clone:
+
   `git clone https://markmbirira/yonnbot.git`
 
 After the download is complete, you need to install dependencies in two steps.
