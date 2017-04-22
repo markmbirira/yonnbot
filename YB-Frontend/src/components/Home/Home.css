@@ -109,7 +109,7 @@
 }
 
 .post-author:hover {
-  color: goldenrod;
+  color: limegreen;
 }
 
 .post-created {
@@ -164,7 +164,7 @@
 }
 
 .post-url:hover {
-  color: goldenrod;
+  color: limegreen;
 }
 
 .post-item-comments {
@@ -178,5 +178,5 @@
 }
 
 .post-item-comments-comments:hover {
-  color: goldenrod;
+  color: limegreen;
 }

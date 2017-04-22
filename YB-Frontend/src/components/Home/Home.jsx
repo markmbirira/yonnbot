@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('Home.jsx just mounted');
     this.props.fetchAllPosts(this.props.page);
     window.scrollTo(0,0);
   }

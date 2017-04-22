@@ -12,6 +12,7 @@ export default class Header extends Component {
   }
 
   componentDidMount() {
+
     // this._hideShowNavBarOnScroll();
   }
 
@@ -23,9 +24,11 @@ export default class Header extends Component {
       function () {
         var currentTop = $(window).scrollTop();
         if (currentTop < this.previousTop) {
-            $(".header").show();
+          // $(".header").show();
+          $(".header").stop().animate({"opacity": "1"}, "fast");
         } else {
-            $(".header").hide();
+          // $(".header").hide();
+          $(".header").stop().animate({"opacity": "0"}, "slow");
         }
         this.previousTop = currentTop;
       });
@@ -38,18 +41,22 @@ export default class Header extends Component {
           <h1 className="header-logo"><a className="yonnbot-logo" href="/" title="YonnBot">YONNBOT</a></h1> {' '}
           <nav className="header-nav">
             <ul>
+              <li className="header_back_button">
+                <a href="#"> <i className="fa fa-arrow-left header_back_button_icon" aria-hidden="true"></i> back</a>
+              </li>
               <li className="post-submit">
-                <Link to="/post/submit" className="post-submit-link">submit <i className="fa fa-external-link" aria-hidden="true"></i> </Link>
+                <Link to="/post/submit" className="post-submit-link">submit <i className="fa fa-external-link post_submit_link_icon" aria-hidden="true"></i> </Link>
               </li>
               <li className="user-dropdown">
                 <a href="#" className="user-dropdown-button">
-                  <i className="fa fa-user-o" aria-hidden="true"></i> {' '}
-                  <i className="fa fa-caret-down" aria-hidden="true"></i> 
+                  <i className="fa fa-user-o header_icon_user" aria-hidden="true"></i> 
+                    {' '}
+                  <i className="fa fa-bars header_icon_menu" aria-hidden="true"></i> 
                 </a>
                 <span className="user-dropdown-content">
-                  <Link to="/auth/login"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</Link>
-                  <Link to="/auth/register"><i className="fa fa-user-plus" aria-hidden="true"></i> register</Link>
-                  <Link to="#"><i className="fa fa-sliders" aria-hidden="true"></i> dashboard</Link>
+                  <Link to="/auth/login" className="fade"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</Link>
+                  <Link to="/auth/register" className="fade"><i className="fa fa-user-plus" aria-hidden="true"></i> register</Link>
+                  <Link to="#" className="fade"><i className="fa fa-sliders" aria-hidden="true"></i> dashboard</Link>
                   <Link to="#" className="logout-link"><i className="fa fa-times" aria-hidden="true"></i> logout</Link>
                 </span>
               </li>

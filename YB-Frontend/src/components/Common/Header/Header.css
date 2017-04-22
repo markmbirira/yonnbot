@@ -37,6 +37,28 @@
   list-style-type: none;
 }
 
+.header_back_button {
+  background: ghostwhite;
+  margin-right: 138px;
+  border-radius: 3px;
+  opacity: .9;
+  cursor: pointer;
+  transition: opacity .25s ease-in-out;
+}
+
+
+.header_back_button_icon {
+  color: #007abd;
+}
+
+.header_back_button a {
+  color: black !important;
+}
+
+.header_back_button:hover {
+  opacity: 1;
+}
+
 .header-nav ul li {
   display: inline;
   padding: 10px 15px;
@@ -52,6 +74,18 @@
   background: ghostwhite;
   color: black;
   border-radius: 4px;
+}
+
+.post_submit_link_icon {
+  color: #000;
+}
+
+.header_icon_user {
+  margin-right: 10px;
+}
+
+.header_icon_menu {
+  color: #ffffff;
 }
 
 .post-submit-link {
@@ -89,7 +123,7 @@
 }
 
 .user-dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: rgba(255, 255, 255, 0.7);
   color: black;
 }
 
@@ -103,4 +137,16 @@
 
 .user-dropdown:hover .user-dropdown-button {
   background-color: #4f4f4f;
+}
+
+/* CSS3 animations */
+.fade {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+}
+
+.fade:hover {
+  opacity: 0.5;
 }
