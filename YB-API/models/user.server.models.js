@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
-  bcrypt = require('bcrypt');
+  bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new Schema({
   username: {
@@ -54,7 +54,7 @@ UserSchema.pre('save', function (next) {
     return next();
   }
 });
- 
+
 UserSchema.methods.comparePassword = function (passw, fn) {
   bcrypt.compare(passw, this.password, function (err, isMatch) {
     if (err) {
@@ -64,9 +64,9 @@ UserSchema.methods.comparePassword = function (passw, fn) {
   });
 };
 
-UserSchema.set('toJSON', { 
+UserSchema.set('toJSON', {
   getters: true,
-  virtuals: true 
+  virtuals: true
 });
 
 mongoose.model('User', UserSchema);
