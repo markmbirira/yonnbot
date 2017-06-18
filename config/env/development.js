@@ -1,5 +1,5 @@
 module.exports = {
-  db: 'mongodb://localhost/yonnbot',
+  db: 'mongodb://localhost/merntutorial',
   //  db: 'mongodb://markmbirira:markmbirira@ds139899.mlab.com:39899/merntutorial',
   sessionSecret: '#**Yonn7115186Bot0~~0d3vSession0~~0T0ps3cr3t!#',
   facebook: {
