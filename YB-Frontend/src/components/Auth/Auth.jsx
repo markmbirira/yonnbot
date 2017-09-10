@@ -1,22 +1,14 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
 
-export default class Auth extends  Component {
+import { browserHistory } from 'react-router';
+
+export default React.createClass({
 
   render() {
     return (
-      <div className="jumbotron">
-
-        <button class="btn btn-lg btn-success">
-          <Link to="auth/login" />
-        </button>
-
-        <button class="btn btn-lg btn-success">
-          <Link to="auth/register" />
-        </button>
-
+      <div className="container">
         {this.props.children}
       </div>
     );
   }
-}
+});

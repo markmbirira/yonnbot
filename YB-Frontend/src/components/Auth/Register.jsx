@@ -38,41 +38,34 @@ class App extends Component {
 
   render () {
     return (
-      <div className="main">
-        <Header />
-        <div className="row main-content">
-          <div className="col-3 mobile-hidden"></div>
-          <div className="col-6">
-            <div className="register-form-container">
-              <p className="register-form-title">
-                <i className="fa fa-user-plus" aria-hidden="true"></i> Register
-              </p>
+      <div className="container">
+        <div className="row">
 
-              <form className="register-form" onSubmit={this._handleRegister}>
-                <span className="register-form-icon-user"><i className="fa fa-user" aria-hidden="true"></i></span>
-                <input type="text" name="username" ref="username" className="register-form-input-username" placeholder="username" required />
-                <span className="register-form-icon-email"><i className="fa fa-envelope" aria-hidden="true"></i></span>
-                <input type="email" name="email" ref="email" className="register-form-input-email" placeholder="email" required />
-                <span className="register-form-icon-password"><i className="fa fa-key" aria-hidden="true"></i></span>
-                <input type="password" name="password" ref="password" className="register-form-input-password" placeholder="password" required />
-                <button className="register-form-button" type="submit">
-                  <span>
-                    <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                  </span>
-                </button>
-                <div className="clear"></div>
-              </form>
+          <div className="main">
 
-              <div className="login-link-section">
-                Existing account? {' '}
-                <button>
-                  <Link to="/auth/login" className="login-link"> Login </Link>
-                  <i className="fa fa-sign-in" aria-hidden="true"></i>
-                </button>
+            <form role="form" onSubmit={this._handleRegister}>
+              <div className="form-group">
+                <label htmlFor="">Username</label>
+                <input type="text" className="form-control" ref="username" />
               </div>
-            </div>
+              <div className="form-group">
+                <label htmlFor="">Email</label>
+                <input type="text" className="form-control" ref="email" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" ref="password" />
+              </div>
+              <button type="submit" className="btn btn btn-primary">
+                Log In
+              </button>
+              <div className="pull-right btn">
+                <Link to="/auth/register">Or register</Link>
+              </div>
+            </form>
+          
           </div>
-          <div className="col-3"></div>
+          
         </div>
       </div>
     );

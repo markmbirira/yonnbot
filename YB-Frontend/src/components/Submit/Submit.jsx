@@ -34,38 +34,30 @@ class App extends Component {
 
   render () {
     return (
-      <div className="main">
-       
-        <div className="row main-content">
-          <div className="col-3 mobile-hidden"></div>
-          <div className="col-6">
-            <div className="submit-form-container">
-              <p className="submit-form-heading">
-                <i className="fa fa-plus" aria-hidden="true"></i>
-                {' '} add a link post
-              </p>
+      <div className="container">
+        <div className="row">
 
-              <form className="submit-form" onSubmit={this._handlePostSubmit}>
-                <span className="submit-form-icon-title"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                <input type="text" name="title" ref="title" className="submit-form-input-title" placeholder="enter title here" required /> <br />
-                <span className="submit-form-icon-url"><i className="fa fa-link" aria-hidden="true"></i></span>
-                <input type="url" name="url" ref="url" className="submit-form-input-url" placeholder="https://example.com/news-item" required /> <br />
-                <span className="submit-form-icon-tags"><i className="fa fa-tags" aria-hidden="true"></i></span>
-                <input type="text" name="text" ref="tag" className="submit-form-input-tags"  placeholder="enter,tags,here,with,commas" /> 
-                <button type="submit" className="submit-form-button">
-                  <span>
-                    <i className="fa fa-paper-plane" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </form>
+          <div className="main">
 
-              <div className="home-link-section">
-                <Link to="/">Home</Link>
+            <form role="form" onSubmit={this._handleRegister}>
+              <div className="form-group">
+                <label htmlFor="">title</label>
+                <input type="text" className="form-control" ref="title" />
               </div>
-
-            </div>
+              <div className="form-group">
+                <label htmlFor="">Email</label>
+                <input type="text" className="form-control" ref="title" />
+              </div>
+              <button type="submit" className="btn btn btn-primary">
+                Submit
+              </button>
+              <div className="pull-right btn">
+                <Link to="/">Cancel</Link>
+              </div>
+            </form>
+          
           </div>
-          <div className="col-3"></div>
+          
         </div>
       </div>
     );

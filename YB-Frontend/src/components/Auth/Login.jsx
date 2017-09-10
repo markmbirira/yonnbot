@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 import profileActionCreators from '../../actions/profileActionCreators';
 
-import Header from '../Common/Header/Header';
 import './Login.css';
 
 class App extends Component {
@@ -34,37 +33,30 @@ class App extends Component {
 
   render () {
     return (
-      <div className="main">
-        <Header />
-        <div className="row main-content">
-          <div className="col-3 mobile-hidden"></div>
-          <div className="col-6">
-            <div className="login-form-container">
-              <p className="login-form-title">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
-              </p>
+      <div className="container">
+        <div className="row">
 
-              <form className="login-form" onSubmit={this._handleLogin}>
-                <span className="login-form-icon-user"><i className="fa fa-user" aria-hidden="true"></i></span>
-                <input type="text" name="username" ref="username" className="login-form-input-username" placeholder="username" required />
-                <span className="login-form-icon-key"><i className="fa fa-key" aria-hidden="true"></i></span>
-                <input type="password" name="password" ref="password" className="login-form-input-password" placeholder="password" required />
-                <button className="login-form-button" type="submit" value="login">
-                  <i className="fa fa-lock" aria-hidden="true"></i>
-                </button>
-                <div className="clear"></div>
-              </form>
+          <div className="main">
 
-              <div className="register-link-section">
-                No account? {' '}
-                <button>
-                  <Link to="/auth/register" className="register-link"> Register </Link>
-                  <i className="fa fa-user-plus" aria-hidden="true"></i>
-                </button>
+            <form role="form" onSubmit={this._handleLogin}>
+              <div className="form-group">
+                <label htmlFor="">Username</label>
+                <input type="text" className="form-control" ref="username" />
               </div>
-            </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" ref="password" />
+              </div>
+              <button type="submit" className="btn btn btn-primary">
+                Log In
+              </button>
+              <div className="pull-right btn">
+                <Link to="/auth/register">Or register</Link>
+              </div>
+            </form>
+          
           </div>
-          <div className="col-3"></div>
+          
         </div>
       </div>
     );
