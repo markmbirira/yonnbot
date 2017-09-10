@@ -3,15 +3,16 @@ import { connect } from 'react-redux';
 import { browserhistory } from 'react-router';
 
 import postActionCreators from '../../actions/postActionCreators';
-
-import Posts from './Posts';
-import './Home.css';
-
+import Header from '../Common/Header/Header.jsx';
+import Footer from '../Common/Footer/Footer.jsx';
 
 class App extends Component {
+  componentWillMount() {
+    
+  }
 
   componentDidMount() {
-    console.log('Home component mounted');
+    console.log('Home.jsx just mounted');
     this.props.fetchAllPosts(this.props.page);
     window.scrollTo(0,0);
   }
@@ -29,23 +30,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3"></div>
-          <Posts 
-            posts={this.props.posts}
-            page={this.props.page}
-            pages={this.props.pages}
-            limit={this.props.limit}
-            total={this.props.total}
-            fetchAllPosts={this.props.fetchAllPosts}
-          />
-          <div className="col-md-3"></div>
-        </div>
+      <div>
+        <Header />
+        
+        { this.props.children }
+
+        <Footer />
       </div>
     );
   }
 }
+
 
 const mapStateToProps = (state) => {
   console.log('state is ', state);

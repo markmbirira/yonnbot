@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import postActionCreators from '../../actions/postActionCreators';
 import commentActionCreators from '../../actions/commentActionCreators';
 
-import Header from '../Common/Header/Header';
 import CommentPost from './CommentPost';
 import CommentComments from './CommentComments';
 
@@ -54,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-        <Header />
+        
 
         <div className="row main-content">
           <div className="col-3"></div>

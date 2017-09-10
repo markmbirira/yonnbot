@@ -90,24 +90,18 @@ class Posts extends Component {
   render() {
     
     return (
-      <div className="row">
-        <div className="col-4 mobile-hidden">
-          
-        </div>
-        <div  className="posts col-8">
-          {
-            (!this.props.posts) ?
-              this._spinner() :
-              console.log('fetching complete')
-          }
-          {
-            this._renderPosts()
-          }
-          {
-            this._renderNavigator()
-          }
-          
-        </div>
+      <div  className="col-md-6">
+        {
+          (!this.props.posts) ?
+            this._spinner() :
+            console.log('fetching complete')
+        }
+        {
+          this._renderPosts()
+        }
+        {
+          this._renderNavigator()
+        }  
       </div>
     );
   }

@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 import postActionCreators from  '../../actions/postActionCreators';
 
-import Header from '../Common/Header/Header';
 import './Submit.css';
 
 class App extends Component {
@@ -36,7 +35,7 @@ class App extends Component {
   render () {
     return (
       <div className="main">
-        <Header />
+       
         <div className="row main-content">
           <div className="col-3 mobile-hidden"></div>
           <div className="col-6">
