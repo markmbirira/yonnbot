@@ -24,13 +24,12 @@ export const Comments = {
 
 // Users
 export const Users = {
-  LOGIN_USER_REQUEST: "login current user start session",
-  LOGIN_USER_RESPONSE: "receive the response of user login to start session",
+  IS_LOGGING_IN: 'user is logging in',
+  REDIRECT_ON_LOGIN: 'redirect on logging in',
+  IS_LOGGING_OUT: 'user is logging out',
+};
 
-  LOGOUT_USER_REQUEST: "logout current user end session to end session",
-  LOGOUT_USER_RESPONSE: "receive the response of user logout end session",
-
-  SIGNUP_USER_REQUEST: "sign up the current user start session",
-  SIGNUP_USER_RESPONSE: "receive the response of user register and start session"
+// users
+export const Auth = {
+  SET_REDIRECT_URL: "set URL for subsequent redirection"
 }
-

@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import Home from './Home/Home';
 import Container from './Container/Container';
 import Comment from './Comment/Comment';
-import Auth from './Auth/Auth';
+import AuthRequired from './Auth/AuthRequired';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
@@ -16,13 +16,12 @@ const Routes = (props) => (
 
       <IndexRoute component={Home} />
 
-      <Route path="/submit" component={Submit} />
       <Route path="/post/:postId/:title" component={Comment} />
+      <Route path="/register" component={Register} />
+      <Route path="/logout" component={Logout} />
 
-      <Route path="/auth" component={Auth} >
-        <Route path="login" component={Login} />
-        <Route path="register" component={Register} />
-        <Route path="logout" component={Logout} />
+      <Route component={AuthRequired} >
+        <Route path="/submit" component={Submit} />
       </Route>
 
     </Route>

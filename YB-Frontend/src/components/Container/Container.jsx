@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { browserhistory } from 'react-router';
 
 import postActionCreators from '../../actions/postActionCreators';
+import authActionCreators from '../../actions/authActionCreators';
 import Header from '../Common/Header/Header.jsx';
 import Footer from '../Common/Footer/Footer.jsx';
 
 class App extends Component {
-  componentWillMount() {
-    
-  }
 
   componentDidMount() {
     console.log('Home.jsx just mounted');
@@ -17,15 +15,20 @@ class App extends Component {
     window.scrollTo(0,0);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.redirectTo) {
-      browserhistory.push('/');
-    }
-  }
+  componentDidUpdate(prevProps) {
 
-  componentDidUpdate(newProps) {
-    console.log('New props are ', newProps);
     window.scrollTo(0,0);
+
+    const { navigateTo, redirectURL } = this.props;
+    const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
+    const isLoggingIn  = !prevProps.isLoggedIn && this.props.isLoggedIn;
+
+    if (isLoggingIn) {
+      console.log('navigating after login');
+      navigateTo(redirectURL);
+    } else if (isLoggingOut) {
+      browserhistory.replace('/');
+    }
   }
 
   render() {
@@ -50,20 +53,20 @@ const mapStateToProps = (state) => {
     pages: Number(state.posts.pages),
     total: Number(state.posts.total),
     limit: Number(state.posts.limit),
-    user: state.user
+    isLoggedIn: state.auth.isLoggedIn,
+    redirectURL: state.auth.redirectURL,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllPosts: (page) => dispatch(postActionCreators.fetchAllPosts(page)),
-    sendNewPost: (title, url) => {
-      dispatch(postActionCreators.sendNewPost(title, url))
-    }
+    sendNewPost: (title, url) => dispatch(postActionCreators.sendNewPost(title, url)),
+    navigateTo: (redirectURL) => dispatch(authActionCreators.navigateTo(redirectURL)),
   }
 }
 
 
-const Home = connect(mapStateToProps, mapDispatchToProps)(App);
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
 
-export default Home;
+export default Container;

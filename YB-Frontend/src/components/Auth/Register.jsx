@@ -60,7 +60,7 @@ class App extends Component {
                 Log In
               </button>
               <div className="pull-right btn">
-                <Link to="/auth/register">Or register</Link>
+                <Link to="/auth/login">Or login</Link>
               </div>
             </form>
           
