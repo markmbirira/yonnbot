@@ -27,6 +27,7 @@ export const Users = {
   LOGIN_REQUEST: 'request JWT from API',
   LOGIN_SUCCESS: 'successful login attempt',
   LOGIN_ERROR: 'failed login attempt',
+  LOGOUT: 'logout the user'
 };
 
 // users

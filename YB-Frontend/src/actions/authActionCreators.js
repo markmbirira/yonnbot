@@ -42,12 +42,9 @@ const authActionCreators = {
   },
 
   logoutUser() {
-    return (dispatch) => {
-      dispatch({ type: Users.LOGOUT_USER_REQUEST });
-      API.apiUsers.logoutUser().then(
-        (userinfo) => dispatch({ type: Users.LOGOUT_USER_RESPONSE, success: true , userinfo }),
-        (error) => dispatch({ type: Users.LOGOUT_USER_RESPONSE, success: false, error })
-      );
+    return {
+      type: Users.LOGOUT,
+      isLoggedIn: false,
     }
   },
 }

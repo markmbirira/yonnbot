@@ -39,7 +39,7 @@ const auth = (state = initialState, action) => {
 		  }
 
 		case Users.LOGIN_ERROR:
-		  console.log('logoutUser loading error');
+		  console.log('login errpr loading error');
 		    return state;
 		    
 		case Users.SIGNUP_USER_REQUEST:
@@ -55,14 +55,8 @@ const auth = (state = initialState, action) => {
 		    return { success: false };
 		  }
 
-		case Users.IS_LOGGING_OUT:
-		  if (action.success) {
-		    console.log('success logging user out', action.userinfo);
-		    return action.userinfo;
-		  } else {
-		    console.log('error logging user out', action.error);
-		    return state;
-		  }
+		case Users.LOGOUT:
+		  return {...state, isLoggedIn: false }
 
 		default:
 			return state;

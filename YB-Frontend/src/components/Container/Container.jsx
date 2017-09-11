@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
-import postActionCreators from '../../actions/postActionCreators';
 import authActionCreators from '../../actions/authActionCreators';
+
 import Header from '../Common/Header/Header.jsx';
 import Footer from '../Common/Footer/Footer.jsx';
 
@@ -47,8 +47,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllPosts: (page) => dispatch(postActionCreators.fetchAllPosts(page)),
-    sendNewPost: (title, url) => dispatch(postActionCreators.sendNewPost(title, url)),
     navigateTo: (redirectURL) => dispatch(authActionCreators.navigateTo(redirectURL)),
   }
 }
