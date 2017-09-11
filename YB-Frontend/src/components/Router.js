@@ -9,7 +9,7 @@ import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import Submit from './Submit/Submit';
-import NotFound from './Common/NotFound';
+import NotFound from './Common/Errors/NotFound';
 
 const Routes = (props) => (
   <Router {...props}>
