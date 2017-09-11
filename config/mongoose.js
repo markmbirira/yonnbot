@@ -9,7 +9,7 @@ module.exports = function() {
 
   db.once('open', function() {
     console.log('connected to mongodb database');
-  });    
+  });  
 
   db.on('disconnected', function () {
     //Reconnect on timeout

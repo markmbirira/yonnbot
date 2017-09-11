@@ -15,9 +15,9 @@ export default class Header extends Component {
             <li><Link to="/submit">Submit</Link></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
-            <li><Link to="/auth/login"><span className="glyphicon glyphicon-log-in"></span> login</Link></li>
-            <li><Link to="/auth/register"><span className="glyphicon glyphicon-user-sign-in"></span> register</Link></li>
-            <li><Link to="/auth/logout"><span className="glyphicon glyphicon-log-out"></span> logout</Link></li>
+            <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> login</Link></li>
+            <li><Link to="/register"><span className="glyphicon glyphicon-user-sign-in"></span> register</Link></li>
+            <li><Link to="/logout"><span className="glyphicon glyphicon-log-out"></span> logout</Link></li>
           </ul>
         </div>
       </nav>

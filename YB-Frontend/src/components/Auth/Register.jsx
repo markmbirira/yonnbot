@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 import profileActionCreators from '../../actions/profileActionCreators';
 
-import Header from '../Common/Header/Header';
 import './Register.css';
 
 class App extends Component {

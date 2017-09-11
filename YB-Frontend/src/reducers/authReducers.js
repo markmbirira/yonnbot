@@ -8,8 +8,10 @@ const initialState = {
 const auth = (state = initialState, action) => {
 	switch (action.type) {
 		case Auth.SET_REDIRECT_URL:
-			let newState = {...state, redirectURL: action.currentURL }
-			return newState;
+			return {...state, redirectURL: action.currentURL }
+
+		case Auth.REDIRECT_ON_LOGIN:
+			return {...state, redirectURL: action.redirectURL };
 
 		default:
 			return state;

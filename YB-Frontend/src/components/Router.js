@@ -18,6 +18,7 @@ const Routes = (props) => (
 
       <Route path="/post/:postId/:title" component={Comment} />
       <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
       <Route path="/logout" component={Logout} />
 
       <Route component={AuthRequired} >

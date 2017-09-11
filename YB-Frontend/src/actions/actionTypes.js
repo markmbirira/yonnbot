@@ -25,11 +25,11 @@ export const Comments = {
 // Users
 export const Users = {
   IS_LOGGING_IN: 'user is logging in',
-  REDIRECT_ON_LOGIN: 'redirect on logging in',
   IS_LOGGING_OUT: 'user is logging out',
 };
 
 // users
 export const Auth = {
-  SET_REDIRECT_URL: "set URL for subsequent redirection"
+  SET_REDIRECT_URL: "set URL for subsequent redirection",
+  REDIRECT_ON_LOGIN: 'redirect on logging in',
 }
