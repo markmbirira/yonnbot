@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-import profileActionCreators from '../../actions/profileActionCreators';
+import authActionCreators from '../../actions/authActionCreators';
 
 import './Login.css';
 
@@ -72,7 +72,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     loginUser: (username, password) => {
-      dispatch(profileActionCreators.loginUser(username, password));
+      dispatch(authActionCreators.loginUser(username, password));
     }
   }
 }

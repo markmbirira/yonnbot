@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { browserHistory } from 'react-router';
-import authActionCreators from '../../actions/authActionCreators';
 import LoginRegisterLinks from './LoginRegisterLinks';
 
 class Auth extends React.Component {

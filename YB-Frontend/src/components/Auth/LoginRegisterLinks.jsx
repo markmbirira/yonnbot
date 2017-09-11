@@ -8,9 +8,9 @@ import './Login.css';
 class App extends Component {
 
 	componentDidMount(){
-		let { currentUrl, setRedirectUrl } = this.props;
+		let { currentURL, setRedirectUrl } = this.props;
 		console.log('setting redirect URL');
-		setRedirectUrl(currentUrl);
+		setRedirectUrl(currentURL);
 	}
 
 	render() {

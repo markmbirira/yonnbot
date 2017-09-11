@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-import profileActionCreators from '../../actions/profileActionCreators';
+import authActionCreators from '../../actions/authActionCreators';
 
 import './Register.css';
 
@@ -80,7 +80,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     registerUser: (username, email, password) => {
-      dispatch(profileActionCreators.registerUser(username, email, password));
+      dispatch(authActionCreators.registerUser(username, email, password));
     }
   }
 }

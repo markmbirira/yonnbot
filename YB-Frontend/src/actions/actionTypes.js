@@ -24,8 +24,9 @@ export const Comments = {
 
 // Users
 export const Users = {
-  IS_LOGGING_IN: 'user is logging in',
-  IS_LOGGING_OUT: 'user is logging out',
+  LOGIN_REQUEST: 'request JWT from API',
+  LOGIN_SUCCESS: 'successful login attempt',
+  LOGIN_ERROR: 'failed login attempt',
 };
 
 // users
