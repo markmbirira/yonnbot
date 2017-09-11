@@ -24,7 +24,7 @@ class App extends Component {
 								<Link to="/login" className="btn btn-lg btn-success pull-left login-button">
 									Login
 								</Link>
-								<Link to="/" className="btn btn-lg btn-warning pull-right cancel-button">
+								<Link to="/" className="btn btn-lg btn-danger pull-right cancel-button ">
 									Cancel
 								</Link>	
 							</div>
