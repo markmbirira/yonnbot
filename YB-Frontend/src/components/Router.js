@@ -9,6 +9,7 @@ import Register from './Auth/Register';
 import Login from './Auth/Login';
 import Logout from './Auth/Logout';
 import Submit from './Submit/Submit';
+import NotFound from './Common/NotFound';
 
 const Routes = (props) => (
   <Router {...props}>
@@ -24,6 +25,8 @@ const Routes = (props) => (
       <Route component={AuthRequired} >
         <Route path="/submit" component={Submit} />
       </Route>
+
+      <Route path="*" component={NotFound} />
 
     </Route>
   </Router>
