@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import  authActionCreators from '../../actions/authActionCreators';
-import './Login.css';
+import './Auth.css';
 
 class App extends Component {
 
@@ -21,11 +21,13 @@ class App extends Component {
 						<div className="col-md-3 .mobile-hidden"></div>
 						<div className="col-md-6">
 							<div className="button-container">
-								<Link to="/login" className="btn btn-lg btn-success pull-left login-button">
+								<Link to="/login" className="btn btn-default pull-left login-button">
+									<i className="fa fa-sign-in" aria-hidden="true"></i>{' '}
 									Login
 								</Link>
-								<Link to="/" className="btn btn-lg btn-danger pull-right cancel-button ">
-									Cancel
+								<Link to="/" className="btn btn-default pull-right cancel-button ">
+									Cancel{' '}
+									<i className="fa fa-times" aria-hidden="true"></i>
 								</Link>	
 							</div>
 						</div>

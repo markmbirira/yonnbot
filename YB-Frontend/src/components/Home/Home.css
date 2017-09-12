@@ -25,7 +25,7 @@
   display: flex;
   padding-bottom: 2px;
   cursor: pointer;
-  box-shadow: 1px 1px 2px 2px burlywood;
+  box-shadow: 1px 1px 2px 2px #dddddd;
 }
 
 .posts-menu a {

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import authActionCreators from '../../actions/authActionCreators';
 
-import './Register.css';
+import './Auth.css';
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class App extends Component {
 
           <div className="main">
 
-            <form role="form" onSubmit={this._handleRegister}>
+            <form role="form" onSubmit={this._handleRegister} className="register-form">
               <div className="form-group">
                 <label htmlFor="">Username</label>
                 <input type="text" className="form-control" ref="username" />
@@ -56,7 +56,7 @@ class App extends Component {
                 <input type="password" className="form-control" ref="password" />
               </div>
               <button type="submit" className="btn btn btn-primary">
-                Log In
+                Register
               </button>
               <div className="pull-right btn">
                 <Link to="/login">Or login</Link>
