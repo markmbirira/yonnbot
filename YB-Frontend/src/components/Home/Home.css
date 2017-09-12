@@ -147,3 +147,11 @@
 .post-item-comments-comments:hover {
   color: limegreen;
 }
+
+
+/* Grid Layout for the Posts */
+.post-grid-item {
+  border: 1px solid black;
+  max-height: 300px;
+  overflow: hidden;
+}

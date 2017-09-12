@@ -2,14 +2,15 @@ import update from 'react-addons-update';
 
 import { Posts } from '../actions/actionTypes';
 
-const initialState = [{
+const initialState = {
   docs: [],
   page: 0,
   pages: 0,
   limit: 0,
   total: 0,
-  submitLoading: false
-}];
+  submitLoading: false,
+  display: 'grid'
+};
 
 const posts = (state = initialState, action) => {
   switch (action.type) {
@@ -19,7 +20,7 @@ const posts = (state = initialState, action) => {
     case Posts.RECEIVE_ALL_POSTS:
       if (action.success) {
         console.log('success fetching all posts:',action.posts);
-        return action.posts;
+        return {...action.posts, display: 'grid'};
       } else {
         console.log('error fetching all posts:',action.error);
         return state;
