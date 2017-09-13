@@ -16,14 +16,16 @@ export default class App extends Component {
 	}
 
 	renderThumbnail() {
-    var src;
+    let img;
     if(!this.props.embedly_data.thumbnail_url) {
-      src = '/img/thumbnail_404.svg';
+      img = null;
     } else {
-      src = this.props.embedly_data.thumbnail_url;
+      img = <Link to={`post/${this.props.slug_url}`} >
+      				<img className="card-img-top" src={ this.props.embedly_data.thumbnail_url } alt="img" />
+      			</Link>
     }
 
-    return src;
+    return img;
   }
 
   renderDate() {
@@ -36,9 +38,7 @@ export default class App extends Component {
 
 		return (
 		  <div className="card grid-item">
-	      <div className="card-img-top">
-	      	{/* <img src={ this.renderThumbnail() } alt="img" /> */}
-	      </div>
+	      { this.renderThumbnail() }
 	      <div className="card-title">
 	            {this.props.title}
 	      </div>
