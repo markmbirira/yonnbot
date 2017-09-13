@@ -6,6 +6,8 @@ import { browserHistory } from 'react-router';
 
 import Routes from './components/Router';
 
+import 'jquery/src/jquery';
+import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 

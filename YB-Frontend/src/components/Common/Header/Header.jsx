@@ -37,7 +37,7 @@ class App extends Component {
             <li className="active"><Link to="/">Home</Link></li>
             <Link className="btn btn-default navbar-btn" to="/submit">
               <i className="fa fa-plus" aria-hidden="true"></i>{' '}
-              Submit
+              New Item
             </Link>
           </ul>
           {navbarRight}
