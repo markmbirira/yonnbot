@@ -1,3 +1,7 @@
 .card {
-	max-width: 300px;
+  max-width: 200px;
+}
+
+.loading-container {
+  margin: 18% 45%;
 }

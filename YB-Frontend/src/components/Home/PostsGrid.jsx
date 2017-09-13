@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
 import Masonry from 'masonry-layout';
 
 import postActionCreators from '../../actions/postActionCreators';
-import PostsGridItem from './PostsGridItem';;
+import PostsGridItem from './PostsGridItem';
+import './PostsGrid.css';
 
 export default class App extends Component {
 
@@ -13,6 +15,13 @@ export default class App extends Component {
 
 	componentDidMount(){
 		this.props.fetchAllPosts();
+
+		var grid = document.querySelector('.grid');
+		var msnry = new Masonry( grid, {
+		  // options... 
+		  itemSelector: '.grid-item',
+		  columnWidth: 50
+		});
 	}
 
 	componentDidUpdate(prevProps) {
@@ -46,9 +55,9 @@ export default class App extends Component {
       return post_items;
     } else {
       return (
-        <div>
-          Loading... 
-        </div>
+      	<div className="loading-container">
+      		<ReactLoading type={"bubbles"} color={"darkorange"} height={100} width={60} />
+      	</div>
       );
     }
   }
