@@ -29,20 +29,30 @@ class App extends Component {
     }
 
     return (
-      <nav className="navbar navbar-default main-navbar">
+      <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link className="navbar-brand" to="#">YonnBot</Link>
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <Link className="navbar-brand" to="/">YonnBot</Link>
           </div>
-          <ul className="nav navbar-nav">
-            <li className="active"><Link to="/">Home</Link></li>
-            <Link className="btn btn-default navbar-btn" to="/submit">
-              <i className="fa fa-plus" aria-hidden="true"></i>{' '}
-              New Item
-            </Link>
-          </ul>
-          {navbarRight}
+          <div id="main-navbar" className="navbar-collapse collapse">
+            <ul className="nav navbar-nav">
+              <li className="active"><Link to="/">Home</Link></li>
+              <Link className="btn btn-default navbar-btn" to="/submit">
+                <i className="fa fa-plus" aria-hidden="true"></i>{' '}
+                New Item
+              </Link>
+            </ul>
+            {navbarRight}
+          </div>
+          {/* nav-collapse */}
         </div>
+        {/* container-fluid */}
       </nav>
     );
   }
