@@ -11,14 +11,18 @@ export default class App extends Component {
 		this._renderPosts = this._renderPosts.bind(this);
 	}
 
-	componentDidMount() {
+	componentDidMount(){
 		this.props.fetchAllPosts();
+	}
+
+	componentDidUpdate(prevProps) {
+		// Activate masonry plugin when posts are loaded
 
 		var grid = document.querySelector('.grid');
 		var msnry = new Masonry( grid, {
 		  // options... 
 		  itemSelector: '.grid-item',
-		  columnWidth: 200
+		  columnWidth: 50
 		});
 	}
 

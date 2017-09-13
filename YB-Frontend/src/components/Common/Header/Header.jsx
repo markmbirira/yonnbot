@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import './Header.css';
+
 import SearchButton from './SearchButton';
 
 class App extends Component {
