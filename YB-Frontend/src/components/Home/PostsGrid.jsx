@@ -8,17 +8,19 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<div className="container">
+			<div className="container-fluid">
 				<div className="row">
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
-					<PostsGridItem />
+					<div className="card-columns">
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+						<PostsGridItem />
+					</div>
 				</div>
 			</div>
 		);
