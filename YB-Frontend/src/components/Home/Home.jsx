@@ -36,7 +36,7 @@ class App extends Component {
   _renderPosts() {
     let { display } = this.props;
     if (display === 'grid') {
-      return <PostsGrid />
+      return <PostsGrid {...this.props} />
     } else {
       return  <div className="container">
                 <div className="row">
@@ -50,7 +50,7 @@ class App extends Component {
 
   render() {
     return (
-      <PostsGrid />
+      <PostsGrid {...this.props} />
     );
   }
 }
