@@ -5,10 +5,16 @@ import { browserhistory } from 'react-router';
 import postActionCreators from '../../actions/postActionCreators';
 
 import Posts from './Posts';
+import PostsGrid from './PostsGrid';
 import './Home.css';
 
 
 class App extends Component {
+
+  constructor(){
+    super(...arguments);
+    this._renderPosts = this._renderPosts.bind(this);
+  }
 
   componentDidMount() {
     console.log('Home component mounted');
@@ -27,22 +33,24 @@ class App extends Component {
     window.scrollTo(0,0);
   }
 
+  _renderPosts() {
+    let { display } = this.props;
+    if (display === 'grid') {
+      return <PostsGrid />
+    } else {
+      return  <div className="container">
+                <div className="row">
+                  <div className="col-md-3"></div>
+                  <Posts {...this.props} />
+                  <div className="col-md-3"></div>
+                </div>
+              </div>
+    }
+  }
+
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3"></div>
-          <Posts 
-            posts={this.props.posts}
-            page={this.props.page}
-            pages={this.props.pages}
-            limit={this.props.limit}
-            total={this.props.total}
-            fetchAllPosts={this.props.fetchAllPosts}
-          />
-          <div className="col-md-3"></div>
-        </div>
-      </div>
+      <PostsGrid />
     );
   }
 }
@@ -55,7 +63,8 @@ const mapStateToProps = (state) => {
     pages: Number(state.posts.pages),
     total: Number(state.posts.total),
     limit: Number(state.posts.limit),
-    user: state.user
+    user: state.user,
+    display: state.posts.display
   }
 };
 
