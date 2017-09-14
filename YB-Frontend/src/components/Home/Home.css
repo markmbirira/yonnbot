@@ -10,12 +10,6 @@
   clear: both;
 }
 
-.post-spinner {
-  color: #fff;
-  font-size: medium;
-  margin-left: 15px;
-}
-
 .post {
   background-color: rgb(255, 255, 255) !important;
   margin: 0px auto 10px auto;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 import moment from 'moment';
 
 import CommentPostThumbnail from './CommentPostThumbnail';
@@ -17,8 +17,8 @@ export default class CommentPost extends Component {
             <span className="comment-post-readmore"><a href={this.props.url} target="blank"> read &rarr;</a></span>
           </p>
           <CommentPostThumbnail  thumbnail_url={this.props.embedly_data.thumbnail_url} />
-          <p>
-              by hercules15 {' '}
+          <p className="comment-post-meta">
+              via <Link to="#">@hercules15</Link> {' '}
               <span className="comment-post-created">
                 { moment(this.props.created).fromNow() }
               </span> {' '}

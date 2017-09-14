@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import ReactLoading from 'react-loading';
 
 import postActionCreators from '../../actions/postActionCreators';
 import commentActionCreators from '../../actions/commentActionCreators';
@@ -42,9 +43,9 @@ class App extends Component {
         />
       );
     } else {
-      commentpost = <div className="post-spinner">
-        fetching
-      </div>
+      commentpost = <div className="loading-container">
+                      <ReactLoading type={"bubbles"} color={"darkorange"} height={100} width={60} />
+                    </div>
     }
     return commentpost;
   }
@@ -52,11 +53,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="container">
         
 
-        <div className="row main-content">
-          <div className="col-3"></div>
+        <div className="row">
+          <div className="col-3 mobile-hidden"></div>
           <div className="comment-content col-6">
             {
               this._renderCommentPost()
@@ -69,7 +70,7 @@ class App extends Component {
               comments={ this.props.comments }
             />
           </div>
-          <div className="col-3"></div>
+          <div className="col-3 mobile-hidden"></div>
         </div>
         <div className="clear"></div>
 

@@ -25,8 +25,8 @@ export default class CommentComments extends Component {
       );
     } else {
       commentitems = <div className="post-spinner">
-        fetching
-      </div>
+                      No comments yet.
+                    </div>
     }
     return commentitems;
   }
@@ -63,9 +63,10 @@ export default class CommentComments extends Component {
     return (
       <div>
         <div className="comment-comment">
-          <div className="comment-form">
-            <input ref="comment_text" className="comment-form-input" required />
-            <button className="comment-form-button" onClick={this._handleCommentSubmit}>
+          <div className="form-group form">
+            <input ref="comment_text" className="form-control" required />
+            <br />
+            <button className="form-control btn btn-default btn-lg" onClick={this._handleCommentSubmit}>
               <i className="fa fa-comment-o" aria-hidden="true"></i>
             </button>
           </div>
