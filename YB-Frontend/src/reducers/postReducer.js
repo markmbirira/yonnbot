@@ -8,7 +8,6 @@ const initialState = {
   pages: 0,
   limit: 0,
   total: 0,
-  display: 'list'
 };
 
 const posts = (state = initialState, action) => {
@@ -20,7 +19,7 @@ const posts = (state = initialState, action) => {
     case Posts.RECEIVE_ALL_POSTS:
       if (action.success) {
         console.log('success fetching all posts:',action.posts);
-        return {...action.posts, display: 'list'};
+        return {...action.posts };
       } else {
         console.log('error fetching all posts:',action.error);
         return state;
@@ -38,12 +37,6 @@ const posts = (state = initialState, action) => {
         console.log('error fetching new post');
         return state;
       }
-
-    case Posts.SET_DISPLAY_LIST:
-      return {...state, display: action.displayState }
-
-    case Posts.SET_DISPLAY_GRID:
-      return {...state, display: action.displayState }
 
     default:
       return state;

@@ -14,6 +14,7 @@ class App extends Component {
 
   constructor(){
     super(...arguments);
+
     this._renderPosts = this._renderPosts.bind(this);
   }
 
@@ -30,9 +31,9 @@ class App extends Component {
     } else {
       console.log("loading posts...");
       this.props.fetchAllPosts(this.props.page);
+      this.props.toggleDisplay("list");
     }
 
-  
     window.scrollTo(0,0);
   }
 
@@ -47,7 +48,6 @@ class App extends Component {
     window.scrollTo(0,0);
   }
 
-  
 
   /* render our posts depending on the display status */
 
@@ -59,7 +59,7 @@ class App extends Component {
 
       return <PostsGrid {...this.props} />
 
-    } else if (display === 'list') {
+    } else {
 
       return  <div className="container">
                 <div className="row">
@@ -89,7 +89,7 @@ const mapStateToProps = (state) => {
     pages: Number(state.posts.pages),
     total: Number(state.posts.total),
     limit: Number(state.posts.limit),
-    display: state.posts.display,
+    display: state.toggleDisplay.display,
     user: state.user,
   }
 };
@@ -98,6 +98,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllPosts: (page) => dispatch(postActionCreators.fetchAllPosts(page)),
     sendNewPost: (title, url) => dispatch(postActionCreators.sendNewPost(title, url)),
+    toggleDisplay: (toggleState) => dispatch(postActionCreators.toggleDisplay(toggleState))
   }
 }
 

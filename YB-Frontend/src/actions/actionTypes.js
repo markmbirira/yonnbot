@@ -1,9 +1,9 @@
 // Posts
 export const Posts = {
   FETCH_ALL_POSTS: "fetch all posts",
-  FETCH_SINGLE_POST : "fetch single post",
-
   RECEIVE_ALL_POSTS: "receive all posts",
+
+  FETCH_SINGLE_POST : "fetch single post",
   RECEIVE_SINGLE_POST: "receive single post",
 
   SEND_NEW_POST: 'send a new post to the API',

@@ -16,28 +16,14 @@ class App extends Component {
 
   _handleGridClick(event) {
   	console.log('grid clicked');
-    if (this.props.display === "list") {
-      console.log("setting display to grid");
-      this.props.toggleDisplay("grid");
-
-      return true;
-    } else {
-      return false;
-    }
+    this.props.toggleDisplay("grid");
   }
 
   /* toggle post display to list */
 
   _handleListClick(event) {
   	console.log("list clicked");
-    if (this.props.display === "grid") {
-      console.log("setting display to list");
-      this.props.toggleDisplay("list");
-
-      return true;
-    } else {
-      return false;
-    }
+    this.props.toggleDisplay("list");
   }
 
 	render() {
@@ -62,7 +48,7 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		display: state.posts.display
+		display: state.toggleDisplay.display
 	}
 }
 const mapDispatchToProps = (dispatch, ownProps) => {

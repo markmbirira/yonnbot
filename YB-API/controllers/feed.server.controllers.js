@@ -14,7 +14,7 @@ exports.pagedPosts = function(req, res, next) {;
     sort: { 'created': -1 },
     // populate: 'author',
     page: req.param('page') || 1,
-    limit: 40
+    limit: 20
   };
 
   Post.paginate(query, options, function(err, posts) {

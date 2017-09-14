@@ -3,7 +3,6 @@ import { Posts } from './actionTypes'; // post action types/constants
 import API from '../api';
 
 let postActionCreators = {
-  // Thunk action creators/async dispatches
   fetchAllPosts(page) {
     return (dispatch) => {
       dispatch({ type: Posts.FETCH_ALL_POSTS });
@@ -35,7 +34,9 @@ let postActionCreators = {
   },
 
   toggleDisplay(displayState) {
-    if (String(displayState) === "grid") {
+    const GRID = "grid";
+    const LIST = "list";
+    if (displayState === GRID) {
       return {
         type: Posts.SET_DISPLAY_GRID,
         displayState: "grid"
