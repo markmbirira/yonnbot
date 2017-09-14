@@ -18,8 +18,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('Home component mounted');
-    this.props.fetchAllPosts(this.props.page);
+    console.log('Home component just mounted');
+
+    /* check if there are posts in state */
+
+    let { posts } = this.props;
+    console.log("Posts are ", posts);
+
+    if (posts.length > 0){
+      console.log("posts already loaded");
+    } else {
+      console.log("loading posts...");
+      this.props.fetchAllPosts(this.props.page);
+    }
+
+  
     window.scrollTo(0,0);
   }
 

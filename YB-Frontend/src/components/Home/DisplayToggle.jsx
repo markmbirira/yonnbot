@@ -15,6 +15,7 @@ class App extends Component {
 	/* toggle post display to grid */
 
   _handleGridClick(event) {
+  	console.log('grid clicked');
     if (this.props.display === "list") {
       console.log("setting display to grid");
       this.props.toggleDisplay("grid");
@@ -28,6 +29,7 @@ class App extends Component {
   /* toggle post display to list */
 
   _handleListClick(event) {
+  	console.log("list clicked");
     if (this.props.display === "grid") {
       console.log("setting display to list");
       this.props.toggleDisplay("list");
@@ -39,14 +41,16 @@ class App extends Component {
   }
 
 	render() {
+		let { display } =this.props;
+
 		return (
 			<div className="display-toggle-container">
 				<div className="">
 					<div className="btn-group">
-						<button type="button" className="btn-button" onclick={this._handleListClick}>
+						<button type="button" className="btn-button" onClick={this._handleListClick} >
 							<i className="fa fa-list"></i>
 						</button>
-						<button type="button" className="btn-button" onclick={this._shandleGridClick}>
+						<button type="button" className="btn-button" onClick={this._handleGridClick} >
 							<i className="fa fa-th"></i>
 						</button>
 					</div>

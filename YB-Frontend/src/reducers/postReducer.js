@@ -8,7 +8,6 @@ const initialState = {
   pages: 0,
   limit: 0,
   total: 0,
-  submitLoading: false,
   display: 'list'
 };
 
@@ -39,6 +38,12 @@ const posts = (state = initialState, action) => {
         console.log('error fetching new post');
         return state;
       }
+
+    case Posts.SET_DISPLAY_LIST:
+      return {...state, display: action.displayState }
+
+    case Posts.SET_DISPLAY_GRID:
+      return {...state, display: action.displayState }
 
     default:
       return state;

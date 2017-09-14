@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
 
 import jquery from 'jquery';
 import PostItem from './PostItem';
+import  './PostsGrid.css';
 
 
 class Posts extends Component {
@@ -80,8 +82,8 @@ class Posts extends Component {
       return post_items;
     } else {
       return (
-        <div className="post-spinner">
-          fetching  
+        <div className="loading-container">
+          <ReactLoading type={"bubbles"} color={"darkorange"} height={100} width={60} />
         </div>
       );
     }

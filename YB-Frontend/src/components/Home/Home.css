@@ -152,7 +152,7 @@
 /* Display Toggle  */
 .display-toggle-container {
   position: absolute;
-  top: 9%;
+  top: 12%;
   right: 6px;
   z-index: 3;
   background-color: #e7e7e7;

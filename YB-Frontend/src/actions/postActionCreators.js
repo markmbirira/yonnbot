@@ -34,13 +34,19 @@ let postActionCreators = {
     }
   },
 
-  // Regular Action Creator
-  methodName(params) {
-    return {
-      type: "ACTION_TYPE",
-      payload: "action payload"
+  toggleDisplay(displayState) {
+    if (String(displayState) === "grid") {
+      return {
+        type: Posts.SET_DISPLAY_GRID,
+        displayState: "grid"
+      }
+    } else {
+      return {
+        type: Posts.SET_DISPLAY_LIST,
+        displayState: "list"
+      }
     }
-  },
+  }
 };
 
 export default postActionCreators;
