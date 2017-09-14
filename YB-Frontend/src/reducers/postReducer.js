@@ -9,7 +9,7 @@ const initialState = {
   limit: 0,
   total: 0,
   submitLoading: false,
-  display: 'grid'
+  display: 'list'
 };
 
 const posts = (state = initialState, action) => {
@@ -17,10 +17,11 @@ const posts = (state = initialState, action) => {
     case Posts.FETCH_ALL_POSTS:
       console.log('fetch_all_posts() loading');
       return state;
+
     case Posts.RECEIVE_ALL_POSTS:
       if (action.success) {
         console.log('success fetching all posts:',action.posts);
-        return {...action.posts, display: 'grid'};
+        return {...action.posts, display: 'list'};
       } else {
         console.log('error fetching all posts:',action.error);
         return state;

@@ -7,7 +7,10 @@ export const Posts = {
   RECEIVE_SINGLE_POST: "receive single post",
 
   SEND_NEW_POST: 'send a new post to the API',
-  RECEIVE_NEW_POST: 'receive new post from API'
+  RECEIVE_NEW_POST: 'receive new post from API',
+
+  SET_DISPLAY_LIST: 'set posts display to list',
+  SET_DISPLAY_GRID: 'set posts display to grid',
 };
 
 // Comments

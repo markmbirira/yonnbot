@@ -149,7 +149,14 @@
 }
 
 
-/* Grid Layout for the Posts */
-.post-grid-item {
-  
+/* Display Toggle  */
+.display-toggle-container {
+  position: absolute;
+  top: 9%;
+  right: 6px;
+  z-index: 3;
+  background-color: #e7e7e7;
+  width: 77px;
+  padding: 4px 8px;  
+  box-shadow: 0 0 1px 1px rgba(68, 68, 68, 0.63);
 }
