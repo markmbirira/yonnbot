@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import LoginRegisterLinks from './LoginRegisterLinks';
+import LoginRegisterContainer from './LoginRegisterContainer';
 
 class Auth extends React.Component {
 
   render() {
+
     if (this.props.isLoggedIn) {
+
     	return this.props.children;
+
     } else {
-    	return <LoginRegisterLinks 
-    						currentURL={this.props.currentURL}
-    				 />
+
+    	return (
+        <LoginRegisterContainer currentURL={this.props.currentURL} />
+      );
     }
     
   }

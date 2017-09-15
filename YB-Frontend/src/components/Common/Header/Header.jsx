@@ -9,25 +9,7 @@ import SearchButton from './SearchButton';
 class App extends Component {
 
   render () {
-    const { isLoggedIn } = this.props;
-
-    let navbarRight = null;
-      
-    if (this.props.isLoggedIn) {
-      navbarRight = 
-        <ul className="nav navbar-nav navbar-right">
-          <li><Link to="/logout"><i className="fa fa-sign-out" aria-hidden="true"></i> logout</Link></li>
-          <SearchButton />
-        </ul> 
-    } else  { 
-      navbarRight = 
-      <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/login"><i className="fa fa-sign-in" aria-hidden="true"></i> login</Link></li>
-        <li><Link to="/register"><i className="fa fa-user-plus" aria-hidden="true"></i> register</Link></li>
-        <SearchButton />
-      </ul>
-    }
-
+    
     return (
       <nav className="navbar navbar-default main-navbar">
         <div className="container">
@@ -48,7 +30,9 @@ class App extends Component {
                 New Item
               </Link>
             </ul>
-            {navbarRight}
+            <ul className="nav navbar-nav navbar-right">
+              <SearchButton />
+            </ul>
           </div>
           {/* nav-collapse */}
         </div>
