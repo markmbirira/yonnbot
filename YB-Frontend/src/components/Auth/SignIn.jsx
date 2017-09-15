@@ -44,8 +44,8 @@ class App extends Component {
     }
 
     return (
-      <div className="tab-pane fade" id="signin-form">
-        <form className="form auth-form" onSubmit={this._handleLogin}>
+      <div className="tab-pane fade in active" id="signin-form">
+        <form className="form" onSubmit={this._handleLogin} style={{ marginTop: 30 }}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input type="text" className="form-control" ref="username" />
@@ -54,7 +54,7 @@ class App extends Component {
             <label htmlFor="password">Password</label>
             <input type="text" className="form-control" ref="password" />
           </div>
-          <button type="submit" className="btn btn-default" style={buttonStyle}>Sign in</button>
+          <button type="submit" className="btn btn-default btn-lg" style={buttonStyle}>Sign in</button>
         </form>
       </div>      
     );

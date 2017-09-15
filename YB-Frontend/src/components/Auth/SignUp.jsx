@@ -45,8 +45,8 @@ class App extends Component {
     }
 
     return (
-      <div className="tab-pane fade in active" id="signup-form">
-        <form className="form" onSubmit={this._handleSignUp}>
+      <div className="tab-pane fade in" id="signup-form">
+        <form className="form" onSubmit={this._handleSignUp} style={{ marginTop: 30 }}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input type="text" className="form-control" ref="username" />
@@ -59,7 +59,7 @@ class App extends Component {
             <label htmlFor="password">Password</label>
             <input type="text" className="form-control" ref="password" />
           </div>
-          <button type="submit" className="btn btn-default" style={buttonStyle}>Sign up</button>
+          <button type="submit" className="btn btn-default btn-lg" style={buttonStyle}>Sign up</button>
         </form>
       </div>      
     );

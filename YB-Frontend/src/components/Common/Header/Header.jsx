@@ -8,7 +8,32 @@ import SearchButton from './SearchButton';
 
 class App extends Component {
 
+
   render () {
+
+    const { isLoggedIn } = this.props;
+
+    let navbarRight = () => {
+
+      if (isLoggedIn) {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+           
+            <Link to="/logout" className="btn btn-default navbar-btn">
+              Sign out <i className="fa fa-sign-out" aria-hidden="true"></i>{' '}
+            </Link>
+            <SearchButton />
+          </ul>
+        );
+      } else {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <SearchButton />
+          </ul>
+        );
+      }
+
+    }
     
     return (
       <nav className="navbar navbar-default main-navbar">
@@ -30,9 +55,7 @@ class App extends Component {
                 New Item
               </Link>
             </ul>
-            <ul className="nav navbar-nav navbar-right">
-              <SearchButton />
-            </ul>
+            { navbarRight() }
           </div>
           {/* nav-collapse */}
         </div>

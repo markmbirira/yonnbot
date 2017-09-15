@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import './Auth.css';
 
 export default class LoginRegisterContainer extends  Component {
 
