@@ -18,9 +18,8 @@ class App extends Component {
       if (isLoggedIn) {
         return (
           <ul className="nav navbar-nav navbar-right">
-           
             <Link to="/logout" className="btn btn-default navbar-btn">
-              Sign out <i className="fa fa-sign-out" aria-hidden="true"></i>{' '}
+              Logout <i className="fa fa-sign-out" aria-hidden="true"></i>{' '}
             </Link>
             <SearchButton />
           </ul>
@@ -28,6 +27,7 @@ class App extends Component {
       } else {
         return (
           <ul className="nav navbar-nav navbar-right">
+            <li></li>
             <SearchButton />
           </ul>
         );
