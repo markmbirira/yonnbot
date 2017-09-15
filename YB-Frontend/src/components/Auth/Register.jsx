@@ -39,32 +39,46 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-
-          <div className="main">
-
-            <form role="form" onSubmit={this._handleRegister} className="register-form">
-              <div className="form-group">
-                <label htmlFor="">Username</label>
-                <input type="text" className="form-control" ref="username" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="">Email</label>
-                <input type="text" className="form-control" ref="email" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" className="form-control" ref="password" />
-              </div>
-              <button type="submit" className="btn btn btn-primary">
-                Register
-              </button>
-              <div className="pull-right btn">
-                <Link to="/login">Or login</Link>
-              </div>
-            </form>
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            
+              <div className="jumbotron">
+                <div className="card">
+                  
+                  <div className="">
+                    <form role="form" onSubmit={this._handleRegister} className="login-form">
+                      <div className="form-group">
+                        <label htmlFor="">Username</label>
+                        <input type="text" className="form-control" ref="username" />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" className="form-control" ref="email" />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" className="form-control" ref="password" />
+                      </div>
+                      <button type="submit" className="btn btn btn-primary " 
+                              style={{
+                                width: "110",
+                                backgroundColor: "#2ab27b",
+                                border: "none"
+                              }}
+                      >
+                        Register
+                      </button>
+                      <div className="pull-right btn">
+                        <Link to="/register" style={{color: "#2ab27b"}}>or Login</Link>
+                      </div>
+                    </form>
+                  </div>
+                  <div className="card-footer"></div>
+                </div>
+              </div>  
           
           </div>
-          
+          <div className="col-md-3"></div>
         </div>
       </div>
     );

@@ -30,7 +30,7 @@ class App extends Component {
 
     return (
       <nav className="navbar navbar-default main-navbar">
-        <div className="container-fluid">
+        <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
               <span className="sr-only">Toggle navigation</span>

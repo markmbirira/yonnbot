@@ -21,11 +21,18 @@ class App extends Component {
 						<div className="col-md-3 .mobile-hidden"></div>
 						<div className="col-md-6">
 							<div className="button-container">
-								<Link to="/login" className="btn btn-default pull-left login-button">
+								<Link to="/login" className="btn btn-default pull-left login-button"
+											style={{
+												backgroundColor: "#2ab27b",
+												width: 110,
+												border: "none",
+												color: "#fff"
+											}}
+								>
 									<i className="fa fa-sign-in" aria-hidden="true"></i>{' '}
 									Login
 								</Link>
-								<Link to="/" className="btn btn-default pull-right cancel-button ">
+								<Link to="/" className="btn btn-default pull-right cancel-button" style={{opacity: ".7"}}>
 									Cancel{' '}
 									<i className="fa fa-times" aria-hidden="true"></i>
 								</Link>	
