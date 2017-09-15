@@ -11,7 +11,7 @@ export default class LoginRegisterContainer extends  Component {
 
 	render(){
 		return (
-			<div className="overlay" className={{ marginTop: 100 }}>
+			<div className="overlay" style={{ marginTop: 80 }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-4"></div>

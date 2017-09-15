@@ -44,19 +44,18 @@ class App extends Component {
     }
 
     return (
-      <div className="tab-pane fade in active" id="signin-form">
-        <h3>Sign in to your account</h3>
-          <form className="form" onSubmit={this._handleLogin}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" className="form-control" ref="username" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input type="text" className="form-control" ref="password" />
-            </div>
-            <button type="submit" className="btn btn-default" style={buttonStyle}>Sign in</button>
-          </form>
+      <div className="tab-pane fade" id="signin-form">
+        <form className="form auth-form" onSubmit={this._handleLogin}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input type="text" className="form-control" ref="username" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input type="text" className="form-control" ref="password" />
+          </div>
+          <button type="submit" className="btn btn-default" style={buttonStyle}>Sign in</button>
+        </form>
       </div>      
     );
   }
