@@ -1,13 +1,13 @@
-# YonnBot - Collect URLs/Links in a fun way
+### YonnBot - Collect URLs/Links in a fun way
 
 ---
 
-## Description
+### Description
 This is a simple project that uses React, Express and Mongo to collects a URL from the user,
 processes the URL with Express via [Embedly API](https://embedly.com), persists the data in Mongo
 and sends the processed link back to the React client. Sounds fun, check out installation below.
 
-## Requirements
+### Requirements
 
 For development, you will only need Node.js installed on your environement.
 
