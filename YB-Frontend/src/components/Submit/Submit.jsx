@@ -66,7 +66,7 @@ class App extends Component {
                     <h4 className="modal-title">Paste a link to create a bookmark</h4>
                   </div>
                   <div className="modal-body">
-                    <form role="form" onSubmit={this._handleRegister}>
+                    <form role="form" onSubmit={this._handlePostSubmit}>
                       <div className="form-group">
                         <label htmlFor="">Title</label>
                         <input type="text" className="form-control" ref="title" />
