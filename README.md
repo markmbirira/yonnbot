@@ -1,23 +1,79 @@
-# YonnBot - YOur owN News Bot
-A social bookmarking MERN (MongoDB Express React Node.js) application
+# YonnBot - A simple React/Express/Mongo App that plays blog links.
 
-## Installation
-Download a zip archize of this project to your working station and extract or use git clone:
+## Requirements
 
-  `git clone https://markmbirira/yonnbot.git`
+For development, you will only need Node.js installed on your environement.
 
-After the download is complete, you need to install dependencies in two steps.
-  1. At the root folder (for the Express REST API)
-  2. In the front-end folder
-  
-Now `cd` into the `yonnbot` directory (where this file file is) and run this at your terminal:
-  `npm install`
+### Node
 
-It will take sometime then `cd` to the `YB-Frontend` folder and run
-  `npm install` 
-too.
+[Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
+You should be able to run the following command after the installation procedure
+below.
 
-then at the project root (where this file file is) start the whole Application with:
-  `npm start` 
+    $ node --version
+    v6.11.2
 
-Navigate to `localhost:5000` in your browser
+    $ npm --version
+    3.10.10
+
+
+#### Node installation on Linux ( I use Ubuntu )
+
+    sudo apt-get install python-software-properties
+    sudo add-apt-repository ppa:chris-lea/node.js
+    sudo apt-get update
+    sudo apt-get install nodejs
+
+#### Node installation on Windows
+
+Just go on [official Node.js website](http://nodejs.org/) & grab the installer.
+Also, be sure to have `git` available in your PATH, `npm` might need it.
+
+---
+
+## Install
+
+    $ git clone https://github.com/markmbirira/yonnbot.git
+    $ cd yonnbot
+    $ npm install
+    $ cd YB-Frontend
+    $ npm install
+
+### Configure app
+
+Edit the files in the config folder at the project root.
+In your local development environment, export the process.env.NODE_ENV property to "development"
+    
+    $ export NODE_ENV="development"
+
+In the `config/env` folder, edit the development.js file correct details for
+
+    - MongoDB database URI
+    - Application secret key
+
+
+## Start & watch
+
+    $ npm start
+
+## Update sources
+
+Some packages usages might change so you should run `npm prune` & `npm install` often.
+A common way to update is by doing
+
+    $ git pull
+    $ npm prune
+    $ npm install
+
+To run those 3 commands you can just do
+
+    $ npm run pull
+
+---
+
+## Languages & tools
+
+- [React](http://facebook.github.io/react) is used for UI.
+- [Express](https://expressjs.com) used for the REST API
+- [MongoDB](https://mongodb.com) a noSQL databse, works well with Express.
+- [Mongoose](https://mongoosejs.com) the ODM for MongoDB
