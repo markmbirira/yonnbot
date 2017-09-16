@@ -52,7 +52,7 @@ class App extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text" className="form-control" ref="password" />
+            <input type="password" className="form-control" ref="password" />
           </div>
           <button type="submit" className="btn btn-default btn-lg" style={buttonStyle}>Sign in</button>
         </form>

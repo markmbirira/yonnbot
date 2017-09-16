@@ -53,11 +53,11 @@ class App extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="text" className="form-control" ref="email" />
+            <input type="email" className="form-control" ref="email" />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text" className="form-control" ref="password" />
+            <input type="password" className="form-control" ref="password" />
           </div>
           <button type="submit" className="btn btn-default btn-lg" style={buttonStyle}>Sign up</button>
         </form>
