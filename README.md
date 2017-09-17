@@ -1,4 +1,4 @@
-### YonnBot - Collect URLs/Links in a fun way
+### YonnBot - Collect URLs in a fun way
 
 ---
 
