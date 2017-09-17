@@ -1,6 +1,6 @@
 ### YonnBot - Collect URLs in a fun way
 
-[https://www.codeship.io/projects/245848/status?branch=master](https://www.codeship.io/projects/245848)
+[ ![Codeship Status for markmbirira/yonnbot](https://app.codeship.com/projects/b3d3cc10-7d87-0135-aaaa-6e710fdb022a/status?branch=master)](https://app.codeship.com/projects/245848)
 
 ---
 
