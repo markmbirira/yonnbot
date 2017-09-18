@@ -43,11 +43,15 @@ var PostSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  slug: String, // userfriendly URLs
+  slug: String,
   author_id: String,
   upvotes: {
     type: Number,
     default: 0
+  },
+  comments: {
+    type: Object,
+    default: {}
   }
 });
 

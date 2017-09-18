@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"success\" && exit 0",
     "start": "./node_modules/.bin/nf start",
-    "server": "nodemon yonnbot.js"
+    "server": "nodemon index.js"
   },
   "dependencies": {
     "axios": "^0.15.3",
