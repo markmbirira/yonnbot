@@ -1,3 +1,3 @@
 exports.index = function (req, res, next) {
-  res.redirect('/feed/1');
-};
+  res.redirect('/api/v1/posts/1') /* send routes from index route */
+}

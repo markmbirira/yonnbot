@@ -1,8 +1,5 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  User = mongoose.model('User'),
-  Post = mongoose.model('User'),
-  moment = require('moment');
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var CommentSchema = new Schema({
   comment_text: {
@@ -22,16 +19,15 @@ var CommentSchema = new Schema({
     type: Number,
     default: 0
   }
-});
+})
 
 CommentSchema.pre('save', function (next) {
-  
-  next();
-});
+  next()
+})
 
-CommentSchema.set('toJSON', { 
+CommentSchema.set('toJSON', {
   getters: true,
-  virtuals: true 
-});
+  virtuals: true
+})
 
-mongoose.model('Comment', CommentSchema);
+mongoose.model('Comment', CommentSchema)

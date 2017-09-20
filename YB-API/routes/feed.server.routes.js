@@ -1,6 +1,7 @@
  var feed = require('../../YB-API/controllers/feed.server.controllers')
  var passport = require('passport')
 
+/* this app object is available at index.js */
  module.exports = function (app) {
    app.route('/api/v1/posts/:page')
     .get(feed.pagedPosts)
