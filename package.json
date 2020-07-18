@@ -29,7 +29,7 @@
     "moment": "^2.18.1",
     "mongoose": "^4.8.4",
     "mongoose-paginate": "^5.0.3",
-    "morgan": "~1.0.0",
+    "morgan": "~1.10.0",
     "nodemon": "^1.11.0",
     "oembed": "^0.1.2",
     "oembed-auto": "0.0.3",
